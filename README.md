@@ -1,4 +1,7 @@
-```erDiagram
+# DB LDM
+
+```mermaid
+erDiagram
 	project_members }o--|| users : references
 	project_members }o--|| projects : references
 	project_followers }o--|| users : references
