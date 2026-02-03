@@ -1,104 +1,107 @@
 # DB LDM
 
+# Database Schema
+
 ```mermaid
 erDiagram
-	project_members }o--|| users : references
-	project_members }o--|| projects : references
-	project_followers }o--|| users : references
-	project_followers }o--|| projects : references
-	notifications }o--|| users : references
-	notifications }o--|| threads : references
-	threads }o--|| projects : references
-	comments }o--|| threads : references
-	comments }o--|| users : references
-	thread_labels }o--|| threads : references
-	thread_labels }o--|| labels : references
-	labels }o--|| projects : references
-	threads }o--|| users : references
+    users ||--o{ project_members : "owns"
+    users ||--o{ project_followers : "follows"
+    users ||--o{ threads : "creates"
+    users ||--o{ comments : "writes"
+    users ||--o{ notifications : "receives"
+    projects ||--o{ project_members : "has"
+    projects ||--o{ project_followers : "followed_by"
+    projects ||--o{ threads : "contains"
+    projects ||--o{ labels : "has"
+    threads ||--o{ comments : "has"
+    threads ||--o{ thread_labels : "tagged_with"
+    threads ||--o{ notifications : "triggers"
+    labels ||--o{ thread_labels : "applied_to"
+    users ||--o{ threads : "assigned_to"
 
-	users {
-		UUID id
-		TEXT email
-		TEXT name
-		TEXT avatar_url
-		TEXT preferred_language
-		TIMESTAMPTZ created_at
-		TIMESTAMPTZ updated_at
-	}
+    users {
+        UUID id PK
+        TEXT email UK
+        TEXT name
+        TEXT avatar_url
+        TEXT preferred_language
+        TIMESTAMPTZ created_at
+        TIMESTAMPTZ updated_at
+    }
 
-	projects {
-		UUID id
-		TEXT name
-		TEXT description
-		TEXT slug
-		UUID owner_id
-		BOOLEAN is_public
-		TEXT invite_code
-		TIMESTAMPTZ created_at
-		TIMESTAMPTZ updated_at
-	}
+    projects {
+        UUID id PK
+        TEXT name
+        TEXT description
+        TEXT slug UK
+        UUID owner_id FK
+        BOOLEAN is_public
+        TEXT invite_code UK
+        TIMESTAMPTZ created_at
+        TIMESTAMPTZ updated_at
+    }
 
-	project_members {
-		UUID id
-		UUID project_id
-		UUID user_id
-		TEXT role
-		TIMESTAMPTZ created_at
-	}
+    project_members {
+        UUID id PK
+        UUID project_id FK
+        UUID user_id FK
+        TEXT role
+        TIMESTAMPTZ created_at
+    }
 
-	project_followers {
-		UUID id
-		UUID project_id
-		UUID user_id
-		TIMESTAMPTZ created_at
-	}
+    project_followers {
+        UUID id PK
+        UUID project_id FK
+        UUID user_id FK
+        TIMESTAMPTZ created_at
+    }
 
-	threads {
-		UUID id
-		UUID project_id
-		UUID author_id
-		TEXT title
-		TEXT content
-		TEXT original_language
-		TEXT status
-		INTEGER priority_weight
-		UUID assigned_to
-		TIMESTAMPTZ created_at
-		TIMESTAMPTZ updated_at
-	}
+    threads {
+        UUID id PK
+        UUID project_id FK
+        UUID author_id FK
+        TEXT title
+        TEXT content
+        TEXT original_language
+        TEXT status
+        INTEGER priority_weight
+        UUID assigned_to FK
+        TIMESTAMPTZ created_at
+        TIMESTAMPTZ updated_at
+    }
 
-	labels {
-		UUID id
-		UUID project_id
-		TEXT name
-		TEXT color
-		TIMESTAMPTZ created_at
-	}
+    labels {
+        UUID id PK
+        UUID project_id FK
+        TEXT name
+        TEXT color
+        TIMESTAMPTZ created_at
+    }
 
-	thread_labels {
-		UUID id
-		UUID thread_id
-		UUID label_id
-		TIMESTAMPTZ created_at
-	}
+    thread_labels {
+        UUID id PK
+        UUID thread_id FK
+        UUID label_id FK
+        TIMESTAMPTZ created_at
+    }
 
-	comments {
-		UUID id
-		UUID thread_id
-		UUID author_id
-		TEXT content
-		TEXT original_language
-		TIMESTAMPTZ created_at
-		TIMESTAMPTZ updated_at
-	}
+    comments {
+        UUID id PK
+        UUID thread_id FK
+        UUID author_id FK
+        TEXT content
+        TEXT original_language
+        TIMESTAMPTZ created_at
+        TIMESTAMPTZ updated_at
+    }
 
-	notifications {
-		UUID id
-		UUID user_id
-		UUID thread_id
-		TEXT type
-		TEXT message
-		BOOLEAN is_read
-		TIMESTAMPTZ created_at
-	}
+    notifications {
+        UUID id PK
+        UUID user_id FK
+        UUID thread_id FK
+        TEXT type
+        TEXT message
+        BOOLEAN is_read
+        TIMESTAMPTZ created_at
+    }
 ```
