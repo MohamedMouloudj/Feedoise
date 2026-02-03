@@ -1,6 +1,4 @@
-# DB LDM
-
-# Database Schema
+# Database Schema (LDM)
 
 ```mermaid
 erDiagram
