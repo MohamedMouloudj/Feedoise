@@ -1,0 +1,21 @@
+{
+  "version": 0.1,
+  "locale": "es",
+  "entries": {
+    "8818ca53e31c": "Crear aplicación Next",
+    "86dbb9f023f2": "Generado por create next app",
+    "498bde000b56": "Logo de Next.js",
+    "9ad922c5a3f9": "Para comenzar, edita el archivo page.tsx.",
+    "fe51bf1cf1b4": "¿Buscas un punto de partida o más instrucciones? Dirígete a <a0>Plantillas </a0> o al centro de <a1>Aprendizaje</a1>.",
+    "cabbfb341ef3": "Desplegar ahora",
+    "706150d051d0": "Logotipo de Vercel",
+    "61bb762097c1": "Documentación",
+    "ca249b2e1178": "Inglés",
+    "54bfb1c34306": "Árabe",
+    "23d8867a1473": "Francés",
+    "728e89b4515b": "Español",
+    "a6763c77ebfe": "Alemán",
+    "28b5b8be2d38": "Chino",
+    "2aa81c111b69": "Ruso"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "entries": {
+    "ca249b2e1178": {
+      "type": "content",
+      "sourceText": "English",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "ca249b2e1178",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 17,
+        "column": 6
+      }
+    },
+    "54bfb1c34306": {
+      "type": "content",
+      "sourceText": "العربية",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "54bfb1c34306",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 18,
+        "column": 6
+      }
+    },
+    "23d8867a1473": {
+      "type": "content",
+      "sourceText": "Français",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "23d8867a1473",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 19,
+        "column": 6
+      }
+    },
+    "728e89b4515b": {
+      "type": "content",
+      "sourceText": "Español",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "728e89b4515b",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 20,
+        "column": 6
+      }
+    },
+    "a6763c77ebfe": {
+      "type": "content",
+      "sourceText": "Deutsch",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "a6763c77ebfe",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 21,
+        "column": 6
+      }
+    },
+    "28b5b8be2d38": {
+      "type": "content",
+      "sourceText": "中文",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "28b5b8be2d38",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 23,
+        "column": 6
+      }
+    },
+    "2aa81c111b69": {
+      "type": "content",
+      "sourceText": "Русский",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "2aa81c111b69",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 22,
+        "column": 6
+      }
+    },
+    "498bde000b56": {
+      "type": "attribute",
+      "sourceText": "Next.js logo",
+      "context": {
+        "attributeName": "alt",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "498bde000b56",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 7,
+        "column": 8
+      }
+    },
+    "9ad922c5a3f9": {
+      "type": "content",
+      "sourceText": "To get started, edit the page.tsx file.",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "9ad922c5a3f9",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 16,
+        "column": 10
+      }
+    },
+    "fe51bf1cf1b4": {
+      "type": "content",
+      "sourceText": "Looking for a starting point or more instructions? Head over to <a0>Templates </a0> or the <a1>Learning </a1> center.",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "fe51bf1cf1b4",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 19,
+        "column": 10
+      }
+    },
+    "cabbfb341ef3": {
+      "type": "content",
+      "sourceText": "Deploy Now",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "cabbfb341ef3",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 38,
+        "column": 10
+      }
+    },
+    "706150d051d0": {
+      "type": "attribute",
+      "sourceText": "Vercel logomark",
+      "context": {
+        "attributeName": "alt",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "706150d051d0",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 44,
+        "column": 12
+      }
+    },
+    "61bb762097c1": {
+      "type": "content",
+      "sourceText": "Documentation",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "61bb762097c1",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 53,
+        "column": 10
+      }
+    },
+    "8818ca53e31c": {
+      "type": "metadata",
+      "sourceText": "Create Next App",
+      "context": {
+        "fieldPath": "title",
+        "filePath": "layout.tsx"
+      },
+      "hash": "8818ca53e31c",
+      "location": {
+        "filePath": "layout.tsx",
+        "line": 7,
+        "column": 9
+      }
+    },
+    "86dbb9f023f2": {
+      "type": "metadata",
+      "sourceText": "Generated by create next app",
+      "context": {
+        "fieldPath": "description",
+        "filePath": "layout.tsx"
+      },
+      "hash": "86dbb9f023f2",
+      "location": {
+        "filePath": "layout.tsx",
+        "line": 8,
+        "column": 15
+      }
+    },
+    "073e4b8dc80f": {
+      "type": "content",
+      "sourceText": "हिन्दी",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "073e4b8dc80f",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 24,
+        "column": 6
+      }
+    },
+    "a850b7d69d12": {
+      "type": "content",
+      "sourceText": "Português",
+      "context": {
+        "componentName": "LanguageSwitcher",
+        "filePath": "../components/LanguageSwitcher.tsx"
+      },
+      "hash": "a850b7d69d12",
+      "location": {
+        "filePath": "../components/LanguageSwitcher.tsx",
+        "line": 21,
+        "column": 6
+      }
+    }
+  },
+  "stats": {
+    "totalEntries": 17,
+    "lastUpdated": "2026-02-03T22:21:41.389Z"
+  }
+}

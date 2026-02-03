@@ -1,0 +1,22 @@
+{
+  "version": 0.1,
+  "locale": "fr",
+  "entries": {
+    "8818ca53e31c": "Créer une application Next",
+    "86dbb9f023f2": "Généré par create next app",
+    "ca249b2e1178": "Anglais",
+    "54bfb1c34306": "العربية",
+    "23d8867a1473": "Français",
+    "728e89b4515b": "Espagnol",
+    "a850b7d69d12": "Portugais",
+    "2aa81c111b69": "Russe",
+    "28b5b8be2d38": "Chinois",
+    "073e4b8dc80f": "Hindi",
+    "498bde000b56": "Logo Next.js",
+    "9ad922c5a3f9": "Pour commencer, modifiez le fichier page.tsx.",
+    "fe51bf1cf1b4": "Vous cherchez un point de départ ou plus d'instructions ? Rendez-vous sur <a0>Modèles </a0> ou le centre <a1>Apprentissage</a1>.",
+    "cabbfb341ef3": "Déployer maintenant",
+    "706150d051d0": "Logo Vercel",
+    "61bb762097c1": "Documentation"
+  }
+}
