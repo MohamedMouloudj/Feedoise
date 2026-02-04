@@ -1,0 +1,25 @@
+enum OrganizationRole {
+    owner
+    admin
+    member
+}
+
+enum ProjectRole {
+    maintainer
+    contributor
+}
+
+enum ThreadStatus {
+    new
+    under_review
+    planned
+    completed
+    wont_fix
+}
+
+enum NotificationType {
+    reply
+    status_change
+    priority_change
+    assignment
+}
