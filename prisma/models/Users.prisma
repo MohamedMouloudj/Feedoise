@@ -1,19 +1,23 @@
 model User {
-    id                String   @id @default(uuid()) @db.Uuid
-    email             String   @unique
-    name              String
-    avatarUrl         String?  @map("avatar_url")
-    preferredLanguage String   @default("en") @map("preferred_language")
-    createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-    updatedAt         DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  id                String   @id @default(uuid()) @db.Uuid
+  email             String   @unique
+  name              String
+  emailVerified     Boolean  @default(false) @map("email_verified")
+  image             String?
+  preferredLanguage String   @default("en") @map("preferred_language")
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt         DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
 
-    organizationMembers OrganizationMember[]
-    projectMembers      ProjectMember[]
-    projectFollowers    ProjectFollower[]
-    threads             Thread[]
-    comments            Comment[]
-    notifications       Notification[]
-    assignedThreads     Thread[]             @relation("AssignedThreads")
+  organizationMembers OrganizationMember[]
+  projectMembers      ProjectMember[]
+  projectFollowers    ProjectFollower[]
+  threads             Thread[]
+  comments            Comment[]
+  notifications       Notification[]
+  assignedThreads     Thread[]             @relation("AssignedThreads")
 
-    @@map("users")
+  sessions Session[]
+  accounts Account[]
+
+  @@map("users")
 }

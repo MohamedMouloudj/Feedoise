@@ -1,27 +1,27 @@
 model Organization {
-    id        String   @id @default(uuid()) @db.Uuid
-    name      String
-    slug      String   @unique
-    avatarUrl String?  @map("avatar_url")
-    createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-    updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  slug      String   @unique
+  avatarUrl String?  @map("avatar_url")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
 
-    members  OrganizationMember[]
-    projects Project[]
+  members  OrganizationMember[]
+  projects Project[]
 
-    @@map("organizations")
+  @@map("organizations")
 }
 
 model OrganizationMember {
-    id             String           @id @default(uuid()) @db.Uuid
-    organizationId String           @map("organization_id") @db.Uuid
-    userId         String           @map("user_id") @db.Uuid
-    role           OrganizationRole @default(member)
-    createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  id             String           @id @default(uuid()) @db.Uuid
+  organizationId String           @map("organization_id") @db.Uuid
+  userId         String           @map("user_id") @db.Uuid
+  role           OrganizationRole @default(member)
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
 
-    organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
-    user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-    @@unique([organizationId, userId])
-    @@map("organization_members")
+  @@unique([organizationId, userId])
+  @@map("organization_members")
 }
