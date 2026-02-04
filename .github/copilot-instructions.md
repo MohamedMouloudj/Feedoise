@@ -193,7 +193,7 @@ const translated = await localizeObject(
 ### Server Actions
 
 - Prefer Server Actions over API routes for mutations
-- Place in separate `actions.ts` files
+- Place in separate `<name>.actions.ts` files under `actions` folder
 - Use `"use server"` directive
 - Return typed responses with error handling
 
@@ -211,7 +211,7 @@ const translated = await localizeObject(
 
 ### Type Safety
 
-- Always import Prisma types: `import { Thread, Project } from "@prisma/client"`
+- Always import Prisma types: `import { Thread, Project } from "@/lib/generated/prisma/client"`
 - Use `Prisma.ThreadInclude` for relations
 - No `any` types unless absolutely necessary
 
