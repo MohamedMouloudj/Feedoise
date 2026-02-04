@@ -15,16 +15,24 @@
     "prisma:pull": "prisma db pull"
   },
   "dependencies": {
+    "@base-ui/react": "^1.1.0",
     "@lingo.dev/compiler": "^0.3.5",
+    "@phosphor-icons/react": "^2.1.10",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cobe": "^0.6.5",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.563.0",
+    "motion": "^12.31.0",
     "next": "16.1.6",
-    "radix-ui": "^1.4.3",
+    "next-themes": "^0.4.6",
     "react": "19.2.3",
+    "react-day-picker": "^9.13.0",
     "react-dom": "19.2.3",
+    "react-resizable-panels": "^4.5.9",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

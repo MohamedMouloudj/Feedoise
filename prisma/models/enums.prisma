@@ -10,10 +10,15 @@ enum ProjectRole {
 }
 
 enum ThreadStatus {
+    /* Just submitted feedback that hasn't been looked at yet. Default state when user creates a thread */
     new
+    /* Team is actively looking at it, investigating, or discussing */
     under_review
+    /* Decided to do it, added to roadmap/backlog */
     planned
+    /* Fixed/implemented/resolved. Success state where feedback resulted in action */
     completed
+    /* Decided to not do it. Could be for various reasons like out of scope, working as intended, not feasible, duplicate, declined by user, etc. */
     wont_fix
 }
 
