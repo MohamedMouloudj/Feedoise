@@ -8,6 +8,7 @@ model Organization {
 
   members  OrganizationMember[]
   projects Project[]
+  invitations Invitation[]
 
   @@map("organizations")
 }
@@ -24,4 +25,19 @@ model OrganizationMember {
 
   @@unique([organizationId, userId])
   @@map("organization_members")
+}
+
+model Invitation {
+  id             String   @id @default(uuid()) @db.Uuid
+  organizationId String   @map("organization_id") @db.Uuid
+  email          String
+  role           OrganizationRole @default(member)
+  token          String   @unique // One-time use token
+  expiresAt      DateTime @map("expires_at") @db.Timestamptz(6)
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  usedAt         DateTime? @map("used_at") @db.Timestamptz(6)
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@map("invitations")
 }

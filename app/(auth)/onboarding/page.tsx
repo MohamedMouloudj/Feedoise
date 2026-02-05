@@ -23,7 +23,7 @@ export default function OnboardingPage() {
       } else {
         toast.error(result.error);
       }
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to create organization");
     } finally {
       setLoading(false);

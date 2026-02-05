@@ -1,11 +1,29 @@
+/**
+ * Each get org-wide permissions
+ */
 enum OrganizationRole {
   owner
   admin
   member
 }
 
-enum ProjectRole {
+/**
+ * Each get per-project permissions
+ */
+enum ProjectRole { 
+  /**
+   * Has full access to the project.
+   * - Can update project settings (name, description, public/private)
+   * - Can assign threads, change status, set priority
+   * - Can manage labels
+   * - Can invite/remove contributors
+   */
   maintainer
+  /**
+   * Can contribute to the project. Like an external open source contributor.
+   * - Can create threads (feedback)
+   * - Can comment on threads
+   */
   contributor
 }
 

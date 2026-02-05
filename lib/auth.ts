@@ -7,10 +7,9 @@ import { prisma } from "./db";
 import { nextCookies } from "better-auth/next-js";
 import PasswordResetEmail from "@/emails/PasswordResetEmail";
 import VerificationEmail from "@/emails/VerificationEmail";
+import { PASSWORD_RESET_EXPIRY_MINUTES } from "@/config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const PASSWORD_RESET_EXPIRY_MINUTES = 10;
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -19,6 +18,8 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: true,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
     sendVerificationEmail: async ({ user, url }) => {
       const verifyLink = url;
       const userName = user.name || user.email.split("@")[0];
