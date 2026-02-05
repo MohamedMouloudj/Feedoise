@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { createOrganization } from "@/actions/organizations";
+import { createOrganization } from "@/actions/organizations.action";
 
 export default function OnboardingPage() {
   const router = useRouter();

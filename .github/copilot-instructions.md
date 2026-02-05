@@ -193,7 +193,7 @@ const translated = await localizeObject(
 ### Server Actions
 
 - Prefer Server Actions over API routes for mutations
-- Place in separate `<name>.actions.ts` files under `actions` folder
+- Place in separate `<name>.action.ts` files under `actions` folder
 - Use `"use server"` directive
 - Return typed responses with error handling
 
@@ -205,9 +205,10 @@ const translated = await localizeObject(
 
 ### Error Handling
 
-- Use Sonner toast for user feedback
 - Server-side: Return `{ success: false, error: string }`
+- Refer to this doc "https://www.prisma.io/docs/orm/reference/error-reference#prisma-client-query-engine" for handling specific Prisma errors
 - Client-side: Display error in UI, don't just console.log
+- Use Sonner toast for user feedback
 
 ### Type Safety
 
@@ -220,7 +221,7 @@ const translated = await localizeObject(
 - **NO modifications to `/components/ui/*`**: These are shadcn base components
 - **NO separate CSS files**: Everything in `globals.css`
 - **NO client components by default**: Only when interactivity required
-- **NO direct database queries**: Always use Prisma client from `@/lib/db`
+- **NO direct database queries**: Always use Prisma client from `@/lib/db` inside `/services`, using static methods, and use them in Server Components or Server Actions
 - **NO hardcoded strings in multiple places**: Extract to constants if reused
 
 ## Code Generation Guidelines

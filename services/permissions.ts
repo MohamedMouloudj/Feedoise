@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import { Prisma } from "@/lib/generated/prisma/client";
 import {
   getOrgPermissions,
   getProjectPermissions,
@@ -17,36 +18,48 @@ export async function getUserPermissions(
   organizationId: string,
   projectId?: string,
 ): Promise<Permission[]> {
-  const permissions: Permission[] = [];
+  try {
+    const permissions: Permission[] = [];
 
-  const orgMember = await prisma.organizationMember.findUnique({
-    where: {
-      organizationId_userId: {
-        organizationId,
-        userId,
-      },
-    },
-  });
-
-  if (orgMember) {
-    permissions.push(...getOrgPermissions(orgMember.role));
-  }
-
-  if (projectId) {
-    const projectMember = await prisma.projectMember.findUnique({
+    const orgMember = await prisma.organizationMember.findUnique({
       where: {
-        projectId_userId: {
-          projectId,
+        organizationId_userId: {
+          organizationId,
           userId,
         },
       },
     });
 
-    if (projectMember) {
-      permissions.push(...getProjectPermissions(projectMember.role));
+    if (orgMember) {
+      permissions.push(...getOrgPermissions(orgMember.role));
     }
-  }
 
-  // remove duplicates
-  return [...new Set(permissions)];
+    if (projectId) {
+      const projectMember = await prisma.projectMember.findUnique({
+        where: {
+          projectId_userId: {
+            projectId,
+            userId,
+          },
+        },
+      });
+
+      if (projectMember) {
+        permissions.push(...getProjectPermissions(projectMember.role));
+      }
+    }
+
+    // remove duplicates
+    return [...new Set(permissions)];
+  } catch (error) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      if (error.code === "P2003") {
+        throw new Error("Invalid organization or project ID");
+      }
+      if (error.code === "P2025") {
+        throw new Error("User is not a member of this organization or project");
+      }
+    }
+    throw new Error("Failed to retrieve user permissions");
+  }
 }

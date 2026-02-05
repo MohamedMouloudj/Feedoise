@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import { Prisma } from "@/lib/generated/prisma/client";
 import { ProjectRole } from "@/lib/generated/prisma/enums";
 
 /**
@@ -9,21 +10,36 @@ export class ProjectsService {
    * Get a user's role in a specific project.
    * @param userId - The ID of the user.
    * @param projectId - The ID of the project.
-   * @returns The user's `role in the project` ("maintainer", "contributor") or `null` if not a member.
+   * @returns The user's role in the project ("maintainer", "contributor") or null if not a member.
    */
   static async getUserRoleInProject(
     userId: string,
     projectId: string,
   ): Promise<ProjectRole | null> {
-    const membership = await prisma.projectMember.findFirst({
-      where: {
-        userId,
-        projectId,
-      },
-      select: {
-        role: true,
-      },
-    });
-    return membership ? membership.role : null;
+    try {
+      const membership = await prisma.projectMember.findUnique({
+        where: {
+          projectId_userId: {
+            projectId,
+            userId,
+          },
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      return membership?.role ?? null;
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        // P2003: Foreign key constraint failed (invalid projectId or userId)
+        if (error.code === "P2003") {
+          throw new Error("Invalid project or user ID");
+        }
+      }
+
+      console.error("Error fetching user role in project:", error);
+      throw new Error("Failed to retrieve user role in project");
+    }
   }
 }
