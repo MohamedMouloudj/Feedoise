@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a multilingual feedback and light ticketing platform built with Next.js 16, Prisma, Supabase, Resend and Lingo.dev for translation.
+This is a multilingual feedback and light ticketing platform built with Next.js 16, Prisma v7, Supabase, Resend and Lingo.dev for translation.
 
 ## Core Features
 
@@ -17,7 +17,7 @@ This is a multilingual feedback and light ticketing platform built with Next.js 
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
-- **Database**: Supabase (PostgreSQL) + Prisma ORM
+- **Database**: Supabase (PostgreSQL) + Prisma v7 ORM
 - **Resend**: Notification
 - **Translation**: Lingo.dev Compiler (static UI) + Lingo.dev SDK (dynamic content)
 - **Styling**: Tailwind CSS + shadcn/ui (Lyra style)
