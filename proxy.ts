@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { API_ROUTES, APP_ROUTS } from "./config";
+import { API_ROUTES, APP_ROUTS } from "./config/config";
 import { getCookieCache } from "better-auth/cookies";
 
 export async function proxy(request: NextRequest) {
@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
   const isPublicRoute =
     APP_ROUTS.PUBLIC_ROUTES.includes(pathname) ||
     pathname.startsWith("/organizations/") ||
-    pathname.startsWith("/threads/");
+    pathname.startsWith("/projects/");
 
   if (isPublicRoute) {
     return NextResponse.next();
@@ -25,7 +25,7 @@ export async function proxy(request: NextRequest) {
   const isAuthRoute = APP_ROUTS.AUTH_ROUTES.includes(pathname);
 
   if (isAuthRoute && session) {
-    return NextResponse.redirect(new URL("/threads", request.url));
+    return NextResponse.redirect(new URL("/projects", request.url));
   }
 
   if (!session && !isPublicRoute) {

@@ -7,7 +7,7 @@ import { prisma } from "./db";
 import { nextCookies } from "better-auth/next-js";
 import PasswordResetEmail from "@/emails/PasswordResetEmail";
 import VerificationEmail from "@/emails/VerificationEmail";
-import { PASSWORD_RESET_EXPIRY_MINUTES } from "@/config";
+import { PASSWORD_RESET_EXPIRY_MINUTES } from "@/config/config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

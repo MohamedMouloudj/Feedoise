@@ -9,7 +9,7 @@ export const APP_ROUTS = {
     "/forgot-password",
     "/reset-password",
   ],
-  PUBLIC_ROUTES: ["/", "/threads", "/organizations"],
+  PUBLIC_ROUTES: ["/", "/about", "/projects", "/organizations"],
 };
 
 export const API_ROUTES = {
@@ -20,7 +20,7 @@ export const UI_APP_ROUTES = {
   PUBLIC_NAVIGATION: {
     Home: "/",
     About: "/about",
-    Projects: "/threads",
+    Projects: "/projects",
     Organizations: "/organizations",
     // Create project will be a button
   },

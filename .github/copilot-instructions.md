@@ -84,7 +84,7 @@ prisma/
 
 - Forms: `input`, `textarea`, `checkbox`, `radio-group`, `select`, `combobox`, `switch`, `toggle`, `calendar`
 - Layout: `card`, `sheet`, `dialog`, `popover`, `hover-card`, `tabs`, `separator`, `resizable`, `pagination`
-- Feedback: `button`, `badge`, `alert-dialog`, `sonner` (toast), `skeleton`, `tooltip`
+- Feedback: `AppButton`, `badge`, `alert-dialog`, `sonner` (toast), `skeleton`, `tooltip`
 - Form helpers: `label`, `input-group`
 - Magic UI: `@magicui/flickering-grid`, `@magicui/globe`
 
@@ -271,7 +271,7 @@ export default async function ProjectsPage() {
 "use client";
 
 import { useForm, Controller } from "react-hook-form";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/AppButton";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
@@ -299,7 +299,7 @@ export function CreateThreadForm({ projectId }: { projectId: string }) {
         rules={{ required: true }}
         render={({ field }) => <Input {...field} placeholder="Title" />}
       />
-      <Button type="submit">Submit Feedback</Button>
+      <AppButton type="submit">Submit Feedback</AppButton>
     </form>
   );
 }

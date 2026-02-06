@@ -9,6 +9,7 @@ import {
   Settings,
   Users,
   CreditCard,
+  GitPullRequest,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
@@ -39,11 +40,11 @@ export default async function AppSidebar() {
           <Logo />
         </div>
         <nav className="flex flex-col gap-2">
-          <NavLink href="/contributions" icon={FolderKanban}>
+          <NavLink href="/contributions" icon={GitPullRequest}>
             Contributions
           </NavLink>
-          <NavLink href="/threads" icon={LayoutDashboard}>
-            Threads
+          <NavLink href="/projects" icon={FolderKanban}>
+            Projects
           </NavLink>
           <Separator className="my-4" />
           <NavLink href="/profile" icon={Settings}>

@@ -19,10 +19,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/threads"
+                  href="/projects"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Browse Threads
+                  Browse Projects
                 </Link>
               </li>
               <li>

@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --scroll: oklch(0.5829 0.2039 264.376);
+  --scroll-border: oklch(0.6647 0.1151 241.41);
+  --scroll-foreground: oklch(0.8971 0.0411 254.604);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -102,7 +108,7 @@ body {
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.488 0.243 264.376);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -139,5 +145,27 @@ body {
   ::selection {
     background-color: var(--primary);
     color: var(--primary-foreground);
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll, #3b70f2) var(--scroll-foreground, #cbdff9);
+  }
+
+  /* Custom Scrollbar Styles for WebKit Browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: var(--scroll, #3b70f2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scroll-foreground, #cbdff9);
+    border-radius: 0px;
+    border: 2px solid var(--scroll-border, #4a9cd4);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-border, #4a9cd4);
   }
 }

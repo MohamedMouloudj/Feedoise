@@ -1,11 +1,12 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Globe } from "@/components/ui/globe";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import AppButton from "@/components/AppButton";
+import Lenis from "@/components/Lenis";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <Lenis />
       {/* Hero Section */}
       <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-background">
         <FlickeringGrid
@@ -27,16 +28,12 @@ export default function Home() {
                 language, you read it in yours. Powered by AI translation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link href="/signup">
-                  <Button size="lg" className="cursor-pointer">
-                    Get Started Free
-                  </Button>
-                </Link>
-                <Link href="/threads">
-                  <Button size="lg" variant="outline">
-                    Browse Feedback
-                  </Button>
-                </Link>
+                <AppButton size="lg" className="cursor-pointer" href="/signup">
+                  Get Started Free
+                </AppButton>
+                <AppButton size="lg" type="outline" href="/projects">
+                  Browse Projects
+                </AppButton>
               </div>
             </div>
             <div className="relative h-100 lg:h-125">
@@ -79,9 +76,9 @@ export default function Home() {
             Join teams around the world using Feedoise to collect and manage
             feedback across languages.
           </p>
-          <Link href="/signup">
-            <Button size="lg">Create Your Organization</Button>
-          </Link>
+          <AppButton size="lg" href="/signup">
+            Create Your Organization
+          </AppButton>
         </div>
       </section>
     </div>

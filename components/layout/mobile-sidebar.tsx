@@ -12,8 +12,8 @@ import {
   X,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
+import AppButton from "../AppButton";
 
 interface MobileSidebarProps {
   isAuthenticated: boolean;
@@ -69,8 +69,8 @@ export function MobileSidebar({
   return (
     <>
       {/* Burger Button */}
-      <Button
-        variant="ghost"
+      <AppButton
+        type="ghost"
         size="icon"
         className="lg:hidden h-9 w-9"
         onClick={() => setIsOpen(true)}
@@ -88,7 +88,7 @@ export function MobileSidebar({
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
-      </Button>
+      </AppButton>
 
       {/* Overlay */}
       <div
@@ -112,14 +112,14 @@ export function MobileSidebar({
               </p>
             )}
           </div>
-          <Button
-            variant="ghost"
+          <AppButton
+            type="ghost"
             size="icon"
             onClick={() => setIsOpen(false)}
             className="h-8 w-8"
           >
             <X className="h-5 w-5" />
-          </Button>
+          </AppButton>
         </div>
 
         <nav className="flex flex-col gap-2">
@@ -128,8 +128,8 @@ export function MobileSidebar({
               <NavLink href="/contributions" icon={FolderKanban}>
                 Contributions
               </NavLink>
-              <NavLink href="/threads" icon={LayoutDashboard}>
-                Threads
+              <NavLink href="/projects" icon={LayoutDashboard}>
+                Projects
               </NavLink>
               <Separator className="my-4" />
               <NavLink href="/profile" icon={Settings}>

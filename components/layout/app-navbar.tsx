@@ -1,12 +1,11 @@
-import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { NotificationSheet } from "./notification-sheet";
 import { MobileSidebar } from "./mobile-sidebar";
-import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { prisma } from "@/lib/db";
+import AppButton from "../AppButton";
 
 async function getUserOrganizationRole(userId: string) {
   const orgMember = await prisma.organizationMember.findFirst({
@@ -39,12 +38,15 @@ export default async function Navbar() {
           )}
           <Logo className="text-base md:text-xl" />
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/threads">
-              <Button variant="ghost" size="sm">Threads</Button>
-            </Link>
-            <Link href="/organizations">
-              <Button variant="ghost" size="sm">Organizations</Button>
-            </Link>
+            <AppButton type="ghost" size="sm" href="/about">
+              About
+            </AppButton>
+            <AppButton type="ghost" size="sm" href="/projects">
+              Projects
+            </AppButton>
+            <AppButton type="ghost" size="sm" href="/organizations">
+              Organizations
+            </AppButton>
           </div>
         </div>
 
@@ -54,12 +56,12 @@ export default async function Navbar() {
             <NotificationSheet />
           ) : (
             <div className="flex items-center gap-2">
-              <Link href="/login" className="hidden sm:flex">
-                <Button variant="ghost" size="sm">Log In</Button>
-              </Link>
-              <Link href="/signup">
-                <Button size="sm">Sign Up</Button>
-              </Link>
+              <AppButton type="outline" size="sm" href="/login">
+                Log In
+              </AppButton>
+              <AppButton size="sm" href="/signup">
+                Sign Up
+              </AppButton>
             </div>
           )}
         </div>

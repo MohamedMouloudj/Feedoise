@@ -1,22 +1,39 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { useForm, Controller } from "react-hook-form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { createOrganization } from "@/actions/organizations.action";
+import AppButton from "@/components/AppButton";
+
+interface OrganizationFormData {
+  name: string;
+  slug: string;
+}
 
 export default function OnboardingPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [orgName, setOrgName] = useState("");
-  const [orgSlug, setOrgSlug] = useState("");
+  const {
+    control,
+    handleSubmit,
+    setValue,
+    getValues,
+    formState: { isSubmitting },
+  } = useForm<OrganizationFormData>({
+    defaultValues: {
+      name: "",
+      slug: "",
+    },
+  });
 
-  const handleCreateOrg = async () => {
-    setLoading(true);
+  const onSubmit = async (data: OrganizationFormData) => {
     try {
-      const result = await createOrganization({ name: orgName, slug: orgSlug });
+      const result = await createOrganization({
+        name: data.name,
+        slug: data.slug,
+      });
       if (result.success) {
         toast.success("Organization created!");
         router.push("/dashboard");
@@ -25,8 +42,6 @@ export default function OnboardingPage() {
       }
     } catch (_error) {
       toast.error("Failed to create organization");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -34,48 +49,126 @@ export default function OnboardingPage() {
     router.push("/dashboard");
   };
 
+  const generateSlug = (name: string) => {
+    return name
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+  };
+
   return (
-    <div className="container max-w-md mx-auto py-16">
-      <h1 className="text-3xl font-bold mb-2">Welcome!</h1>
-      <p className="text-muted-foreground mb-8">
-        Create an organization to get started, or skip for now.
+    <div className="container mx-auto max-w-md py-16">
+      <h1 className="mb-2 text-3xl font-bold">Welcome!</h1>
+      <p className="mb-8 text-muted-foreground">
+        Create an organization to get started, or skip now.
       </p>
 
-      <div className="space-y-4">
-        <div>
-          <label className="text-sm font-medium">Organization Name</label>
-          <Input
-            value={orgName}
-            onChange={(e) => {
-              setOrgName(e.target.value);
-              // Auto-generate slug
-              setOrgSlug(e.target.value.toLowerCase().replace(/\s+/g, "-"));
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="name">Organization Name</Label>
+          <Controller
+            name="name"
+            control={control}
+            rules={{
+              required: "Organization name is required",
+              minLength: {
+                value: 2,
+                message: "Organization name must be at least 2 characters",
+              },
+              maxLength: {
+                value: 100,
+                message: "Organization name must not exceed 100 characters",
+              },
             }}
-            placeholder="Acme Inc"
+            render={({ field, fieldState }) => (
+              <div className="space-y-1">
+                <Input
+                  {...field}
+                  id="name"
+                  placeholder="Acme Inc"
+                  onChange={(e) => {
+                    field.onChange(e);
+                    // Auto-generate slug when typing if slug is empty or matches previous auto-generated value
+                    const currentSlug = getValues("slug");
+                    const previousSlug = generateSlug(field.value);
+
+                    if (!currentSlug || currentSlug === previousSlug) {
+                      setValue("slug", generateSlug(e.target.value));
+                    }
+                  }}
+                />
+                {fieldState.error && (
+                  <p className="text-sm text-destructive">
+                    {fieldState.error.message}
+                  </p>
+                )}
+              </div>
+            )}
           />
         </div>
 
-        <div>
-          <label className="text-sm font-medium">URL Slug</label>
-          <Input
-            value={orgSlug}
-            onChange={(e) => setOrgSlug(e.target.value)}
-            placeholder="acme-inc"
+        <div className="space-y-2">
+          <Label htmlFor="slug">URL Slug</Label>
+          <Controller
+            name="slug"
+            control={control}
+            rules={{
+              required: "URL slug is required",
+              minLength: {
+                value: 2,
+                message: "URL slug must be at least 2 characters",
+              },
+              maxLength: {
+                value: 50,
+                message: "URL slug must not exceed 50 characters",
+              },
+              pattern: {
+                value: /^[a-z0-9-]+$/,
+                message:
+                  "URL slug must contain only lowercase letters, numbers, and hyphens",
+              },
+            }}
+            render={({ field, fieldState }) => (
+              <div className="space-y-1">
+                <Input
+                  {...field}
+                  id="slug"
+                  placeholder="acme-inc"
+                  onChange={(e) => {
+                    // Ensure slug follows the pattern
+                    const value = e.target.value.toLowerCase();
+                    field.onChange(value);
+                  }}
+                />
+                {fieldState.error && (
+                  <p className="text-sm text-destructive">
+                    {fieldState.error.message}
+                  </p>
+                )}
+                {!fieldState.error && field.value && (
+                  <p className="text-sm text-muted-foreground">
+                    Your organization will be available at: /{field.value}
+                  </p>
+                )}
+              </div>
+            )}
           />
         </div>
 
-        <Button
-          onClick={handleCreateOrg}
-          disabled={!orgName || !orgSlug || loading}
+        <AppButton
+          type="primary-submit"
+          disabled={isSubmitting}
           className="w-full"
         >
-          Create Organization
-        </Button>
+          {isSubmitting ? "Creating..." : "Create Organization"}
+        </AppButton>
 
-        <Button onClick={handleSkip} variant="ghost" className="w-full">
+        <AppButton type="outline" onClick={handleSkip} className="w-full">
           Skip for now
-        </Button>
-      </div>
+        </AppButton>
+      </form>
     </div>
   );
 }
