@@ -1,65 +1,104 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Globe } from "@/components/ui/globe";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-background">
+        <FlickeringGrid
+          className="absolute inset-0 z-0"
+          squareSize={4}
+          gridGap={6}
+          color="rgba(0, 0, 0, 0.6)"
+          maxOpacity={0.3}
+          flickerChance={0.3}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="container relative z-10 mx-auto px-4 py-20 md:py-32">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="flex flex-col gap-6 text-center lg:text-start">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+                Feedback without language barriers
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+                Collect feedback in any language. Users submit in their native
+                language, you read it in yours. Powered by AI translation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link href="/signup">
+                  <Button size="lg" className="cursor-pointer">
+                    Get Started Free
+                  </Button>
+                </Link>
+                <Link href="/threads">
+                  <Button size="lg" variant="outline">
+                    Browse Feedback
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-100 lg:h-125">
+              <Globe />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-39.5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Features Section */}
+      <section className="bg-muted/30 py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Built for global teams
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <FeatureCard
+              title="Multilingual Support"
+              description="Users submit feedback in their language, you read it in yours. Automatic translation powered by AI."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-39.5"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <FeatureCard
+              title="Smart Prioritization"
+              description="Weighted scoring system helps you focus on what matters most to your users."
+            />
+            <FeatureCard
+              title="Light Ticketing"
+              description="Track status, assign tasks, add labels. Everything you need without the complexity."
+            />
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to get started?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Join teams around the world using Feedoise to collect and manage
+            feedback across languages.
+          </p>
+          <Link href="/signup">
+            <Button size="lg">Create Your Organization</Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function FeatureCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="flex flex-col gap-3 p-6 bg-background border border-border">
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 }

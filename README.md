@@ -2,12 +2,15 @@
 
 ```mermaid
 erDiagram
-    users ||--o{ project_members : "owns"
+    organizations ||--o{ organization_members : "has"
+    organizations ||--o{ projects : "owns"
+    users ||--o{ organization_members : "joins"
+    users ||--o{ project_members : "contributes_to"
     users ||--o{ project_followers : "follows"
     users ||--o{ threads : "creates"
     users ||--o{ comments : "writes"
     users ||--o{ notifications : "receives"
-    projects ||--o{ project_members : "has"
+    projects ||--o{ project_members : "has_contributors"
     projects ||--o{ project_followers : "followed_by"
     projects ||--o{ threads : "contains"
     projects ||--o{ labels : "has"
@@ -16,6 +19,23 @@ erDiagram
     threads ||--o{ notifications : "triggers"
     labels ||--o{ thread_labels : "applied_to"
     users ||--o{ threads : "assigned_to"
+
+    organizations {
+        UUID id PK
+        TEXT name
+        TEXT slug UK
+        TEXT avatar_url
+        TIMESTAMPTZ created_at
+        TIMESTAMPTZ updated_at
+    }
+
+    organization_members {
+        UUID id PK
+        UUID organization_id FK
+        UUID user_id FK
+        TEXT role
+        TIMESTAMPTZ created_at
+    }
 
     users {
         UUID id PK
@@ -29,10 +49,10 @@ erDiagram
 
     projects {
         UUID id PK
+        UUID organization_id FK
         TEXT name
         TEXT description
-        TEXT slug UK
-        UUID owner_id FK
+        TEXT slug
         BOOLEAN is_public
         TEXT invite_code UK
         TIMESTAMPTZ created_at

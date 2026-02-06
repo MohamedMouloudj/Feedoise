@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 import { withLingo } from "@lingo.dev/compiler/next";
 
 const nextConfig: NextConfig = {
-  // Your existing Next.js config
+  // images: {
+  //   qualities: [60, 80, 90, 100],
+  // },
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
