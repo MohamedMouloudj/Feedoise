@@ -36,7 +36,7 @@ export default async function Navbar() {
               role={orgMembership?.role}
             />
           )}
-          <Logo className="text-base md:text-xl" />
+          <Logo size="sm" href="/" />
           <div className="hidden md:flex items-center gap-4">
             <AppButton type="ghost" size="sm" href="/about">
               About

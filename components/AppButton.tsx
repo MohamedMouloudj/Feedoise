@@ -76,7 +76,7 @@ function AppButton({
       size={size}
       dir={dir}
     >
-      {icon} {href ? <Link href={href}>{children}</Link> : children}
+      {href ? <Link href={href}>{children}</Link> : children} {icon}
     </ShadcnButton>
   );
 }

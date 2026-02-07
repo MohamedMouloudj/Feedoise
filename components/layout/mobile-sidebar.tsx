@@ -105,7 +105,7 @@ export function MobileSidebar({
       >
         <div className="flex items-center justify-between mb-8">
           <div>
-            <Logo />
+            <Logo responsive size="sm" />
             {hasOrganization && (
               <p className="mt-2 text-sm text-muted-foreground">
                 {organizationName}

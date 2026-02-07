@@ -37,7 +37,7 @@ export default async function AppSidebar() {
     return (
       <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background p-6">
         <div className="mb-8">
-          <Logo />
+          <Logo responsive size="lg" />
         </div>
         <nav className="flex flex-col gap-2">
           <NavLink href="/contributions" icon={GitPullRequest}>
@@ -62,7 +62,7 @@ export default async function AppSidebar() {
   return (
     <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background p-6">
       <div className="mb-8">
-        <Logo />
+        <Logo responsive size="lg" />
         <p className="mt-2 text-sm text-muted-foreground">
           {orgMembership.organization.name}
         </p>

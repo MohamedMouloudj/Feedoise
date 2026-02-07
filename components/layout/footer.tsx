@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <Logo className="mb-4" />
+            <Logo className="mb-4" responsive variant="dark" size="lg" />
             <p className="text-sm text-muted-foreground max-w-md">
               Multilingual feedback and ticketing platform. Collect feedback in
               any language, manage it in yours.
