@@ -28,7 +28,11 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/projects", request.url));
   }
 
-  if (!session && !isPublicRoute) {
+  if (isAuthRoute && !session) {
+    return NextResponse.next();
+  }
+
+  if (!session) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 

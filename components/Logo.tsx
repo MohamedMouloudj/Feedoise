@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils"; // or use template literals if you don't have cn
+import { cn } from "@/lib/utils";
 
 type LogoVariant = "default" | "negative" | "dark";
 type LogoSize = "sm" | "md" | "lg" | "xl";
@@ -15,9 +15,9 @@ interface LogoProps {
 }
 
 const LOGO_VARIANTS: Record<LogoVariant, string> = {
-  default: "/logo.svg",
-  negative: "/logo-negative.svg",
-  dark: "/logo-dark.svg",
+  default: "/logo/logo.svg",
+  negative: "/logo/logo-negative.svg",
+  dark: "/logo/logo-dark.svg",
 };
 
 const LOGO_SIZES: Record<LogoSize, { width: number; height: number }> = {
@@ -41,7 +41,7 @@ export function Logo({
   variant = "default",
   size = "md",
   className,
-  href = "/",
+  href,
   priority = false,
   responsive = false,
 }: LogoProps) {
@@ -69,11 +69,11 @@ export function Logo({
   );
 
   if (!href) {
-    return <div className={cn("flex items-center", className)}>{logo}</div>;
+    return <div className={`flex items-center ${className}`}>{logo}</div>;
   }
 
   return (
-    <Link href={href} className={cn("flex items-center", className)}>
+    <Link href={href} className={`flex items-center ${className}`}>
       {logo}
     </Link>
   );

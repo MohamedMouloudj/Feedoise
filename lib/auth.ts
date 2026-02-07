@@ -15,11 +15,8 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  emailAndPassword: {
-    enabled: true,
-    requireEmailVerification: true,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
+
+  emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
       const verifyLink = url;
       const userName = user.name || user.email.split("@")[0];
@@ -60,6 +57,11 @@ export const auth = betterAuth({
         await sendEmail();
       }
     },
+    sendOnSignUp: true,
+  },
+  emailAndPassword: {
+    enabled: true,
+    requireEmailVerification: true,
     sendResetPassword: async ({ user, url }) => {
       const resetLink = url;
       const userName = user.name || user.email.split("@")[0];

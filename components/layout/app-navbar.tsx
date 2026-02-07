@@ -2,6 +2,7 @@ import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { NotificationSheet } from "./notification-sheet";
 import { MobileSidebar } from "./mobile-sidebar";
+import { UserDropdown } from "./user-dropdown";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { prisma } from "@/lib/db";
@@ -53,13 +54,21 @@ export default async function Navbar() {
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
           {session?.user ? (
-            <NotificationSheet />
+            <div className="flex items-center gap-2">
+              <NotificationSheet />
+              <UserDropdown
+                userName={session.user.name}
+                userEmail={session.user.email}
+                organizationName={orgMembership?.organization?.name}
+                role={orgMembership?.role}
+              />
+            </div>
           ) : (
             <div className="flex items-center gap-2">
               <AppButton type="outline" size="sm" href="/login">
                 Log In
               </AppButton>
-              <AppButton size="sm" href="/signup">
+              <AppButton type="primary" size="sm" href="/signup">
                 Sign Up
               </AppButton>
             </div>

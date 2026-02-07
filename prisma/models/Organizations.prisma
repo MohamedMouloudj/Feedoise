@@ -16,7 +16,7 @@ model Organization {
 model OrganizationMember {
   id             String           @id @default(uuid()) @db.Uuid
   organizationId String           @map("organization_id") @db.Uuid
-  userId         String           @map("user_id") @db.Uuid
+  userId         String           @map("user_id")
   role           OrganizationRole @default(member)
   createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
 

@@ -334,3 +334,17 @@ export const featuresIcons: Record<Feature["id"], React.ElementType> = {
   "follow-notifications": Bell,
   "comment-threads": MessageSquare,
 };
+
+/**
+ * Supported languages for the application.
+ */
+export const LANGUAGES = [
+  { value: "en", label: "English" },
+  { value: "es", label: "Español" },
+  { value: "fr", label: "Français" },
+  { value: "ar", label: "العربية" },
+  { value: "zh", label: "中文" },
+  { value: "ru", label: "Русский" },
+  { value: "hi", label: "हिन्दी" },
+  { value: "pt", label: "Português" },
+];

@@ -1,61 +1,5 @@
 {
   "entries": {
-    "b08f6687f352": {
-      "type": "content",
-      "sourceText": "Critical Error",
-      "context": {
-        "componentName": "GlobalError",
-        "filePath": "global-error.tsx"
-      },
-      "hash": "b08f6687f352",
-      "location": {
-        "filePath": "global-error.tsx",
-        "line": 28,
-        "column": 12
-      }
-    },
-    "8de7e5e89628": {
-      "type": "content",
-      "sourceText": "A critical error occurred. The application needs to reload.",
-      "context": {
-        "componentName": "GlobalError",
-        "filePath": "global-error.tsx"
-      },
-      "hash": "8de7e5e89628",
-      "location": {
-        "filePath": "global-error.tsx",
-        "line": 29,
-        "column": 12
-      }
-    },
-    "bdcfb4bc3191": {
-      "type": "content",
-      "sourceText": "Reload Application",
-      "context": {
-        "componentName": "GlobalError",
-        "filePath": "global-error.tsx"
-      },
-      "hash": "bdcfb4bc3191",
-      "location": {
-        "filePath": "global-error.tsx",
-        "line": 41,
-        "column": 14
-      }
-    },
-    "afe3fca178d6": {
-      "type": "content",
-      "sourceText": "Go Home",
-      "context": {
-        "componentName": "GlobalError",
-        "filePath": "global-error.tsx"
-      },
-      "hash": "afe3fca178d6",
-      "location": {
-        "filePath": "global-error.tsx",
-        "line": 44,
-        "column": 14
-      }
-    },
     "29bf780ddf59": {
       "type": "metadata",
       "sourceText": "Feedoise - Multilingual Feedback Platform",
@@ -84,215 +28,204 @@
         "column": 4
       }
     },
-    "fb32fa524302": {
+    "6cd44a70979f": {
       "type": "content",
-      "sourceText": "Something Went Wrong",
+      "sourceText": "Multilingual feedback and ticketing platform. Collect feedback in any language, manage it in yours.",
       "context": {
-        "componentName": "Error",
-        "filePath": "error.tsx"
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "fb32fa524302",
+      "hash": "6cd44a70979f",
       "location": {
-        "filePath": "error.tsx",
-        "line": 26,
-        "column": 8
+        "filePath": "../public/icons/footer.tsx",
+        "line": 12,
+        "column": 12
       }
     },
-    "0635c98b9fb3": {
+    "35e5704ef20f": {
       "type": "content",
-      "sourceText": "An unexpected error occurred. Please try again.",
+      "sourceText": "Product",
       "context": {
-        "componentName": "Error",
-        "filePath": "error.tsx"
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "0635c98b9fb3",
+      "hash": "35e5704ef20f",
       "location": {
-        "filePath": "error.tsx",
-        "line": 27,
-        "column": 8
+        "filePath": "../public/icons/footer.tsx",
+        "line": 19,
+        "column": 12
       }
     },
-    "056121be1af6": {
+    "6bff41a38cb2": {
       "type": "content",
-      "sourceText": "Try Again",
+      "sourceText": "Browse Projects",
       "context": {
-        "componentName": "Error",
-        "filePath": "error.tsx"
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "056121be1af6",
+      "hash": "6bff41a38cb2",
       "location": {
-        "filePath": "error.tsx",
+        "filePath": "../public/icons/footer.tsx",
+        "line": 22,
+        "column": 16
+      }
+    },
+    "4235eeb11bc5": {
+      "type": "content",
+      "sourceText": "Organizations",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "4235eeb11bc5",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 30,
+        "column": 16
+      }
+    },
+    "34bc45902526": {
+      "type": "content",
+      "sourceText": "Pricing",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "34bc45902526",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
         "line": 38,
-        "column": 10
+        "column": 16
       }
     },
-    "57862bcc4a25": {
+    "a8770b2abcd4": {
       "type": "content",
-      "sourceText": "Go Home",
+      "sourceText": "Company",
       "context": {
-        "componentName": "Error",
-        "filePath": "error.tsx"
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "57862bcc4a25",
+      "hash": "a8770b2abcd4",
       "location": {
-        "filePath": "error.tsx",
-        "line": 41,
+        "filePath": "../public/icons/footer.tsx",
+        "line": 49,
+        "column": 12
+      }
+    },
+    "7c57e83cec54": {
+      "type": "content",
+      "sourceText": "About",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "7c57e83cec54",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 52,
+        "column": 16
+      }
+    },
+    "ea89745ae534": {
+      "type": "content",
+      "sourceText": "Privacy Policy",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "ea89745ae534",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 60,
+        "column": 16
+      }
+    },
+    "667a5e2b7a8e": {
+      "type": "content",
+      "sourceText": "Terms of Service",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "667a5e2b7a8e",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 68,
+        "column": 16
+      }
+    },
+    "e1b9b61bc0ef": {
+      "type": "content",
+      "sourceText": "© {expression0} Feedoise. All rights reserved.",
+      "context": {
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "e1b9b61bc0ef",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 80,
         "column": 10
       }
     },
-    "005dd2e0679d": {
+    "55a05acd8a8b": {
       "type": "attribute",
-      "sourceText": "404 Not Found",
+      "sourceText": "GitHub",
+      "context": {
+        "attributeName": "aria-label",
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
+      },
+      "hash": "55a05acd8a8b",
+      "location": {
+        "filePath": "../public/icons/footer.tsx",
+        "line": 84,
+        "column": 12
+      }
+    },
+    "95a6357856b5": {
+      "type": "attribute",
+      "sourceText": "GitHub Logo",
       "context": {
         "attributeName": "alt",
-        "componentName": "NotFound",
-        "filePath": "not-found.tsx"
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "005dd2e0679d",
+      "hash": "95a6357856b5",
       "location": {
-        "filePath": "not-found.tsx",
-        "line": 8,
-        "column": 8
+        "filePath": "../public/icons/footer.tsx",
+        "line": 91,
+        "column": 14
       }
     },
-    "265030f7b76d": {
-      "type": "content",
-      "sourceText": "Page Not Found",
+    "e8b02e87319c": {
+      "type": "attribute",
+      "sourceText": "Twitter",
       "context": {
-        "componentName": "NotFound",
-        "filePath": "not-found.tsx"
+        "attributeName": "aria-label",
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "265030f7b76d",
+      "hash": "e8b02e87319c",
       "location": {
-        "filePath": "not-found.tsx",
-        "line": 17,
-        "column": 8
+        "filePath": "../public/icons/footer.tsx",
+        "line": 98,
+        "column": 12
       }
     },
-    "6017c1eb60eb": {
-      "type": "content",
-      "sourceText": "The page you're looking for doesn't exist or has been moved.",
+    "b09bc368d809": {
+      "type": "attribute",
+      "sourceText": "X (Twitter) Logo",
       "context": {
-        "componentName": "NotFound",
-        "filePath": "not-found.tsx"
+        "attributeName": "alt",
+        "componentName": "Footer",
+        "filePath": "../public/icons/footer.tsx"
       },
-      "hash": "6017c1eb60eb",
+      "hash": "b09bc368d809",
       "location": {
-        "filePath": "not-found.tsx",
-        "line": 18,
-        "column": 8
-      }
-    },
-    "e5f5ce331886": {
-      "type": "content",
-      "sourceText": "Go Home",
-      "context": {
-        "componentName": "NotFound",
-        "filePath": "not-found.tsx"
-      },
-      "hash": "e5f5ce331886",
-      "location": {
-        "filePath": "not-found.tsx",
-        "line": 23,
-        "column": 10
-      }
-    },
-    "fbb6a43f434b": {
-      "type": "content",
-      "sourceText": "Browse community projects",
-      "context": {
-        "componentName": "NotFound",
-        "filePath": "not-found.tsx"
-      },
-      "hash": "fbb6a43f434b",
-      "location": {
-        "filePath": "not-found.tsx",
-        "line": 26,
-        "column": 10
-      }
-    },
-    "6fbc96a7e7b0": {
-      "type": "metadata",
-      "sourceText": "About Feedoise | Multilingual Feedback & Ticketing Platform",
-      "context": {
-        "fieldPath": "title",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "6fbc96a7e7b0",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 8,
-        "column": 9
-      }
-    },
-    "5e41638e5ac7": {
-      "type": "metadata",
-      "sourceText": "Feedoise is a centralized feedback management tool where teams handle multiple projects and users submit feedback in any language - with light ticketing features for workflow management.",
-      "context": {
-        "fieldPath": "description",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "5e41638e5ac7",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 10,
-        "column": 4
-      }
-    },
-    "9d365529cfc3": {
-      "type": "metadata",
-      "sourceText": "About Feedoise | Multilingual Feedback & Ticketing Platform",
-      "context": {
-        "fieldPath": "openGraph.title",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "9d365529cfc3",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 21,
-        "column": 11
-      }
-    },
-    "364aadbea5b1": {
-      "type": "metadata",
-      "sourceText": "Centralized feedback management with multilingual support and light ticketing features for workflow management.",
-      "context": {
-        "fieldPath": "openGraph.description",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "364aadbea5b1",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 23,
-        "column": 6
-      }
-    },
-    "b67a8302d132": {
-      "type": "metadata",
-      "sourceText": "About Feedoise | Multilingual Feedback & Ticketing Platform",
-      "context": {
-        "fieldPath": "twitter.title",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "b67a8302d132",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 28,
-        "column": 11
-      }
-    },
-    "e37e72872b13": {
-      "type": "metadata",
-      "sourceText": "Centralized feedback management with multilingual support and light ticketing features.",
-      "context": {
-        "fieldPath": "twitter.description",
-        "filePath": "about/page.tsx"
-      },
-      "hash": "e37e72872b13",
-      "location": {
-        "filePath": "about/page.tsx",
-        "line": 30,
-        "column": 6
+        "filePath": "../public/icons/footer.tsx",
+        "line": 105,
+        "column": 14
       }
     },
     "70b5aad5dbfa": {
@@ -305,7 +238,7 @@
       "hash": "70b5aad5dbfa",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 11,
+        "line": 35,
         "column": 12
       }
     },
@@ -319,7 +252,7 @@
       "hash": "2ba9647026de",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 18,
+        "line": 42,
         "column": 12
       }
     },
@@ -333,7 +266,7 @@
       "hash": "2a046bb0971c",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 21,
+        "line": 45,
         "column": 16
       }
     },
@@ -347,7 +280,7 @@
       "hash": "e911a492e827",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 29,
+        "line": 53,
         "column": 16
       }
     },
@@ -361,7 +294,7 @@
       "hash": "e92328ab8a2a",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 37,
+        "line": 61,
         "column": 16
       }
     },
@@ -375,7 +308,7 @@
       "hash": "c90be4011fe3",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 48,
+        "line": 72,
         "column": 12
       }
     },
@@ -389,7 +322,7 @@
       "hash": "cf1c58276274",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 51,
+        "line": 75,
         "column": 16
       }
     },
@@ -403,7 +336,7 @@
       "hash": "1714c4667477",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 59,
+        "line": 83,
         "column": 16
       }
     },
@@ -417,7 +350,7 @@
       "hash": "f4c16874cd4c",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 67,
+        "line": 91,
         "column": 16
       }
     },
@@ -431,7 +364,7 @@
       "hash": "3c01bc79224c",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 79,
+        "line": 103,
         "column": 10
       }
     },
@@ -446,8 +379,23 @@
       "hash": "a050a85c5da6",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 83,
+        "line": 97,
         "column": 12
+      }
+    },
+    "120c3ad92400": {
+      "type": "attribute",
+      "sourceText": "GitHub Logo",
+      "context": {
+        "attributeName": "alt",
+        "componentName": "Footer",
+        "filePath": "../components/layout/footer.tsx"
+      },
+      "hash": "120c3ad92400",
+      "location": {
+        "filePath": "../components/layout/footer.tsx",
+        "line": 104,
+        "column": 14
       }
     },
     "43fecb648e06": {
@@ -461,175 +409,22 @@
       "hash": "43fecb648e06",
       "location": {
         "filePath": "../components/layout/footer.tsx",
-        "line": 94,
+        "line": 111,
         "column": 12
       }
     },
-    "924b766f598d": {
-      "type": "content",
-      "sourceText": "Contributions",
+    "a3fa0e819d52": {
+      "type": "attribute",
+      "sourceText": "X (Twitter) Logo",
       "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
+        "attributeName": "alt",
+        "componentName": "Footer",
+        "filePath": "../components/layout/footer.tsx"
       },
-      "hash": "924b766f598d",
+      "hash": "a3fa0e819d52",
       "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 43,
-        "column": 10
-      }
-    },
-    "055b1e8a137c": {
-      "type": "content",
-      "sourceText": "Projects",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "055b1e8a137c",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 74,
-        "column": 8
-      }
-    },
-    "d03a700c7d40": {
-      "type": "content",
-      "sourceText": "Profile",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "d03a700c7d40",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 97,
-        "column": 8
-      }
-    },
-    "e34b017ea8ca": {
-      "type": "content",
-      "sourceText": "Dashboard",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "e34b017ea8ca",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 71,
-        "column": 8
-      }
-    },
-    "b59f05303724": {
-      "type": "content",
-      "sourceText": "Organization Settings",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "b59f05303724",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 81,
-        "column": 12
-      }
-    },
-    "a9617dd56124": {
-      "type": "content",
-      "sourceText": "Team Management",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "a9617dd56124",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 84,
-        "column": 12
-      }
-    },
-    "1e091423aa04": {
-      "type": "content",
-      "sourceText": "Billing",
-      "context": {
-        "componentName": "AppSidebar",
-        "filePath": "../components/layout/app-sidebar.tsx"
-      },
-      "hash": "1e091423aa04",
-      "location": {
-        "filePath": "../components/layout/app-sidebar.tsx",
-        "line": 91,
-        "column": 10
-      }
-    },
-    "73b411992f97": {
-      "type": "content",
-      "sourceText": "About",
-      "context": {
-        "componentName": "Navbar",
-        "filePath": "../components/layout/app-navbar.tsx"
-      },
-      "hash": "73b411992f97",
-      "location": {
-        "filePath": "../components/layout/app-navbar.tsx",
-        "line": 41,
-        "column": 12
-      }
-    },
-    "c2323561f58e": {
-      "type": "content",
-      "sourceText": "Projects",
-      "context": {
-        "componentName": "Navbar",
-        "filePath": "../components/layout/app-navbar.tsx"
-      },
-      "hash": "c2323561f58e",
-      "location": {
-        "filePath": "../components/layout/app-navbar.tsx",
-        "line": 44,
-        "column": 12
-      }
-    },
-    "754c9bd65cf7": {
-      "type": "content",
-      "sourceText": "Organizations",
-      "context": {
-        "componentName": "Navbar",
-        "filePath": "../components/layout/app-navbar.tsx"
-      },
-      "hash": "754c9bd65cf7",
-      "location": {
-        "filePath": "../components/layout/app-navbar.tsx",
-        "line": 47,
-        "column": 12
-      }
-    },
-    "72167066ef2a": {
-      "type": "content",
-      "sourceText": "Log In",
-      "context": {
-        "componentName": "Navbar",
-        "filePath": "../components/layout/app-navbar.tsx"
-      },
-      "hash": "72167066ef2a",
-      "location": {
-        "filePath": "../components/layout/app-navbar.tsx",
-        "line": 59,
-        "column": 14
-      }
-    },
-    "74832566e63e": {
-      "type": "content",
-      "sourceText": "Sign Up",
-      "context": {
-        "componentName": "Navbar",
-        "filePath": "../components/layout/app-navbar.tsx"
-      },
-      "hash": "74832566e63e",
-      "location": {
-        "filePath": "../components/layout/app-navbar.tsx",
-        "line": 62,
+        "filePath": "../components/layout/footer.tsx",
+        "line": 118,
         "column": 14
       }
     },
@@ -648,843 +443,317 @@
         "column": 4
       }
     },
-    "5c0ffd5f4387": {
+    "2b2b8676554f": {
       "type": "content",
-      "sourceText": "Contributions",
+      "sourceText": "Email",
       "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "5c0ffd5f4387",
+      "hash": "2b2b8676554f",
       "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 128,
-        "column": 14
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 87,
+        "column": 10
       }
     },
-    "5e0674b6cc63": {
+    "f5198a3e3959": {
       "type": "content",
-      "sourceText": "Projects",
+      "sourceText": "Password",
       "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "5e0674b6cc63",
+      "hash": "f5198a3e3959",
       "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 144,
-        "column": 14
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 116,
+        "column": 12
       }
     },
-    "80b5a0a1a0ab": {
+    "26da170bacd2": {
       "type": "content",
-      "sourceText": "Profile",
+      "sourceText": "Forgot password?",
       "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "80b5a0a1a0ab",
+      "hash": "26da170bacd2",
       "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 167,
-        "column": 14
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 117,
+        "column": 12
       }
     },
-    "aa87d38264c4": {
+    "81cf05214055": {
       "type": "content",
-      "sourceText": "Dashboard",
+      "sourceText": "OR",
       "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "aa87d38264c4",
+      "hash": "81cf05214055",
       "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 141,
-        "column": 14
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 162,
+        "column": 8
       }
     },
-    "218bd79a29e4": {
+    "7ec48f0ecadf": {
       "type": "content",
-      "sourceText": "Organization Settings",
+      "sourceText": "Don''t have an account? <Link0>Sign up </Link0>",
       "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "218bd79a29e4",
+      "hash": "7ec48f0ecadf",
       "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 151,
-        "column": 18
-      }
-    },
-    "4b84d3120e95": {
-      "type": "content",
-      "sourceText": "Team Management",
-      "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
-      },
-      "hash": "4b84d3120e95",
-      "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 154,
-        "column": 18
-      }
-    },
-    "1df408e61e0e": {
-      "type": "content",
-      "sourceText": "Billing",
-      "context": {
-        "componentName": "MobileSidebar",
-        "filePath": "../components/layout/mobile-sidebar.tsx"
-      },
-      "hash": "1df408e61e0e",
-      "location": {
-        "filePath": "../components/layout/mobile-sidebar.tsx",
-        "line": 161,
-        "column": 16
-      }
-    },
-    "77aff1a7c0d5": {
-      "type": "attribute",
-      "sourceText": "Notifications",
-      "context": {
-        "attributeName": "aria-label",
-        "componentName": "NotificationSheet",
-        "filePath": "../components/layout/notification-sheet.tsx"
-      },
-      "hash": "77aff1a7c0d5",
-      "location": {
-        "filePath": "../components/layout/notification-sheet.tsx",
-        "line": 9,
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 188,
         "column": 6
       }
     },
-    "db0db517e497": {
+    "90370fafa2f8": {
       "type": "content",
-      "sourceText": "Notifications",
+      "sourceText": "Sign In",
       "context": {
-        "componentName": "NotificationSheet",
-        "filePath": "../components/layout/notification-sheet.tsx"
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
       },
-      "hash": "db0db517e497",
+      "hash": "90370fafa2f8",
       "location": {
-        "filePath": "../components/layout/notification-sheet.tsx",
-        "line": 18,
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 150,
+        "column": 8
+      }
+    },
+    "45b10b5b937d": {
+      "type": "content",
+      "sourceText": "Continue with GitHub",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "45b10b5b937d",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 167,
+        "column": 6
+      }
+    },
+    "669ede41f0d0": {
+      "type": "metadata",
+      "sourceText": "Sign Up | Feedoise",
+      "context": {
+        "fieldPath": "title",
+        "filePath": "(auth)/signup/page.tsx"
+      },
+      "hash": "669ede41f0d0",
+      "location": {
+        "filePath": "(auth)/signup/page.tsx",
+        "line": 6,
+        "column": 9
+      }
+    },
+    "39ead0278551": {
+      "type": "metadata",
+      "sourceText": "Create your Feedoise account",
+      "context": {
+        "fieldPath": "description",
+        "filePath": "(auth)/signup/page.tsx"
+      },
+      "hash": "39ead0278551",
+      "location": {
+        "filePath": "(auth)/signup/page.tsx",
+        "line": 7,
+        "column": 15
+      }
+    },
+    "c7ccc5f4c258": {
+      "type": "content",
+      "sourceText": "Get started",
+      "context": {
+        "componentName": "SignupPage",
+        "filePath": "(auth)/signup/page.tsx"
+      },
+      "hash": "c7ccc5f4c258",
+      "location": {
+        "filePath": "(auth)/signup/page.tsx",
+        "line": 16,
         "column": 10
       }
     },
-    "0f3852c440b5": {
+    "52adc63cd1a5": {
       "type": "content",
-      "sourceText": "No new notifications",
+      "sourceText": "Create your account to start managing feedback",
       "context": {
-        "componentName": "NotificationSheet",
-        "filePath": "../components/layout/notification-sheet.tsx"
+        "componentName": "SignupPage",
+        "filePath": "(auth)/signup/page.tsx"
       },
-      "hash": "0f3852c440b5",
+      "hash": "52adc63cd1a5",
       "location": {
-        "filePath": "../components/layout/notification-sheet.tsx",
-        "line": 19,
+        "filePath": "(auth)/signup/page.tsx",
+        "line": 17,
         "column": 10
       }
     },
-    "741bc028f861": {
-      "type": "attribute",
-      "sourceText": "EN",
-      "context": {
-        "attributeName": "placeholder",
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "741bc028f861",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 25,
-        "column": 8
-      }
-    },
-    "ca249b2e1178": {
+    "0854cda59f44": {
       "type": "content",
-      "sourceText": "English",
+      "sourceText": "Check your email",
       "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "ca249b2e1178",
+      "hash": "0854cda59f44",
       "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 28,
-        "column": 8
-      }
-    },
-    "54bfb1c34306": {
-      "type": "content",
-      "sourceText": "العربية",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "54bfb1c34306",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 31,
-        "column": 8
-      }
-    },
-    "23d8867a1473": {
-      "type": "content",
-      "sourceText": "Français",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "23d8867a1473",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 34,
-        "column": 8
-      }
-    },
-    "728e89b4515b": {
-      "type": "content",
-      "sourceText": "Español",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "728e89b4515b",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 37,
-        "column": 8
-      }
-    },
-    "a850b7d69d12": {
-      "type": "content",
-      "sourceText": "Português",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "a850b7d69d12",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 40,
-        "column": 8
-      }
-    },
-    "2aa81c111b69": {
-      "type": "content",
-      "sourceText": "Русский",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "2aa81c111b69",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 43,
-        "column": 8
-      }
-    },
-    "28b5b8be2d38": {
-      "type": "content",
-      "sourceText": "中文",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "28b5b8be2d38",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 46,
-        "column": 8
-      }
-    },
-    "073e4b8dc80f": {
-      "type": "content",
-      "sourceText": "हिन्दी",
-      "context": {
-        "componentName": "LanguageSwitcher",
-        "filePath": "../components/LanguageSwitcher.tsx"
-      },
-      "hash": "073e4b8dc80f",
-      "location": {
-        "filePath": "../components/LanguageSwitcher.tsx",
-        "line": 49,
-        "column": 8
-      }
-    },
-    "d6eeae3cf727": {
-      "type": "content",
-      "sourceText": "Feedoise",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "d6eeae3cf727",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 28,
-        "column": 12
-      }
-    },
-    "6527cd633073": {
-      "type": "content",
-      "sourceText": "Verify your email address",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "6527cd633073",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 29,
-        "column": 12
-      }
-    },
-    "cb6ef47ee856": {
-      "type": "content",
-      "sourceText": "Hello {userName},",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "cb6ef47ee856",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 30,
-        "column": 12
-      }
-    },
-    "b7b3532f5c9a": {
-      "type": "content",
-      "sourceText": "Thank you for signing up for Feedoise. To complete your registration, please verify your email address by clicking the button below.",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "b7b3532f5c9a",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 31,
-        "column": 12
-      }
-    },
-    "4132b18512be": {
-      "type": "content",
-      "sourceText": "Verify Email Address",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "4132b18512be",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 36,
-        "column": 12
-      }
-    },
-    "b1898692ed31": {
-      "type": "content",
-      "sourceText": "If the button above does not work, you can also copy and paste the following link into your browser:",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "b1898692ed31",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 39,
-        "column": 12
-      }
-    },
-    "824729c581c0": {
-      "type": "content",
-      "sourceText": "If you did not create an account with Feedoise, you can safely ignore this email.",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "824729c581c0",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 47,
-        "column": 12
-      }
-    },
-    "72882240a943": {
-      "type": "content",
-      "sourceText": "This link will expire in 24 hours for security reasons.",
-      "context": {
-        "componentName": "VerificationEmail",
-        "filePath": "../emails/VerificationEmail.tsx"
-      },
-      "hash": "72882240a943",
-      "location": {
-        "filePath": "../emails/VerificationEmail.tsx",
-        "line": 51,
-        "column": 12
-      }
-    },
-    "f115c7280206": {
-      "type": "content",
-      "sourceText": "Feedoise",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "f115c7280206",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 30,
-        "column": 12
-      }
-    },
-    "7558668cd6fa": {
-      "type": "content",
-      "sourceText": "Reset your password",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "7558668cd6fa",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 31,
-        "column": 12
-      }
-    },
-    "352d94e23deb": {
-      "type": "content",
-      "sourceText": "Hello {userName},",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "352d94e23deb",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 32,
-        "column": 12
-      }
-    },
-    "83ba25f02fad": {
-      "type": "content",
-      "sourceText": "We received a request to reset the password for your Feedoise account. Click the button below to create a new password.",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "83ba25f02fad",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 33,
-        "column": 12
-      }
-    },
-    "a8aba0e404b1": {
-      "type": "content",
-      "sourceText": "Reset Password",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "a8aba0e404b1",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 37,
-        "column": 12
-      }
-    },
-    "d1172d98bd2e": {
-      "type": "content",
-      "sourceText": "If the button above does not work, you can also copy and paste the following link into your browser:",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "d1172d98bd2e",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 40,
-        "column": 12
-      }
-    },
-    "e1cab93f9db0": {
-      "type": "content",
-      "sourceText": "This password reset link will expire in {expiryMinutes} minutes for security reasons.",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "e1cab93f9db0",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 48,
-        "column": 12
-      }
-    },
-    "126ff1f8dd2f": {
-      "type": "content",
-      "sourceText": "If you did not request a password reset, you can safely ignore this email. Your password will remain unchanged.",
-      "context": {
-        "componentName": "PasswordResetEmail",
-        "filePath": "../emails/PasswordResetEmail.tsx"
-      },
-      "hash": "126ff1f8dd2f",
-      "location": {
-        "filePath": "../emails/PasswordResetEmail.tsx",
-        "line": 52,
-        "column": 12
-      }
-    },
-    "4c4b4fbcfa42": {
-      "type": "content",
-      "sourceText": "Close",
-      "context": {
-        "componentName": "SheetContent",
-        "filePath": "../components/ui/sheet.tsx"
-      },
-      "hash": "4c4b4fbcfa42",
-      "location": {
-        "filePath": "../components/ui/sheet.tsx",
-        "line": 69,
-        "column": 12
-      }
-    },
-    "845884e97547": {
-      "type": "content",
-      "sourceText": "About Feedoise",
-      "context": {
-        "componentName": "AboutHero",
-        "filePath": "../components/pages/about/about-hero.tsx"
-      },
-      "hash": "845884e97547",
-      "location": {
-        "filePath": "../components/pages/about/about-hero.tsx",
-        "line": 53,
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 86,
         "column": 10
       }
     },
-    "36283201dd22": {
+    "575b3fb6a54d": {
       "type": "content",
-      "sourceText": "Feedback Management, <span0>Globally Accessible </span0>",
+      "sourceText": "We've sent a verification link to your email address. Please verify your email to continue.",
       "context": {
-        "componentName": "AboutHero",
-        "filePath": "../components/pages/about/about-hero.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "36283201dd22",
+      "hash": "575b3fb6a54d",
       "location": {
-        "filePath": "../components/pages/about/about-hero.tsx",
-        "line": 58,
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 87,
+        "column": 10
+      }
+    },
+    "34d090e9073e": {
+      "type": "content",
+      "sourceText": "Go to Verification Page",
+      "context": {
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
+      },
+      "hash": "34d090e9073e",
+      "location": {
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 92,
         "column": 8
       }
     },
-    "23531289e12e": {
+    "f366935e1dfb": {
       "type": "content",
-      "sourceText": "A centralized feedback management tool where teams handle multiple projects and users submit feedback in any language - with light ticketing features for workflow management.",
+      "sourceText": "Full Name",
       "context": {
-        "componentName": "AboutHero",
-        "filePath": "../components/pages/about/about-hero.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "23531289e12e",
+      "hash": "f366935e1dfb",
       "location": {
-        "filePath": "../components/pages/about/about-hero.tsx",
-        "line": 65,
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 107,
+        "column": 10
+      }
+    },
+    "d68d6f63e105": {
+      "type": "content",
+      "sourceText": "Email",
+      "context": {
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
+      },
+      "hash": "d68d6f63e105",
+      "location": {
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 134,
+        "column": 10
+      }
+    },
+    "6460bf90259f": {
+      "type": "content",
+      "sourceText": "Password",
+      "context": {
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
+      },
+      "hash": "6460bf90259f",
+      "location": {
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 162,
+        "column": 10
+      }
+    },
+    "6675129bb2d6": {
+      "type": "content",
+      "sourceText": "Confirm Password",
+      "context": {
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
+      },
+      "hash": "6675129bb2d6",
+      "location": {
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 190,
+        "column": 10
+      }
+    },
+    "b0cad0e75a55": {
+      "type": "content",
+      "sourceText": "OR",
+      "context": {
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
+      },
+      "hash": "b0cad0e75a55",
+      "location": {
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 229,
         "column": 8
       }
     },
-    "96140adf8f05": {
+    "ffa84915e286": {
       "type": "content",
-      "sourceText": "Core Features",
+      "sourceText": "Already have an account? <Link0>Sign in </Link0>",
       "context": {
-        "componentName": "AboutFeatures",
-        "filePath": "../components/pages/about/about-features.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "96140adf8f05",
+      "hash": "ffa84915e286",
       "location": {
-        "filePath": "../components/pages/about/about-features.tsx",
-        "line": 43,
-        "column": 10
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 255,
+        "column": 6
       }
     },
-    "98a2aa1996bc": {
+    "124e54e8f94c": {
       "type": "content",
-      "sourceText": "Everything you need to manage feedback across multiple projects with teams from around the world.",
+      "sourceText": "Create Account",
       "context": {
-        "componentName": "AboutFeatures",
-        "filePath": "../components/pages/about/about-features.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "98a2aa1996bc",
+      "hash": "124e54e8f94c",
       "location": {
-        "filePath": "../components/pages/about/about-features.tsx",
-        "line": 46,
-        "column": 10
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 217,
+        "column": 8
       }
     },
-    "8c91cbfe5c74": {
+    "599b242a24f4": {
       "type": "content",
-      "sourceText": "Ready to Get Started?",
+      "sourceText": "Continue with GitHub",
       "context": {
-        "componentName": "AboutCTA",
-        "filePath": "../components/pages/about/about-cta.tsx"
+        "componentName": "SignupForm",
+        "filePath": "../components/pages/auth/signup-form.tsx"
       },
-      "hash": "8c91cbfe5c74",
+      "hash": "599b242a24f4",
       "location": {
-        "filePath": "../components/pages/about/about-cta.tsx",
-        "line": 38,
-        "column": 12
-      }
-    },
-    "dfa7d06c0c92": {
-      "type": "content",
-      "sourceText": "Join teams worldwide who are managing feedback seamlessly across languages and time zones.",
-      "context": {
-        "componentName": "AboutCTA",
-        "filePath": "../components/pages/about/about-cta.tsx"
-      },
-      "hash": "dfa7d06c0c92",
-      "location": {
-        "filePath": "../components/pages/about/about-cta.tsx",
-        "line": 41,
-        "column": 12
-      }
-    },
-    "06ca23e16ac1": {
-      "type": "content",
-      "sourceText": "Create Free Account",
-      "context": {
-        "componentName": "AboutCTA",
-        "filePath": "../components/pages/about/about-cta.tsx"
-      },
-      "hash": "06ca23e16ac1",
-      "location": {
-        "filePath": "../components/pages/about/about-cta.tsx",
-        "line": 47,
-        "column": 14
-      }
-    },
-    "4f8beb207886": {
-      "type": "content",
-      "sourceText": "Browse Public Projects",
-      "context": {
-        "componentName": "AboutCTA",
-        "filePath": "../components/pages/about/about-cta.tsx"
-      },
-      "hash": "4f8beb207886",
-      "location": {
-        "filePath": "../components/pages/about/about-cta.tsx",
-        "line": 55,
-        "column": 14
-      }
-    },
-    "5dee27d616d0": {
-      "type": "content",
-      "sourceText": "Feedback without language barriers",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "5dee27d616d0",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 23,
-        "column": 14
-      }
-    },
-    "cda4833d5f91": {
-      "type": "content",
-      "sourceText": "Collect feedback in any language. Users submit in their native language, you read it in yours. Powered by AI translation.",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "cda4833d5f91",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 26,
-        "column": 14
-      }
-    },
-    "8b78bc41e44c": {
-      "type": "content",
-      "sourceText": "Get Started Free",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "8b78bc41e44c",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 31,
-        "column": 16
-      }
-    },
-    "7976634dd387": {
-      "type": "content",
-      "sourceText": "Browse Projects",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "7976634dd387",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 34,
-        "column": 16
-      }
-    },
-    "ba3c3d7b3ab7": {
-      "type": "content",
-      "sourceText": "Built for global teams",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "ba3c3d7b3ab7",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 49,
-        "column": 10
-      }
-    },
-    "dbeadacb1d94": {
-      "type": "attribute",
-      "sourceText": "Multilingual Support",
-      "context": {
-        "attributeName": "title",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "dbeadacb1d94",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 53,
-        "column": 12
-      }
-    },
-    "47c552337926": {
-      "type": "attribute",
-      "sourceText": "Users submit feedback in their language, you read it in yours. Automatic translation powered by AI.",
-      "context": {
-        "attributeName": "description",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "47c552337926",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 53,
-        "column": 12
-      }
-    },
-    "7a12a9e7ac47": {
-      "type": "attribute",
-      "sourceText": "Smart Prioritization",
-      "context": {
-        "attributeName": "title",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "7a12a9e7ac47",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 57,
-        "column": 12
-      }
-    },
-    "10ad12b5d91e": {
-      "type": "attribute",
-      "sourceText": "Weighted scoring system helps you focus on what matters most to your users.",
-      "context": {
-        "attributeName": "description",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "10ad12b5d91e",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 57,
-        "column": 12
-      }
-    },
-    "96ecfde0469f": {
-      "type": "attribute",
-      "sourceText": "Light Ticketing",
-      "context": {
-        "attributeName": "title",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "96ecfde0469f",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 61,
-        "column": 12
-      }
-    },
-    "4948cd6b13c8": {
-      "type": "attribute",
-      "sourceText": "Track status, assign tasks, add labels. Everything you need without the complexity.",
-      "context": {
-        "attributeName": "description",
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "4948cd6b13c8",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 61,
-        "column": 12
-      }
-    },
-    "314e5109717c": {
-      "type": "content",
-      "sourceText": "Ready to get started?",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "314e5109717c",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 72,
-        "column": 10
-      }
-    },
-    "98ba14f7e6cd": {
-      "type": "content",
-      "sourceText": "Join teams around the world using Feedoise to collect and manage feedback across languages.",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "98ba14f7e6cd",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 75,
-        "column": 10
-      }
-    },
-    "397d5f4d8fad": {
-      "type": "content",
-      "sourceText": "Create Your Organization",
-      "context": {
-        "componentName": "Home",
-        "filePath": "page.tsx"
-      },
-      "hash": "397d5f4d8fad",
-      "location": {
-        "filePath": "page.tsx",
-        "line": 79,
-        "column": 10
+        "filePath": "../components/pages/auth/signup-form.tsx",
+        "line": 234,
+        "column": 6
       }
     }
   },
   "stats": {
-    "totalEntries": 105,
-    "lastUpdated": "2026-02-06T23:46:14.866Z"
+    "totalEntries": 53,
+    "lastUpdated": "2026-02-07T14:20:11.692Z"
   }
 }

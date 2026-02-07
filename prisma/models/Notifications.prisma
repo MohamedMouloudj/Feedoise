@@ -1,6 +1,6 @@
 model Notification {
   id        String           @id @default(uuid()) @db.Uuid
-  userId    String           @map("user_id") @db.Uuid
+  userId    String           @map("user_id")
   threadId  String           @map("thread_id") @db.Uuid
   type      NotificationType
   message   String

@@ -16,7 +16,11 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
     "@gsap/react": "^2.1.2",
+    "@hookform/resolvers": "^5.2.2",
     "@lingo.dev/compiler": "^0.3.5",
     "@phosphor-icons/react": "^2.1.10",
     "@prisma/adapter-pg": "^7.3.0",
@@ -43,7 +47,8 @@
     "react-resizable-panels": "^4.5.9",
     "resend": "^6.9.1",
     "sonner": "^2.0.7",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
