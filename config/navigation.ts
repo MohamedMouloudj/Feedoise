@@ -16,8 +16,8 @@ export const NAVIGATION = {
   PUBLIC: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Discover Projects", href: "/projects" },
-    { label: "Discover Organizations", href: "/organizations" },
+    { label: "Projects", href: "/projects" },
+    { label: "Organizations", href: "/organizations" },
   ],
 
   /**

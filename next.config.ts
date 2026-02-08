@@ -24,7 +24,7 @@ export default async function (): Promise<NextConfig> {
     models: "lingo.dev",
     buildMode: "translate",
     dev: {
-      usePseudotranslator: true,
+      usePseudotranslator: false,
     },
   });
 }

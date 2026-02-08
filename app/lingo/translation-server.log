@@ -11257,3 +11257,9 @@
 2026-02-08T06:39:06.188Z [DEBUG] [Lingo.dev] 🔄 Hashes: 7fec05d83b2f, beb093a0da7d, ab9e0a7d8e66, 9e9ad5b1872c, 2ccbf089d636, 74d6ab5dfd7e
 2026-02-08T06:39:06.191Z [DEBUG] [Lingo.dev] [BUSY] Server is now busy (1 active)
 2026-02-08T06:39:06.672Z [DEBUG] [Lingo.dev] [IDLE] Server is now idle
+2026-02-08T06:41:19.200Z [INFO] [Lingo.dev] Port 60000 is available, starting new server...
+2026-02-08T06:41:19.691Z [INFO] [Lingo.dev] 🔧 Initializing translator...
+2026-02-08T06:41:19.701Z [DEBUG] [Lingo.dev] Starting translation server on port 60000
+2026-02-08T06:41:19.707Z [INFO] [Lingo.dev] Translation server listening on http://127.0.0.1:60000
+2026-02-08T06:41:19.708Z [INFO] [Lingo.dev] WebSocket server initialized
+2026-02-08T06:41:19.709Z [DEBUG] [Lingo.dev] WebSocket client connected. Total clients: 1
