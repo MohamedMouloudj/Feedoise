@@ -2,19 +2,18 @@
 import { Lock, CheckCircle2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ResetPasswordFormData, resetPasswordSchema } from "@/schemas";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { Logo } from "@/components/Logo";
 import { resetPassword } from "@/actions/auth.action";
 import AppButton from "@/components/AppButton";
 
 function ResetPasswordForm({ token }: { token: string }) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const {
@@ -35,36 +34,33 @@ function ResetPasswordForm({ token }: { token: string }) {
       return;
     }
 
-    setIsLoading(true);
     try {
-      const response = await resetPassword(data.password, token);
+      startTransition(async () => {
+        const response = await resetPassword(data.password, token);
 
-      if (response.success) {
-        setIsSuccess(true);
-        toast.success("Password reset successful!");
-        setTimeout(() => {
-          router.push("/login");
-        }, 2000);
-      } else {
-        const error = response.error || "Failed to reset password";
-        if (error?.includes("expired") || error?.includes("invalid")) {
-          toast.error("Reset link has expired or is invalid");
+        if (response.success) {
+          setIsSuccess(true);
+          toast.success("Password reset successful!");
+          setTimeout(() => {
+            router.push("/login");
+          }, 2000);
         } else {
-          toast.error(error);
+          const error = response.error || "Failed to reset password";
+          if (error?.includes("expired") || error?.includes("invalid")) {
+            toast.error("Reset link has expired or is invalid");
+          } else {
+            toast.error(error);
+          }
         }
-      }
+      });
     } catch (_error) {
       toast.error("An error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
   if (isSuccess) {
     return (
       <div className="container flex min-h-screen flex-col items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8 text-center">
-          <Logo className="mx-auto mb-6" size="lg" />
-
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-500/10">
             <CheckCircle2 className="h-10 w-10 text-green-500" />
           </div>
@@ -85,7 +81,6 @@ function ResetPasswordForm({ token }: { token: string }) {
     <div className="container flex min-h-screen flex-col items-center justify-center py-12 px-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <Logo className="mx-auto mb-6" size="lg" />
           <h1 className="text-3xl font-bold">Reset your password</h1>
           <p className="mt-2 text-muted-foreground">
             Enter your new password below
@@ -108,7 +103,7 @@ function ResetPasswordForm({ token }: { token: string }) {
                       type="password"
                       placeholder="••••••••"
                       className="pl-10"
-                      disabled={isLoading}
+                      disabled={isPending}
                     />
                   </div>
                   {fieldState.error && (
@@ -136,7 +131,7 @@ function ResetPasswordForm({ token }: { token: string }) {
                       type="password"
                       placeholder="••••••••"
                       className="pl-10"
-                      disabled={isLoading}
+                      disabled={isPending}
                     />
                   </div>
                   {fieldState.error && (
@@ -151,10 +146,10 @@ function ResetPasswordForm({ token }: { token: string }) {
 
           <AppButton
             type="primary-submit"
-            disabled={isLoading || isSubmitting}
+            disabled={isPending || isSubmitting}
             className="w-full"
           >
-            {isLoading ? "Resetting..." : "Reset Password"}
+            Reset Password
           </AppButton>
         </form>
       </div>

@@ -1,4 +1,3 @@
-"use i18n";
 "use client";
 
 import { useState, useTransition } from "react";
@@ -57,8 +56,6 @@ export default function ForgotPasswordPage() {
     return (
       <div className="container flex min-h-screen flex-col items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8 text-center">
-          <Logo className="mx-auto mb-6" size="lg" />
-
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
             <Mail className="h-10 w-10 text-primary" />
           </div>

@@ -13,8 +13,8 @@ export function NotificationSheet() {
         <Bell className="h-5 w-5" />
         <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive" />
       </SheetTrigger>
-      <SheetContent>
-        <div className="flex flex-col gap-4 py-2">
+      <SheetContent className="p-3">
+        <div className="flex flex-col gap-4">
           <h2 className="text-lg font-semibold">Notifications</h2>
           <p className="text-sm text-muted-foreground">No new notifications</p>
         </div>

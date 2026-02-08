@@ -1,4 +1,3 @@
-"use i18n";
 "use client";
 
 import { useState, useTransition } from "react";

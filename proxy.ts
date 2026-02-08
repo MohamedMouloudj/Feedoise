@@ -16,7 +16,11 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const isProtectedRoute = APP_ROUTS.PROTECTED_ROUTES.includes(pathname);
+  const isProtectedRoute =
+    APP_ROUTS.PROTECTED_ROUTES.includes(pathname) ||
+    APP_ROUTS.PROTECTED_ROUTES.some((route) =>
+      pathname.startsWith(route + "/"),
+    );
 
   if (isProtectedRoute) {
     if (!session) {
@@ -34,9 +38,6 @@ export async function proxy(request: NextRequest) {
   const isAuthRoute = APP_ROUTS.AUTH_ROUTES.includes(pathname);
 
   if (isAuthRoute && session) {
-    if (pathname === "/onboarding") {
-      return NextResponse.next();
-    }
     return NextResponse.redirect(new URL("/space", request.url));
   }
 

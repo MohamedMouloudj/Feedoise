@@ -1,5 +1,3 @@
-'use i18n'
-
 import { SignupForm } from "@/components/pages/auth/signup-form";
 import { Logo } from "@/components/Logo";
 import type { Metadata } from "next";

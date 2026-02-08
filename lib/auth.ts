@@ -1,7 +1,6 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { Resend } from "resend";
-import { render } from "@react-email/components";
 import { waitUntil } from "@vercel/functions";
 import { prisma } from "./db";
 import { nextCookies } from "better-auth/next-js";
@@ -26,13 +25,12 @@ export const auth = betterAuth({
 
       const userName = user.name || user.email.split("@")[0];
 
-      const emailHtml = await render(
-        VerificationEmail({
-          verifyLink,
-          userName,
-          expiryHours: EMAIL_VERIFICATION_EXPIRY_HOURS,
-        }),
-      );
+      const emailHtml = VerificationEmail({
+        verifyLink,
+        userName,
+        expiryHours: EMAIL_VERIFICATION_EXPIRY_HOURS,
+      });
+
       const sendEmail = async () => {
         try {
           await resend.emails.send({
@@ -74,13 +72,12 @@ export const auth = betterAuth({
       const resetLink = url;
       const userName = user.name || user.email.split("@")[0];
 
-      const emailHtml = await render(
-        PasswordResetEmail({
-          resetLink,
-          userName,
-          expiryMinutes: PASSWORD_RESET_EXPIRY_MINUTES,
-        }),
-      );
+      const emailHtml = PasswordResetEmail({
+        resetLink,
+        userName,
+        expiryMinutes: PASSWORD_RESET_EXPIRY_MINUTES,
+      });
+
       const sendEmail = async () => {
         try {
           await resend.emails.send({
