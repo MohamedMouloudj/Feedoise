@@ -1,7 +1,8 @@
+"use i18n";
 "use client";
 
-import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useState, useTransition } from "react";
+import { useForm, Controller, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -15,16 +16,16 @@ import {
   forgotPasswordSchema,
   type ForgotPasswordFormData,
 } from "@/schemas/auth.schema";
+import { requestResetPassword } from "@/actions/auth.action";
 
 export default function ForgotPasswordPage() {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const [emailSent, setEmailSent] = useState(false);
 
   const {
     control,
     handleSubmit,
-    watch,
     formState: { isSubmitting },
   } = useForm<ForgotPasswordFormData>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -33,32 +34,22 @@ export default function ForgotPasswordPage() {
     },
   });
 
-  const email = watch("email");
+  const email = useWatch({ control, name: "email" });
 
   const onSubmit = async (data: ForgotPasswordFormData) => {
-    setIsLoading(true);
     try {
-      // BetterAuth handles password reset through its API
-      const response = await fetch("/api/auth/forget-password", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: data.email,
-          redirectTo: "/reset-password",
-        }),
-      });
+      startTransition(async () => {
+        const response = await requestResetPassword(data.email);
 
-      if (response.ok) {
-        setEmailSent(true);
-        toast.success("Password reset email sent!");
-      } else {
-        const error = await response.json();
-        toast.error(error.message || "Failed to send reset email");
-      }
+        if (response.success) {
+          setEmailSent(true);
+          toast.success("Password reset email sent!");
+        } else {
+          toast.error(response.error || "Failed to send reset email");
+        }
+      });
     } catch (_error) {
       toast.error("An error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -105,7 +96,7 @@ export default function ForgotPasswordPage() {
     <div className="container flex min-h-screen flex-col items-center justify-center py-12 px-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <Logo className="mx-auto mb-6" size="lg" />
+          <Logo className="justify-center" size="lg" />
           <h1 className="text-3xl font-bold">Forgot password?</h1>
           <p className="mt-2 text-muted-foreground">
             Enter your email and we&apos;ll send you a reset link
@@ -128,7 +119,7 @@ export default function ForgotPasswordPage() {
                       type="email"
                       placeholder="you@example.com"
                       className="pl-10"
-                      disabled={isLoading}
+                      disabled={isPending || isSubmitting}
                     />
                   </div>
                   {fieldState.error && (
@@ -143,10 +134,10 @@ export default function ForgotPasswordPage() {
 
           <AppButton
             type="primary-submit"
-            disabled={isLoading || isSubmitting}
+            disabled={isPending || isSubmitting}
             className="w-full"
           >
-            {isLoading ? "Sending..." : "Send Reset Link"}
+            Send Reset Link
           </AppButton>
         </form>
 

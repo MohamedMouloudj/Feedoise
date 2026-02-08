@@ -4,7 +4,7 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
 /**
- * Helper function to get the current user's session in server actions.
+ * Helper function to get the current user's session in server actions and server components.
  * @returns betterAuth user `session` or `null` if not authenticated.
  */
 export async function getUserSession() {

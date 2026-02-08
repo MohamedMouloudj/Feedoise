@@ -4,6 +4,14 @@ import { withLingo } from "@lingo.dev/compiler/next";
 const nextConfig: NextConfig = {
   images: {
     qualities: [60, 80, 90, 100],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "/u/**",
+      },
+    ],
   },
 };
 
@@ -18,5 +26,6 @@ export default async function (): Promise<NextConfig> {
     dev: {
       usePseudotranslator: true,
     },
+    useDirective: true,
   });
 }

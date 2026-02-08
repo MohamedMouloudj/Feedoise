@@ -99,7 +99,7 @@ const text = {
 };
 
 const button = {
-  backgroundColor: "#000000",
+  backgroundColor: "#1447e6",
   borderRadius: "5px",
   color: "#ffffff",
   fontSize: "16px",

@@ -13,11 +13,13 @@ import {
 interface VerificationEmailProps {
   verifyLink: string;
   userName: string;
+  expiryHours: number;
 }
 
 export default function VerificationEmail({
   verifyLink,
   userName,
+  expiryHours = 24,
 }: VerificationEmailProps) {
   return (
     <Html>
@@ -49,7 +51,7 @@ export default function VerificationEmail({
               ignore this email.
             </Text>
             <Text style={footer}>
-              This link will expire in 24 hours for security reasons.
+              This link will expire in {expiryHours} hours for security reasons.
             </Text>
           </Section>
         </Container>
@@ -97,7 +99,7 @@ const text = {
 };
 
 const button = {
-  backgroundColor: "#000000",
+  backgroundColor: "#1447e6",
   borderRadius: "5px",
   color: "#ffffff",
   fontSize: "16px",

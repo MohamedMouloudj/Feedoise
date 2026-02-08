@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { API_ROUTES, APP_ROUTS } from "./config/config";
-import { getCookieCache } from "better-auth/cookies";
+import { API_ROUTES, APP_ROUTS } from "./config/const";
+import { getSessionCookie } from "better-auth/cookies";
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const session = await getCookieCache(request);
+  const session = await getSessionCookie(request);
 
   const isPublicRoute =
     APP_ROUTS.PUBLIC_ROUTES.includes(pathname) ||
@@ -13,6 +13,15 @@ export async function proxy(request: NextRequest) {
     pathname.startsWith("/projects/");
 
   if (isPublicRoute) {
+    return NextResponse.next();
+  }
+
+  const isProtectedRoute = APP_ROUTS.PROTECTED_ROUTES.includes(pathname);
+
+  if (isProtectedRoute) {
+    if (!session) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
     return NextResponse.next();
   }
 
@@ -25,7 +34,10 @@ export async function proxy(request: NextRequest) {
   const isAuthRoute = APP_ROUTS.AUTH_ROUTES.includes(pathname);
 
   if (isAuthRoute && session) {
-    return NextResponse.redirect(new URL("/projects", request.url));
+    if (pathname === "/onboarding") {
+      return NextResponse.next();
+    }
+    return NextResponse.redirect(new URL("/space", request.url));
   }
 
   if (isAuthRoute && !session) {

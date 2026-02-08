@@ -150,4 +150,94 @@ export class OrganizationsService {
       throw new Error("Failed to update invitation");
     }
   }
+
+  /**
+   * Get all organizations a user belongs to, along with their role in each organization.
+   * @param userId - The ID of the user.
+   * @returns An array of organizations with membership details.
+   */
+  static async getUserOrganizations(userId: string) {
+    try {
+      const organizations = await prisma.organizationMember.findMany({
+        where: { userId },
+        include: {
+          organization: true,
+        },
+      });
+      return organizations;
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        // P2003: Foreign key constraint failed (invalid projectId or userId)
+        if (error.code === "P2003") {
+          throw new Error("Invalid organization or user ID");
+        }
+        if (error.code === "P2025") {
+          throw new Error("User not found");
+        }
+      }
+
+      throw new Error("Failed to retrieve user organizations");
+    }
+  }
+
+  /**
+   * Get the organization owned by a user.
+   * @param userId - The ID of the user.
+   * @returns The owned organization with membership details or null.
+   */
+  static async getOwnedOrganization(userId: string) {
+    try {
+      const ownedOrg = await prisma.organizationMember.findFirst({
+        where: {
+          userId,
+          role: OrganizationRole.owner,
+        },
+        include: {
+          organization: true,
+        },
+      });
+      return ownedOrg;
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        if (error.code === "P2003") {
+          throw new Error("Invalid user ID");
+        }
+      }
+      console.error("Error fetching owned organization:", error);
+      throw new Error("Failed to retrieve owned organization");
+    }
+  }
+
+  /**
+   * Get organizations where user is admin or member (not owner).
+   * @param userId - The ID of the user.
+   * @returns An array of organizations with membership details.
+   */
+  static async getMemberOrganizations(userId: string) {
+    try {
+      const memberOrgs = await prisma.organizationMember.findMany({
+        where: {
+          userId,
+          role: {
+            in: [OrganizationRole.admin, OrganizationRole.member],
+          },
+        },
+        include: {
+          organization: true,
+        },
+        orderBy: {
+          role: "asc", // admin first, then member
+        },
+      });
+      return memberOrgs;
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        if (error.code === "P2003") {
+          throw new Error("Invalid user ID");
+        }
+      }
+      console.error("Error fetching member organizations:", error);
+      throw new Error("Failed to retrieve member organizations");
+    }
+  }
 }

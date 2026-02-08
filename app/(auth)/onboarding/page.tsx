@@ -1,6 +1,7 @@
+"use i18n";
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,8 +34,7 @@ import {
 export default function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [_hasOrganization, setHasOrganization] = useState<boolean | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   const {
     control: orgControl,
@@ -67,46 +67,42 @@ export default function OnboardingPage() {
   };
 
   const handleCreateOrg = async (data: OrganizationFormData) => {
-    setLoading(true);
     try {
-      const result = await createOrganization({
-        name: data.name,
-        slug: data.slug,
+      startTransition(async () => {
+        const result = await createOrganization({
+          name: data.name,
+          slug: data.slug,
+        });
+        if (result.success) {
+          toast.success("Organization created!");
+          setStep(3);
+        } else {
+          toast.error(result.error);
+        }
       });
-      if (result.success) {
-        toast.success("Organization created!");
-        setHasOrganization(true);
-        setStep(3);
-      } else {
-        toast.error(result.error);
-      }
     } catch (_error) {
       toast.error("Failed to create organization");
-    } finally {
-      setLoading(false);
     }
   };
 
   const handleSkipOrg = () => {
-    setHasOrganization(false);
     setStep(3);
   };
 
   const handleSetLanguage = async (data: LanguageFormData) => {
-    setLoading(true);
     try {
-      const result = await updateUserLanguage(data.language);
-      if (result.success) {
-        toast.success("Welcome to Feedoise!");
-        router.push("/dashboard");
-        router.refresh();
-      } else {
-        toast.error(result.error || "Failed to update language");
-      }
+      startTransition(async () => {
+        const result = await updateUserLanguage(data.language);
+        if (result.success) {
+          toast.success("Welcome to Feedoise!");
+          router.push("/space");
+        } else {
+          toast.error(result.error || "Failed to update language");
+        }
+      });
     } catch (_error) {
       toast.error("An error occurred");
     } finally {
-      setLoading(false);
     }
   };
 
@@ -115,7 +111,7 @@ export default function OnboardingPage() {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="mb-8 text-center">
-          <Logo className="mx-auto mb-6" size="lg" />
+          <Logo className="justify-center mb-2" size="lg" />
           <div className="flex items-center justify-center gap-2 mb-4">
             <Badge variant={step >= 1 ? "default" : "secondary"}>1</Badge>
             <div className="h-px w-12 bg-border"></div>
@@ -241,17 +237,17 @@ export default function OnboardingPage() {
                 <AppButton
                   type="ghost"
                   onClick={handleSkipOrg}
-                  disabled={loading}
+                  disabled={isPending}
                   className="flex-1"
                 >
                   Skip for now
                 </AppButton>
                 <AppButton
                   type="primary-submit"
-                  disabled={loading}
+                  disabled={isPending}
                   className="flex-1"
                 >
-                  {loading ? "Creating..." : "Create"}
+                  {isPending ? "Creating..." : "Create"}
                 </AppButton>
               </div>
             </form>
@@ -279,10 +275,7 @@ export default function OnboardingPage() {
                   name="language"
                   control={langControl}
                   render={({ field }) => (
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
+                    <Select onValueChange={field.onChange} value={field.value}>
                       <SelectTrigger id="language">
                         <SelectValue placeholder="Select a language" />
                       </SelectTrigger>
@@ -309,10 +302,10 @@ export default function OnboardingPage() {
                 </AppButton>
                 <AppButton
                   type="primary-submit"
-                  disabled={loading}
+                  disabled={isPending}
                   className="flex-1"
                 >
-                  {loading ? "Completing..." : "Complete Setup"}
+                  {isPending ? "Completing..." : "Complete Setup"}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </AppButton>
               </div>

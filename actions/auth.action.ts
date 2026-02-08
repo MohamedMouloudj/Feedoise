@@ -21,7 +21,15 @@ export async function resendVerificationEmail(
       return { success: false, error: "Email already verified" };
     }
 
-    return { success: true };
+    const { status } = await auth.api.sendVerificationEmail({
+      headers: await headers(),
+      body: {
+        email: user.email,
+        callbackURL: "/login",
+      },
+    });
+
+    return { success: status };
   } catch (error) {
     console.error("Resend verification error:", error);
     return { success: false, error: "Failed to resend verification email" };
@@ -57,6 +65,38 @@ export async function signOutUser(): Promise<ApiResponse<void>> {
   } catch (error) {
     console.error("Sign out error:", error);
     return { success: false, error: "Failed to sign out" };
+  }
+}
+
+export async function requestResetPassword(
+  email: string,
+): Promise<ApiResponse<{ message: string }>> {
+  try {
+    await auth.api.requestPasswordReset({
+      body: {
+        email,
+        redirectTo: `${process.env.BETTER_AUTH_URL}/reset-password`,
+      },
+    });
+    return { success: true, data: { message: "Password reset email sent" } };
+  } catch (error) {
+    console.error("Request reset password error:", error);
+    return { success: false, error: "Failed to request password reset" };
+  }
+}
+
+export async function resetPassword(newPassword: string, token: string) {
+  try {
+    await auth.api.resetPassword({
+      body: {
+        newPassword,
+        token,
+      },
+    });
+    return { success: true, data: { message: "Password reset successful" } };
+  } catch (error) {
+    console.error("Reset password error:", error);
+    return { success: false, error: "Failed to reset password" };
   }
 }
 

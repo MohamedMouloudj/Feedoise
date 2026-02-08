@@ -39,7 +39,7 @@ export function LoginForm() {
       const result = await signIn.email({
         email: data.email,
         password: data.password,
-        callbackURL: "/dashboard",
+        callbackURL: "/space",
       });
 
       if (result.error) {
@@ -55,14 +55,13 @@ export function LoginForm() {
         } else {
           toast.error(result.error.message || "Failed to sign in");
         }
+        setIsLoading(false);
       } else {
         toast.success("Welcome back!");
-        router.push("/dashboard");
-        router.refresh();
+        // Let middleware handle the redirect to avoid timing issues
       }
     } catch (_error) {
       toast.error("An unexpected error occurred");
-    } finally {
       setIsLoading(false);
     }
   };
@@ -72,8 +71,9 @@ export function LoginForm() {
     try {
       await signIn.social({
         provider: "github",
-        callbackURL: "/dashboard",
+        callbackURL: "/space",
       });
+      // Social auth will handle redirect automatically
     } catch (_error) {
       toast.error("Failed to sign in with GitHub");
       setIsGithubLoading(false);

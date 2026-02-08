@@ -7,7 +7,10 @@ import { prisma } from "./db";
 import { nextCookies } from "better-auth/next-js";
 import PasswordResetEmail from "@/emails/PasswordResetEmail";
 import VerificationEmail from "@/emails/VerificationEmail";
-import { PASSWORD_RESET_EXPIRY_MINUTES } from "@/config/config";
+import {
+  EMAIL_VERIFICATION_EXPIRY_HOURS,
+  PASSWORD_RESET_EXPIRY_MINUTES,
+} from "@/config/const";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,14 +20,17 @@ export const auth = betterAuth({
   }),
 
   emailVerification: {
-    sendVerificationEmail: async ({ user, url }) => {
-      const verifyLink = url;
+    sendVerificationEmail: async ({ user, url, token }) => {
+      const baseUrl = url.split("?")[0];
+      const verifyLink = `${baseUrl}?token=${token}&callbackURL=/onboarding`;
+
       const userName = user.name || user.email.split("@")[0];
 
       const emailHtml = await render(
         VerificationEmail({
           verifyLink,
           userName,
+          expiryHours: EMAIL_VERIFICATION_EXPIRY_HOURS,
         }),
       );
       const sendEmail = async () => {
@@ -58,6 +64,8 @@ export const auth = betterAuth({
       }
     },
     sendOnSignUp: true,
+    autoSignInAfterVerification: true,
+    expiresIn: 60 * 60 * EMAIL_VERIFICATION_EXPIRY_HOURS,
   },
   emailAndPassword: {
     enabled: true,
@@ -109,10 +117,13 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
-  callbacks: {
-    async onSignUp() {
-      // redirect to onboarding
-      return { redirect: "/onboarding" };
+  user: {
+    additionalFields: {
+      preferredLanguage: {
+        type: "string",
+        required: false,
+        defaultValue: "en",
+      },
     },
   },
   plugins: [nextCookies()],

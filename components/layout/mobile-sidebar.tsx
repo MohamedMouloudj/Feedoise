@@ -3,34 +3,37 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import {
-  LayoutDashboard,
-  FolderKanban,
-  Settings,
-  Users,
-  CreditCard,
-  X,
-} from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { ChevronDown, ChevronRight, X } from "lucide-react";
 import { gsap } from "gsap";
 import AppButton from "../AppButton";
-
-interface MobileSidebarProps {
-  isAuthenticated: boolean;
-  organizationName?: string;
-  role?: "owner" | "admin" | "member";
-  isRTL?: boolean;
-}
+import { useLingoContext } from "@lingo.dev/compiler/react";
+import { Badge } from "@/components/ui/badge";
+import type { OrganizationRole, ProjectRole } from "@/config/navigation";
+import {
+  NAVIGATION,
+  getOrgNavigationItems,
+  getProjectNavigationItems,
+  buildOrgRoute,
+  buildProjectRoute,
+} from "@/config/navigation";
+import { MobileSidebarProps } from "@/types/navigation";
 
 export function MobileSidebar({
   isAuthenticated,
-  organizationName,
-  role,
-  isRTL = false,
+  ownedOrg,
+  memberOrgs,
+  contributorProjects,
 }: MobileSidebarProps) {
+  const navigation = NAVIGATION;
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(
+    new Set(["owned-org", "user-activity"]),
+  );
   const sidebarRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+
+  const { locale } = useLingoContext();
+  const isRTL = locale === "ar";
 
   useEffect(() => {
     if (!sidebarRef.current || !overlayRef.current) return;
@@ -60,11 +63,21 @@ export function MobileSidebar({
     }
   }, [isOpen, isRTL]);
 
-  if (!isAuthenticated) return null;
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(sectionId)) {
+        next.delete(sectionId);
+      } else {
+        next.add(sectionId);
+      }
+      return next;
+    });
+  };
 
-  const isOwner = role === "owner";
-  const isAdmin = role === "admin";
-  const hasOrganization = !!organizationName;
+  const isExpanded = (sectionId: string) => expandedSections.has(sectionId);
+
+  if (!isAuthenticated) return null;
 
   return (
     <>
@@ -100,18 +113,11 @@ export function MobileSidebar({
       {/* Sidebar */}
       <aside
         ref={sidebarRef}
-        className={`fixed top-0 ${isRTL ? "right-0" : "left-0"} h-full w-64 bg-background border-${isRTL ? "l" : "r"} border-border z-50 p-6 lg:hidden transform ${isRTL ? "translate-x-full" : "-translate-x-full"}`}
+        className={`fixed top-0 ${isRTL ? "right-0" : "left-0"} h-full w-64 bg-background border-${isRTL ? "l" : "r"} border-border z-50 p-4 lg:hidden transform ${isRTL ? "translate-x-full" : "-translate-x-full"} overflow-y-auto`}
         style={{ direction: isRTL ? "rtl" : "ltr" }}
       >
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <Logo responsive size="sm" />
-            {hasOrganization && (
-              <p className="mt-2 text-sm text-muted-foreground">
-                {organizationName}
-              </p>
-            )}
-          </div>
+        <div className="flex items-center justify-between mb-6">
+          <Logo size="sm" />
           <AppButton
             type="ghost"
             size="icon"
@@ -122,75 +128,233 @@ export function MobileSidebar({
           </AppButton>
         </div>
 
-        <nav className="flex flex-col gap-2">
-          {!hasOrganization ? (
-            <>
-              <NavLink href="/contributions" icon={FolderKanban}>
-                Contributions
-              </NavLink>
-              <NavLink href="/projects" icon={LayoutDashboard}>
-                Projects
-              </NavLink>
-              <Separator className="my-4" />
-              <NavLink href="/profile" icon={Settings}>
-                Profile
-              </NavLink>
-            </>
-          ) : (
-            <>
-              <NavLink href="/dashboard" icon={LayoutDashboard}>
-                Dashboard
-              </NavLink>
-              <NavLink href="/dashboard/projects" icon={FolderKanban}>
-                Projects
-              </NavLink>
-
-              {(isOwner || isAdmin) && (
-                <>
-                  <Separator className="my-4" />
-                  <NavLink href="/dashboard/settings" icon={Settings}>
-                    Organization Settings
-                  </NavLink>
-                  <NavLink href="/dashboard/team" icon={Users}>
-                    Team Management
-                  </NavLink>
-                </>
+        <nav className="flex flex-col gap-1">
+          {/* Owned Organization Section */}
+          {ownedOrg && (
+            <div className="mb-2">
+              <button
+                onClick={() => toggleSection("owned-org")}
+                className="flex w-full items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+              >
+                <div className="flex flex-col items-start">
+                  <span>{ownedOrg.name}</span>
+                  <span className="text-xs text-muted-foreground">
+                    My Organization
+                  </span>
+                </div>
+                {isExpanded("owned-org") ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                )}
+              </button>
+              {isExpanded("owned-org") && (
+                <div className="ml-3 mt-1 space-y-1">
+                  {(
+                    Object.entries(navigation.OWNED_ORG) as [
+                      string,
+                      { href: string; icon: React.ElementType },
+                    ][]
+                  ).map(([label, { href, icon: Icon }]) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {label}
+                    </Link>
+                  ))}
+                </div>
               )}
-
-              {isOwner && (
-                <NavLink href="/dashboard/billing" icon={CreditCard}>
-                  Billing
-                </NavLink>
-              )}
-
-              <Separator className="my-4" />
-              <NavLink href="/profile" icon={Settings}>
-                Profile
-              </NavLink>
-            </>
+            </div>
           )}
+
+          {/* Organizations I'm In Section */}
+          {memberOrgs.length > 0 && (
+            <div className="mb-2">
+              <button
+                onClick={() => toggleSection("member-orgs")}
+                className="flex w-full items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+              >
+                <span>Organizations I&apos;m In</span>
+                {isExpanded("member-orgs") ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                )}
+              </button>
+              {isExpanded("member-orgs") && (
+                <div className="ml-3 mt-1 space-y-2">
+                  {memberOrgs.map((org) => {
+                    const items = getOrgNavigationItems(
+                      org.role as OrganizationRole,
+                      false,
+                    );
+                    const sectionId = `org-${org.id}`;
+
+                    return (
+                      <div key={org.id}>
+                        <button
+                          onClick={() => toggleSection(sectionId)}
+                          className="flex w-full items-center justify-between px-3 py-1.5 text-sm text-foreground hover:bg-accent rounded-md transition-colors"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span>{org.name}</span>
+                            <Badge
+                              variant="secondary"
+                              className="text-xs capitalize"
+                            >
+                              {org.role}
+                            </Badge>
+                          </div>
+                          {isExpanded(sectionId) ? (
+                            <ChevronDown className="h-3 w-3" />
+                          ) : (
+                            <ChevronRight className="h-3 w-3" />
+                          )}
+                        </button>
+                        {isExpanded(sectionId) && (
+                          <div className="ml-3 mt-1 space-y-1">
+                            {(
+                              Object.entries(items) as [
+                                string,
+                                { href: string; icon: React.ElementType },
+                              ][]
+                            ).map(([label, { href, icon: Icon }]) => (
+                              <Link
+                                key={href}
+                                href={buildOrgRoute(href, org.slug)}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-3 px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
+                              >
+                                <Icon className="h-4 w-4" />
+                                {label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Projects I Contribute To Section */}
+          {contributorProjects.length > 0 && (
+            <div className="mb-2">
+              <button
+                onClick={() => toggleSection("contributor-projects")}
+                className="flex w-full items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+              >
+                <span>Projects I Contribute To</span>
+                {isExpanded("contributor-projects") ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                )}
+              </button>
+              {isExpanded("contributor-projects") && (
+                <div className="ml-3 mt-1 space-y-2">
+                  {contributorProjects.map((project) => {
+                    const items = getProjectNavigationItems(
+                      project.role as ProjectRole,
+                    );
+                    const sectionId = `project-${project.id}`;
+
+                    return (
+                      <div key={project.id}>
+                        <button
+                          onClick={() => toggleSection(sectionId)}
+                          className="flex w-full items-center justify-between px-3 py-1.5 text-sm text-foreground hover:bg-accent rounded-md transition-colors"
+                        >
+                          <div className="flex flex-col items-start">
+                            <div className="flex items-center gap-2">
+                              <span className="text-sm">{project.name}</span>
+                              <Badge
+                                variant="secondary"
+                                className="text-xs capitalize"
+                              >
+                                {project.role}
+                              </Badge>
+                            </div>
+                            <span className="text-xs text-muted-foreground">
+                              {project.organizationName}
+                            </span>
+                          </div>
+                          {isExpanded(sectionId) ? (
+                            <ChevronDown className="h-3 w-3" />
+                          ) : (
+                            <ChevronRight className="h-3 w-3" />
+                          )}
+                        </button>
+                        {isExpanded(sectionId) && (
+                          <div className="ml-3 mt-1 space-y-1">
+                            {(
+                              Object.entries(items) as [
+                                string,
+                                { href: string; icon: React.ElementType },
+                              ][]
+                            ).map(([label, { href, icon: Icon }]) => (
+                              <Link
+                                key={href}
+                                href={buildProjectRoute(href, project.slug)}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-3 px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
+                              >
+                                <Icon className="h-4 w-4" />
+                                {label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* User Activity Section */}
+          <div className="mb-2 border-t pt-2">
+            <button
+              onClick={() => toggleSection("user-activity")}
+              className="flex w-full items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+            >
+              <span>My Activity</span>
+              {isExpanded("user-activity") ? (
+                <ChevronDown className="h-4 w-4" />
+              ) : (
+                <ChevronRight className="h-4 w-4" />
+              )}
+            </button>
+            {isExpanded("user-activity") && (
+              <div className="ml-3 mt-1 space-y-1">
+                {(
+                  Object.entries(navigation.USER_ACTIVITY) as [
+                    string,
+                    { href: string; icon: React.ElementType },
+                  ][]
+                ).map(([label, { href, icon: Icon }]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
+                  >
+                    <Icon className="h-4 w-4" />
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
       </aside>
     </>
-  );
-}
-
-function NavLink({
-  href,
-  icon: Icon,
-  children,
-}: {
-  href: string;
-  icon: React.ElementType;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center gap-3 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-    >
-      <Icon className="h-4 w-4" />
-      {children}
-    </Link>
   );
 }

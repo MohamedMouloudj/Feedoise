@@ -1,759 +1,330 @@
 {
   "entries": {
-    "29bf780ddf59": {
-      "type": "metadata",
-      "sourceText": "Feedoise - Multilingual Feedback Platform",
-      "context": {
-        "fieldPath": "title",
-        "filePath": "layout.tsx"
-      },
-      "hash": "29bf780ddf59",
-      "location": {
-        "filePath": "layout.tsx",
-        "line": 11,
-        "column": 9
-      }
-    },
-    "2da5c2550bfd": {
-      "type": "metadata",
-      "sourceText": "Collect and manage feedback in any language. A modern ticketing platform for global teams.",
-      "context": {
-        "fieldPath": "description",
-        "filePath": "layout.tsx"
-      },
-      "hash": "2da5c2550bfd",
-      "location": {
-        "filePath": "layout.tsx",
-        "line": 13,
-        "column": 4
-      }
-    },
-    "6cd44a70979f": {
+    "2f1947cf45d4": {
       "type": "content",
-      "sourceText": "Multilingual feedback and ticketing platform. Collect feedback in any language, manage it in yours.",
+      "sourceText": "Check your email",
       "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
       },
-      "hash": "6cd44a70979f",
+      "hash": "2f1947cf45d4",
       "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 12,
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 67,
         "column": 12
       }
     },
-    "35e5704ef20f": {
+    "35fa659b69a5": {
       "type": "content",
-      "sourceText": "Product",
+      "sourceText": "We''ve sent a password reset link to <span0>{email}</span0>",
       "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
       },
-      "hash": "35e5704ef20f",
+      "hash": "35fa659b69a5",
       "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 19,
-        "column": 12
-      }
-    },
-    "6bff41a38cb2": {
-      "type": "content",
-      "sourceText": "Browse Projects",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "6bff41a38cb2",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 22,
-        "column": 16
-      }
-    },
-    "4235eeb11bc5": {
-      "type": "content",
-      "sourceText": "Organizations",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "4235eeb11bc5",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 30,
-        "column": 16
-      }
-    },
-    "34bc45902526": {
-      "type": "content",
-      "sourceText": "Pricing",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "34bc45902526",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 38,
-        "column": 16
-      }
-    },
-    "a8770b2abcd4": {
-      "type": "content",
-      "sourceText": "Company",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "a8770b2abcd4",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 49,
-        "column": 12
-      }
-    },
-    "7c57e83cec54": {
-      "type": "content",
-      "sourceText": "About",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "7c57e83cec54",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 52,
-        "column": 16
-      }
-    },
-    "ea89745ae534": {
-      "type": "content",
-      "sourceText": "Privacy Policy",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "ea89745ae534",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 60,
-        "column": 16
-      }
-    },
-    "667a5e2b7a8e": {
-      "type": "content",
-      "sourceText": "Terms of Service",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "667a5e2b7a8e",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
+        "filePath": "(auth)/forgot-password/page.tsx",
         "line": 68,
-        "column": 16
+        "column": 12
       }
     },
-    "e1b9b61bc0ef": {
+    "eb3c232ce504": {
       "type": "content",
-      "sourceText": "© {expression0} Feedoise. All rights reserved.",
+      "sourceText": "Click the link in the email to reset your password. The link will expire in 1 hour.",
       "context": {
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
       },
-      "hash": "e1b9b61bc0ef",
+      "hash": "eb3c232ce504",
       "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 80,
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 76,
+        "column": 14
+      }
+    },
+    "cf57e6ad93c4": {
+      "type": "content",
+      "sourceText": "Back to Sign In",
+      "context": {
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
+      },
+      "hash": "cf57e6ad93c4",
+      "location": {
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 144,
+        "column": 8
+      }
+    },
+    "e55735273828": {
+      "type": "content",
+      "sourceText": "Forgot password?",
+      "context": {
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
+      },
+      "hash": "e55735273828",
+      "location": {
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 100,
         "column": 10
       }
     },
-    "55a05acd8a8b": {
-      "type": "attribute",
-      "sourceText": "GitHub",
-      "context": {
-        "attributeName": "aria-label",
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "55a05acd8a8b",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 84,
-        "column": 12
-      }
-    },
-    "95a6357856b5": {
-      "type": "attribute",
-      "sourceText": "GitHub Logo",
-      "context": {
-        "attributeName": "alt",
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "95a6357856b5",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 91,
-        "column": 14
-      }
-    },
-    "e8b02e87319c": {
-      "type": "attribute",
-      "sourceText": "Twitter",
-      "context": {
-        "attributeName": "aria-label",
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "e8b02e87319c",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 98,
-        "column": 12
-      }
-    },
-    "b09bc368d809": {
-      "type": "attribute",
-      "sourceText": "X (Twitter) Logo",
-      "context": {
-        "attributeName": "alt",
-        "componentName": "Footer",
-        "filePath": "../public/icons/footer.tsx"
-      },
-      "hash": "b09bc368d809",
-      "location": {
-        "filePath": "../public/icons/footer.tsx",
-        "line": 105,
-        "column": 14
-      }
-    },
-    "70b5aad5dbfa": {
+    "62b993f5a921": {
       "type": "content",
-      "sourceText": "Multilingual feedback and ticketing platform. Collect feedback in any language, manage it in yours.",
+      "sourceText": "Enter your email and we'll send you a reset link",
       "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
       },
-      "hash": "70b5aad5dbfa",
+      "hash": "62b993f5a921",
       "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 35,
-        "column": 12
-      }
-    },
-    "2ba9647026de": {
-      "type": "content",
-      "sourceText": "Product",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "2ba9647026de",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 42,
-        "column": 12
-      }
-    },
-    "2a046bb0971c": {
-      "type": "content",
-      "sourceText": "Browse Projects",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "2a046bb0971c",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 45,
-        "column": 16
-      }
-    },
-    "e911a492e827": {
-      "type": "content",
-      "sourceText": "Organizations",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "e911a492e827",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 53,
-        "column": 16
-      }
-    },
-    "e92328ab8a2a": {
-      "type": "content",
-      "sourceText": "Pricing",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "e92328ab8a2a",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 61,
-        "column": 16
-      }
-    },
-    "c90be4011fe3": {
-      "type": "content",
-      "sourceText": "Company",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "c90be4011fe3",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 72,
-        "column": 12
-      }
-    },
-    "cf1c58276274": {
-      "type": "content",
-      "sourceText": "About",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "cf1c58276274",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 75,
-        "column": 16
-      }
-    },
-    "1714c4667477": {
-      "type": "content",
-      "sourceText": "Privacy Policy",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "1714c4667477",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 83,
-        "column": 16
-      }
-    },
-    "f4c16874cd4c": {
-      "type": "content",
-      "sourceText": "Terms of Service",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "f4c16874cd4c",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 91,
-        "column": 16
-      }
-    },
-    "3c01bc79224c": {
-      "type": "content",
-      "sourceText": "© {expression0} Feedoise. All rights reserved.",
-      "context": {
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "3c01bc79224c",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 103,
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 101,
         "column": 10
       }
     },
-    "a050a85c5da6": {
-      "type": "attribute",
-      "sourceText": "GitHub",
-      "context": {
-        "attributeName": "aria-label",
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "a050a85c5da6",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 97,
-        "column": 12
-      }
-    },
-    "120c3ad92400": {
-      "type": "attribute",
-      "sourceText": "GitHub Logo",
-      "context": {
-        "attributeName": "alt",
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "120c3ad92400",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 104,
-        "column": 14
-      }
-    },
-    "43fecb648e06": {
-      "type": "attribute",
-      "sourceText": "Twitter",
-      "context": {
-        "attributeName": "aria-label",
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "43fecb648e06",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 111,
-        "column": 12
-      }
-    },
-    "a3fa0e819d52": {
-      "type": "attribute",
-      "sourceText": "X (Twitter) Logo",
-      "context": {
-        "attributeName": "alt",
-        "componentName": "Footer",
-        "filePath": "../components/layout/footer.tsx"
-      },
-      "hash": "a3fa0e819d52",
-      "location": {
-        "filePath": "../components/layout/footer.tsx",
-        "line": 118,
-        "column": 14
-      }
-    },
-    "deef52df7b58": {
-      "type": "attribute",
-      "sourceText": "Feedoise Logo",
-      "context": {
-        "attributeName": "alt",
-        "componentName": "Logo",
-        "filePath": "../components/Logo.tsx"
-      },
-      "hash": "deef52df7b58",
-      "location": {
-        "filePath": "../components/Logo.tsx",
-        "line": 56,
-        "column": 4
-      }
-    },
-    "2b2b8676554f": {
+    "2708b3d7cd2d": {
       "type": "content",
       "sourceText": "Email",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
       },
-      "hash": "2b2b8676554f",
+      "hash": "2708b3d7cd2d",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
-        "line": 87,
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 108,
+        "column": 12
+      }
+    },
+    "e9cdd75e5310": {
+      "type": "content",
+      "sourceText": "Send Reset Link",
+      "context": {
+        "componentName": "ForgotPasswordPage",
+        "filePath": "(auth)/forgot-password/page.tsx"
+      },
+      "hash": "e9cdd75e5310",
+      "location": {
+        "filePath": "(auth)/forgot-password/page.tsx",
+        "line": 135,
         "column": 10
       }
     },
-    "f5198a3e3959": {
+    "52f9c0988d4e": {
       "type": "content",
-      "sourceText": "Password",
+      "sourceText": "1",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "f5198a3e3959",
+      "hash": "52f9c0988d4e",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
+        "filePath": "(auth)/onboarding/page.tsx",
         "line": 116,
         "column": 12
       }
     },
-    "26da170bacd2": {
+    "57af6cc24322": {
       "type": "content",
-      "sourceText": "Forgot password?",
+      "sourceText": "2",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "26da170bacd2",
+      "hash": "57af6cc24322",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
-        "line": 117,
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 118,
         "column": 12
       }
     },
-    "81cf05214055": {
+    "2a6c91bd1202": {
       "type": "content",
-      "sourceText": "OR",
+      "sourceText": "3",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "81cf05214055",
+      "hash": "2a6c91bd1202",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
-        "line": 162,
-        "column": 8
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 120,
+        "column": 12
       }
     },
-    "7ec48f0ecadf": {
+    "a54a9142af73": {
       "type": "content",
-      "sourceText": "Don''t have an account? <Link0>Sign up </Link0>",
+      "sourceText": "Welcome to Feedoise! 🎉",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "7ec48f0ecadf",
+      "hash": "a54a9142af73",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
-        "line": 188,
-        "column": 6
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 131,
+        "column": 14
       }
     },
-    "90370fafa2f8": {
+    "d654ff8fbfcc": {
       "type": "content",
-      "sourceText": "Sign In",
+      "sourceText": "Let's get you set up. It only takes a minute to get started with your multilingual feedback management platform.",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "90370fafa2f8",
+      "hash": "d654ff8fbfcc",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
-        "line": 150,
-        "column": 8
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 132,
+        "column": 14
       }
     },
-    "45b10b5b937d": {
+    "d2fe31dd7eb4": {
       "type": "content",
-      "sourceText": "Continue with GitHub",
+      "sourceText": "Get Started",
       "context": {
-        "componentName": "LoginForm",
-        "filePath": "../components/pages/auth/login-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "45b10b5b937d",
+      "hash": "d2fe31dd7eb4",
       "location": {
-        "filePath": "../components/pages/auth/login-form.tsx",
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 138,
+        "column": 14
+      }
+    },
+    "cdeef349fb3a": {
+      "type": "content",
+      "sourceText": "Create your organization",
+      "context": {
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
+      },
+      "hash": "cdeef349fb3a",
+      "location": {
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 155,
+        "column": 14
+      }
+    },
+    "69546bac0ea8": {
+      "type": "content",
+      "sourceText": "Organizations help you manage multiple projects and teams. You can skip this for now.",
+      "context": {
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
+      },
+      "hash": "69546bac0ea8",
+      "location": {
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 156,
+        "column": 14
+      }
+    },
+    "06c83ad4dae8": {
+      "type": "content",
+      "sourceText": "Organization Name",
+      "context": {
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
+      },
+      "hash": "06c83ad4dae8",
+      "location": {
+        "filePath": "(auth)/onboarding/page.tsx",
         "line": 167,
-        "column": 6
+        "column": 16
       }
     },
-    "669ede41f0d0": {
-      "type": "metadata",
-      "sourceText": "Sign Up | Feedoise",
-      "context": {
-        "fieldPath": "title",
-        "filePath": "(auth)/signup/page.tsx"
-      },
-      "hash": "669ede41f0d0",
-      "location": {
-        "filePath": "(auth)/signup/page.tsx",
-        "line": 6,
-        "column": 9
-      }
-    },
-    "39ead0278551": {
-      "type": "metadata",
-      "sourceText": "Create your Feedoise account",
-      "context": {
-        "fieldPath": "description",
-        "filePath": "(auth)/signup/page.tsx"
-      },
-      "hash": "39ead0278551",
-      "location": {
-        "filePath": "(auth)/signup/page.tsx",
-        "line": 7,
-        "column": 15
-      }
-    },
-    "c7ccc5f4c258": {
+    "6d2e0513a530": {
       "type": "content",
-      "sourceText": "Get started",
+      "sourceText": "URL Slug",
       "context": {
-        "componentName": "SignupPage",
-        "filePath": "(auth)/signup/page.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "c7ccc5f4c258",
+      "hash": "6d2e0513a530",
       "location": {
-        "filePath": "(auth)/signup/page.tsx",
-        "line": 16,
-        "column": 10
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 198,
+        "column": 16
       }
     },
-    "52adc63cd1a5": {
+    "8db1064ad551": {
       "type": "content",
-      "sourceText": "Create your account to start managing feedback",
+      "sourceText": "Back",
       "context": {
-        "componentName": "SignupPage",
-        "filePath": "(auth)/signup/page.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "52adc63cd1a5",
+      "hash": "8db1064ad551",
       "location": {
-        "filePath": "(auth)/signup/page.tsx",
-        "line": 17,
-        "column": 10
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 295,
+        "column": 16
       }
     },
-    "0854cda59f44": {
+    "6318a417d706": {
       "type": "content",
-      "sourceText": "Check your email",
+      "sourceText": "Skip for now",
       "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "0854cda59f44",
+      "hash": "6318a417d706",
       "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 86,
-        "column": 10
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 237,
+        "column": 16
       }
     },
-    "575b3fb6a54d": {
+    "d1f08abb0748": {
       "type": "content",
-      "sourceText": "We've sent a verification link to your email address. Please verify your email to continue.",
+      "sourceText": "Choose your language",
       "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "575b3fb6a54d",
+      "hash": "d1f08abb0748",
       "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 87,
-        "column": 10
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 261,
+        "column": 14
       }
     },
-    "34d090e9073e": {
+    "6c9981aeb246": {
       "type": "content",
-      "sourceText": "Go to Verification Page",
+      "sourceText": "Select your preferred language for the interface. You can change this later in settings.",
       "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "34d090e9073e",
+      "hash": "6c9981aeb246",
       "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 92,
-        "column": 8
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 262,
+        "column": 14
       }
     },
-    "f366935e1dfb": {
+    "1407e489da7e": {
       "type": "content",
-      "sourceText": "Full Name",
+      "sourceText": "Preferred Language",
       "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
+        "componentName": "OnboardingPage",
+        "filePath": "(auth)/onboarding/page.tsx"
       },
-      "hash": "f366935e1dfb",
+      "hash": "1407e489da7e",
       "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 107,
-        "column": 10
-      }
-    },
-    "d68d6f63e105": {
-      "type": "content",
-      "sourceText": "Email",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "d68d6f63e105",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 134,
-        "column": 10
-      }
-    },
-    "6460bf90259f": {
-      "type": "content",
-      "sourceText": "Password",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "6460bf90259f",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 162,
-        "column": 10
-      }
-    },
-    "6675129bb2d6": {
-      "type": "content",
-      "sourceText": "Confirm Password",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "6675129bb2d6",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 190,
-        "column": 10
-      }
-    },
-    "b0cad0e75a55": {
-      "type": "content",
-      "sourceText": "OR",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "b0cad0e75a55",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 229,
-        "column": 8
-      }
-    },
-    "ffa84915e286": {
-      "type": "content",
-      "sourceText": "Already have an account? <Link0>Sign in </Link0>",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "ffa84915e286",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 255,
-        "column": 6
-      }
-    },
-    "124e54e8f94c": {
-      "type": "content",
-      "sourceText": "Create Account",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "124e54e8f94c",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 217,
-        "column": 8
-      }
-    },
-    "599b242a24f4": {
-      "type": "content",
-      "sourceText": "Continue with GitHub",
-      "context": {
-        "componentName": "SignupForm",
-        "filePath": "../components/pages/auth/signup-form.tsx"
-      },
-      "hash": "599b242a24f4",
-      "location": {
-        "filePath": "../components/pages/auth/signup-form.tsx",
-        "line": 234,
-        "column": 6
+        "filePath": "(auth)/onboarding/page.tsx",
+        "line": 273,
+        "column": 16
       }
     }
   },
   "stats": {
-    "totalEntries": 53,
-    "lastUpdated": "2026-02-07T14:20:11.692Z"
+    "totalEntries": 23,
+    "lastUpdated": "2026-02-08T02:53:40.357Z"
   }
 }

@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Mail, RefreshCw } from "lucide-react";
 import AppButton from "@/components/AppButton";
-import { Logo } from "@/components/Logo";
 import { toast } from "sonner";
 import { resendVerificationEmail } from "@/actions/auth.action";
 
@@ -12,7 +11,7 @@ export default function VerifyEmailPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
-  const [isResending, setIsResending] = useState(false);
+  const [isResending, startTransition] = useTransition();
   const [countdown, setCountdown] = useState(0);
 
   useEffect(() => {
@@ -28,28 +27,25 @@ export default function VerifyEmailPage() {
       return;
     }
 
-    setIsResending(true);
     try {
-      const result = await resendVerificationEmail(email);
-      if (result.success) {
-        toast.success("Verification email sent! Please check your inbox.");
-        setCountdown(60); // 60 second cooldown
-      } else {
-        toast.error(result.error || "Failed to resend verification email");
-      }
+      startTransition(async () => {
+        const result = await resendVerificationEmail(email);
+        if (result.success) {
+          toast.success("Verification email sent! Please check your inbox.");
+          setCountdown(60); // 60 second cooldown
+        } else {
+          toast.error(result.error || "Failed to resend verification email");
+        }
+      });
     } catch (_error) {
       toast.error("An error occurred. Please try again.");
-    } finally {
-      setIsResending(false);
     }
   };
 
   return (
     <div className="container flex min-h-screen flex-col items-center justify-center py-12 px-4">
       <div className="w-full max-w-md space-y-8 text-center">
-        <Logo className="mx-auto mb-6" size="lg" />
-
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 mb-2">
           <Mail className="h-10 w-10 text-primary" />
         </div>
 
@@ -60,7 +56,7 @@ export default function VerifyEmailPage() {
             {email ? (
               <span className="font-medium text-foreground">{email}</span>
             ) : (
-              "your email"
+              <>your email</>
             )}
             . Click the link in the email to verify your account.
           </p>

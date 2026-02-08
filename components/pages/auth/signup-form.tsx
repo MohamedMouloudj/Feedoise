@@ -43,7 +43,6 @@ export function SignupForm() {
         email: data.email,
         password: data.password,
         name: data.name,
-        callbackURL: "/onboarding",
       });
 
       if (result.error) {

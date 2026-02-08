@@ -199,7 +199,7 @@ const translated = await localizeObject(
 
 ### Data Fetching
 
-- Server Components: Direct Prisma queries
+- Server Components: Direct Prisma queries through Service classes
 - Client Components: Use Server Actions or API routes
 - Cache appropriately with Next.js caching strategies
 

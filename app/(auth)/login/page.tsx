@@ -1,3 +1,5 @@
+"use i18n";
+
 import { LoginForm } from "@/components/pages/auth/login-form";
 import { Logo } from "@/components/Logo";
 import type { Metadata } from "next";

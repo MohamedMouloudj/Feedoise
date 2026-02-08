@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useTransition } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -13,9 +14,11 @@ import { User, Settings, LogOut, Building2 } from "lucide-react";
 import { signOutUser } from "@/actions/auth.action";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface UserDropdownProps {
   userName: string;
+  userImage?: string | null;
   userEmail: string;
   organizationName?: string;
   role?: string;
@@ -23,28 +26,26 @@ interface UserDropdownProps {
 
 export function UserDropdown({
   userName,
+  userImage,
   userEmail,
   organizationName,
-  role,
 }: UserDropdownProps) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const handleSignOut = async () => {
-    setIsLoading(true);
     try {
-      const result = await signOutUser();
-      if (result.success) {
-        toast.success("Signed out successfully");
-        router.push("/");
-        router.refresh();
-      } else {
-        toast.error(result.error || "Failed to sign out");
-      }
+      startTransition(async () => {
+        const result = await signOutUser();
+        if (result.success) {
+          toast.success("Signed out successfully");
+          router.refresh();
+        } else {
+          toast.error(result.error || "Failed to sign out");
+        }
+      });
     } catch (_error) {
       toast.error("An error occurred");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -59,9 +60,19 @@ export function UserDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-2 rounded-lg hover:bg-accent p-2 transition-colors outline-none">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
-          {initials}
-        </div>
+        {userImage ? (
+          <Image
+            src={userImage}
+            alt={userName}
+            width={32}
+            height={32}
+            className="rounded-full object-cover"
+          />
+        ) : (
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
+            {initials}
+          </div>
+        )}
         <div className="hidden md:block text-left">
           <p className="text-sm font-medium leading-none">{userName}</p>
           <p className="text-xs text-muted-foreground mt-0.5">
@@ -70,28 +81,25 @@ export function UserDropdown({
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>
-          <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">{userName}</p>
-            <p className="text-xs leading-none text-muted-foreground">
-              {userEmail}
-            </p>
-          </div>
-        </DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>
+            <div className="flex flex-col space-y-1">
+              <p className="text-sm font-medium leading-none">{userName}</p>
+              <p className="text-xs leading-none text-muted-foreground">
+                {userEmail}
+              </p>
+            </div>
+          </DropdownMenuLabel>
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         {organizationName && (
           <>
             <DropdownMenuItem
-              onClick={() => router.push("/dashboard")}
+              onClick={() => router.push("/space")}
               className="cursor-pointer"
             >
               <Building2 className="mr-2 h-4 w-4" />
               <span>{organizationName}</span>
-              {role && (
-                <span className="ml-auto text-xs text-muted-foreground">
-                  {role}
-                </span>
-              )}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
           </>
@@ -113,14 +121,13 @@ export function UserDropdown({
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={handleSignOut}
-          disabled={isLoading}
+          disabled={isPending}
           className="cursor-pointer text-destructive focus:text-destructive"
         >
           <LogOut className="mr-2 h-4 w-4" />
-          <span>{isLoading ? "Signing out..." : "Sign Out"}</span>
+          Sign Out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
-
