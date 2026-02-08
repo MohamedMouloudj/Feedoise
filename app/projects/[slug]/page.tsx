@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import { ProjectsService } from "@/services/Projects";
 import { ThreadsService } from "@/services/Threads";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
 import { ThreadList } from "@/components/features/threads/thread-list";
 import { CreateThreadDialog } from "@/components/features/threads/create-thread-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Users, MessageSquare, Eye } from "lucide-react";
+import { getUserSession } from "@/actions/session-helper.action";
 
 type PublicProjectPageProps = {
   params: Promise<{
@@ -29,12 +28,10 @@ export default async function PublicProjectPage({
   // Get threads for this project
   const threads = await ThreadsService.findByProject(project.id);
 
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+  const session = await getUserSession();
 
   return (
-    <div className="container py-8">
+    <div className="container max-w-full p-8">
       <div className="mb-8">
         <div className="mb-4 flex items-start justify-between">
           <div className="flex-1">

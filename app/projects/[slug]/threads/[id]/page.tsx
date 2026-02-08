@@ -14,7 +14,6 @@ import { ThreadPrioritySelector } from "@/components/features/threads/thread-pri
 import { Separator } from "@/components/ui/separator";
 import { User, Calendar, MessageSquare, ArrowLeft } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
-import Link from "next/link";
 import AppButton from "@/components/AppButton";
 
 type ThreadDetailPageProps = {

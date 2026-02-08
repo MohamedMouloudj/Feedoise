@@ -29,11 +29,14 @@ import {
   languageSchema,
   type LanguageFormData,
 } from "@/schemas/onboarding.schema";
+import { useLingoContext } from "@lingo.dev/compiler/react";
 
 export default function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [isPending, startTransition] = useTransition();
+
+  const { setLocale } = useLingoContext();
 
   const {
     control: orgControl,
@@ -94,6 +97,7 @@ export default function OnboardingPage() {
         const result = await updateUserLanguage(data.language);
         if (result.success) {
           toast.success("Welcome to Feedoise!");
+          setLocale(data.language);
           router.push("/space");
         } else {
           toast.error(result.error || "Failed to update language");
