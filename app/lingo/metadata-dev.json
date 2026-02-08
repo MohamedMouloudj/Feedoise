@@ -1115,10 +1115,1386 @@
         "line": 132,
         "column": 10
       }
+    },
+    "953d8590d3ad": {
+      "type": "content",
+      "sourceText": "Projects",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "953d8590d3ad",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 35,
+        "column": 10
+      }
+    },
+    "976628fe03b0": {
+      "type": "content",
+      "sourceText": "Manage feedback projects for {expression0}",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "976628fe03b0",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 36,
+        "column": 10
+      }
+    },
+    "f401081d85da": {
+      "type": "content",
+      "sourceText": "New Project",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "f401081d85da",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 41,
+        "column": 10
+      }
+    },
+    "18d06a54f8bd": {
+      "type": "content",
+      "sourceText": "No projects yet",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "18d06a54f8bd",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 49,
+        "column": 10
+      }
+    },
+    "72c8be1c7958": {
+      "type": "content",
+      "sourceText": "Create your first project to start collecting feedback",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "72c8be1c7958",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 50,
+        "column": 10
+      }
+    },
+    "05871e08c1da": {
+      "type": "content",
+      "sourceText": "Create Project",
+      "context": {
+        "componentName": "OrganizationProjectsPage",
+        "filePath": "space/projects/page.tsx"
+      },
+      "hash": "05871e08c1da",
+      "location": {
+        "filePath": "space/projects/page.tsx",
+        "line": 54,
+        "column": 12
+      }
+    },
+    "3791c11fc46d": {
+      "type": "content",
+      "sourceText": "by {expression0}",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/project-card.tsx"
+      },
+      "hash": "3791c11fc46d",
+      "location": {
+        "filePath": "../components/features/project-card.tsx",
+        "line": 27,
+        "column": 12
+      }
+    },
+    "4b34ac066c59": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/project-card.tsx"
+      },
+      "hash": "4b34ac066c59",
+      "location": {
+        "filePath": "../components/features/project-card.tsx",
+        "line": 45,
+        "column": 12
+      }
+    },
+    "c9169f1c8759": {
+      "type": "content",
+      "sourceText": "{expression0} threads",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/project-card.tsx"
+      },
+      "hash": "c9169f1c8759",
+      "location": {
+        "filePath": "../components/features/project-card.tsx",
+        "line": 49,
+        "column": 12
+      }
+    },
+    "4afcede17154": {
+      "type": "content",
+      "sourceText": "Create New Project",
+      "context": {
+        "componentName": "NewProjectPage",
+        "filePath": "space/projects/new/page.tsx"
+      },
+      "hash": "4afcede17154",
+      "location": {
+        "filePath": "space/projects/new/page.tsx",
+        "line": 25,
+        "column": 8
+      }
+    },
+    "a4c36eb80cc0": {
+      "type": "content",
+      "sourceText": "Set up a new feedback project for your organization",
+      "context": {
+        "componentName": "NewProjectPage",
+        "filePath": "space/projects/new/page.tsx"
+      },
+      "hash": "a4c36eb80cc0",
+      "location": {
+        "filePath": "space/projects/new/page.tsx",
+        "line": 26,
+        "column": 8
+      }
+    },
+    "8273f0d27cb3": {
+      "type": "content",
+      "sourceText": "Project Name *",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "8273f0d27cb3",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 88,
+        "column": 8
+      }
+    },
+    "619b6c9f7932": {
+      "type": "content",
+      "sourceText": "URL Slug *",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "619b6c9f7932",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 115,
+        "column": 8
+      }
+    },
+    "1b3d69afa33d": {
+      "type": "content",
+      "sourceText": "Description",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "1b3d69afa33d",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 142,
+        "column": 8
+      }
+    },
+    "5c0fe20532ab": {
+      "type": "content",
+      "sourceText": "Public Project",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "5c0fe20532ab",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 167,
+        "column": 10
+      }
+    },
+    "b90e3e78cca0": {
+      "type": "content",
+      "sourceText": "Allow anyone to discover and view this project",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "b90e3e78cca0",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 168,
+        "column": 10
+      }
+    },
+    "5a4ffd63ad3a": {
+      "type": "content",
+      "sourceText": "Cancel",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/create-project-form.tsx"
+      },
+      "hash": "5a4ffd63ad3a",
+      "location": {
+        "filePath": "../components/features/create-project-form.tsx",
+        "line": 187,
+        "column": 8
+      }
+    },
+    "e53a6ccc2cea": {
+      "type": "content",
+      "sourceText": "by {expression0}",
+      "context": {
+        "componentName": "ProjectDetailPage",
+        "filePath": "space/projects/[slug]/page.tsx"
+      },
+      "hash": "e53a6ccc2cea",
+      "location": {
+        "filePath": "space/projects/[slug]/page.tsx",
+        "line": 58,
+        "column": 12
+      }
+    },
+    "71515a0738ce": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "ProjectDetailPage",
+        "filePath": "space/projects/[slug]/page.tsx"
+      },
+      "hash": "71515a0738ce",
+      "location": {
+        "filePath": "space/projects/[slug]/page.tsx",
+        "line": 74,
+        "column": 12
+      }
+    },
+    "d7b7d6ac840b": {
+      "type": "content",
+      "sourceText": "{expression0} threads",
+      "context": {
+        "componentName": "ProjectDetailPage",
+        "filePath": "space/projects/[slug]/page.tsx"
+      },
+      "hash": "d7b7d6ac840b",
+      "location": {
+        "filePath": "space/projects/[slug]/page.tsx",
+        "line": 78,
+        "column": 12
+      }
+    },
+    "2465f76b9636": {
+      "type": "content",
+      "sourceText": "No feedback yet",
+      "context": {
+        "componentName": "ThreadList",
+        "filePath": "../components/features/thread-list.tsx"
+      },
+      "hash": "2465f76b9636",
+      "location": {
+        "filePath": "../components/features/thread-list.tsx",
+        "line": 52,
+        "column": 10
+      }
+    },
+    "8d9ff667609a": {
+      "type": "content",
+      "sourceText": "Create Feedback",
+      "context": {
+        "componentName": "CreateThreadDialog",
+        "filePath": "../components/features/create-thread-dialog.tsx"
+      },
+      "hash": "8d9ff667609a",
+      "location": {
+        "filePath": "../components/features/create-thread-dialog.tsx",
+        "line": 38,
+        "column": 8
+      }
+    },
+    "3e268f5be1aa": {
+      "type": "content",
+      "sourceText": "Share Your Feedback",
+      "context": {
+        "componentName": "CreateThreadDialog",
+        "filePath": "../components/features/create-thread-dialog.tsx"
+      },
+      "hash": "3e268f5be1aa",
+      "location": {
+        "filePath": "../components/features/create-thread-dialog.tsx",
+        "line": 44,
+        "column": 10
+      }
+    },
+    "4adc55eafb60": {
+      "type": "content",
+      "sourceText": "Title *",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/create-thread-form.tsx"
+      },
+      "hash": "4adc55eafb60",
+      "location": {
+        "filePath": "../components/features/create-thread-form.tsx",
+        "line": 75,
+        "column": 8
+      }
+    },
+    "cc29664ba73a": {
+      "type": "content",
+      "sourceText": "Description *",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/create-thread-form.tsx"
+      },
+      "hash": "cc29664ba73a",
+      "location": {
+        "filePath": "../components/features/create-thread-form.tsx",
+        "line": 98,
+        "column": 8
+      }
+    },
+    "9171667c9611": {
+      "type": "content",
+      "sourceText": "Cancel",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/create-thread-form.tsx"
+      },
+      "hash": "9171667c9611",
+      "location": {
+        "filePath": "../components/features/create-thread-form.tsx",
+        "line": 123,
+        "column": 10
+      }
+    },
+    "6e15a14724e5": {
+      "type": "content",
+      "sourceText": "Close",
+      "context": {
+        "componentName": "DialogContent",
+        "filePath": "../components/ui/dialog.tsx"
+      },
+      "hash": "6e15a14724e5",
+      "location": {
+        "filePath": "../components/ui/dialog.tsx",
+        "line": 72,
+        "column": 12
+      }
+    },
+    "c35c4423746d": {
+      "type": "content",
+      "sourceText": "Close",
+      "context": {
+        "componentName": "DialogFooter",
+        "filePath": "../components/ui/dialog.tsx"
+      },
+      "hash": "c35c4423746d",
+      "location": {
+        "filePath": "../components/ui/dialog.tsx",
+        "line": 109,
+        "column": 8
+      }
+    },
+    "63b6495efdf1": {
+      "type": "content",
+      "sourceText": "{expression0} comments",
+      "context": {
+        "componentName": "ThreadCard",
+        "filePath": "../components/features/thread-card.tsx"
+      },
+      "hash": "63b6495efdf1",
+      "location": {
+        "filePath": "../components/features/thread-card.tsx",
+        "line": 45,
+        "column": 12
+      }
+    },
+    "be6a9bad6e97": {
+      "type": "content",
+      "sourceText": "Originally in {expression0}",
+      "context": {
+        "componentName": "ThreadCard",
+        "filePath": "../components/features/thread-card.tsx"
+      },
+      "hash": "be6a9bad6e97",
+      "location": {
+        "filePath": "../components/features/thread-card.tsx",
+        "line": 55,
+        "column": 10
+      }
+    },
+    "69ac8cea98f3": {
+      "type": "content",
+      "sourceText": "Filter by Status",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "69ac8cea98f3",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 29,
+        "column": 8
+      }
+    },
+    "c307acd4a63f": {
+      "type": "attribute",
+      "sourceText": "All statuses",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "c307acd4a63f",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 36,
+        "column": 12
+      }
+    },
+    "8f21d73d33ac": {
+      "type": "content",
+      "sourceText": "All",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "8f21d73d33ac",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 39,
+        "column": 12
+      }
+    },
+    "7a5d0c6ab1af": {
+      "type": "content",
+      "sourceText": "New",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "7a5d0c6ab1af",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 40,
+        "column": 12
+      }
+    },
+    "7ea776fe361b": {
+      "type": "content",
+      "sourceText": "Under Review",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "7ea776fe361b",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 41,
+        "column": 12
+      }
+    },
+    "e6964895b120": {
+      "type": "content",
+      "sourceText": "Planned",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "e6964895b120",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 42,
+        "column": 12
+      }
+    },
+    "a639d1b0466f": {
+      "type": "content",
+      "sourceText": "Completed",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "a639d1b0466f",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 43,
+        "column": 12
+      }
+    },
+    "658d4dca0135": {
+      "type": "content",
+      "sourceText": "Won't Fix",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "658d4dca0135",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 44,
+        "column": 12
+      }
+    },
+    "57620f261c8a": {
+      "type": "content",
+      "sourceText": "Sort by",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "57620f261c8a",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 50,
+        "column": 8
+      }
+    },
+    "6939413411d0": {
+      "type": "attribute",
+      "sourceText": "Sort by...",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "6939413411d0",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 56,
+        "column": 12
+      }
+    },
+    "fb182904d63a": {
+      "type": "content",
+      "sourceText": "Most Recent",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "fb182904d63a",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 59,
+        "column": 12
+      }
+    },
+    "6a95ee90fcd9": {
+      "type": "content",
+      "sourceText": "Priority",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "6a95ee90fcd9",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 60,
+        "column": 12
+      }
+    },
+    "033bb2d71ad2": {
+      "type": "content",
+      "sourceText": "Most Discussed",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/thread-filters.tsx"
+      },
+      "hash": "033bb2d71ad2",
+      "location": {
+        "filePath": "../components/features/thread-filters.tsx",
+        "line": 61,
+        "column": 12
+      }
+    },
+    "41b7ece9530a": {
+      "type": "content",
+      "sourceText": "🔥",
+      "context": {
+        "componentName": "PriorityIndicator",
+        "filePath": "../components/features/priority-indicator.tsx"
+      },
+      "hash": "41b7ece9530a",
+      "location": {
+        "filePath": "../components/features/priority-indicator.tsx",
+        "line": 20,
+        "column": 17
+      }
+    },
+    "8764173b1297": {
+      "type": "content",
+      "sourceText": "Priority: {priority}",
+      "context": {
+        "componentName": "PriorityIndicator",
+        "filePath": "../components/features/priority-indicator.tsx"
+      },
+      "hash": "8764173b1297",
+      "location": {
+        "filePath": "../components/features/priority-indicator.tsx",
+        "line": 22,
+        "column": 8
+      }
+    },
+    "c4d65d240f0c": {
+      "type": "content",
+      "sourceText": "Create Feedback",
+      "context": {
+        "componentName": "CreateThreadDialog",
+        "filePath": "../components/features/threads/create-thread-dialog.tsx"
+      },
+      "hash": "c4d65d240f0c",
+      "location": {
+        "filePath": "../components/features/threads/create-thread-dialog.tsx",
+        "line": 38,
+        "column": 8
+      }
+    },
+    "b221689769a6": {
+      "type": "content",
+      "sourceText": "Share Your Feedback",
+      "context": {
+        "componentName": "CreateThreadDialog",
+        "filePath": "../components/features/threads/create-thread-dialog.tsx"
+      },
+      "hash": "b221689769a6",
+      "location": {
+        "filePath": "../components/features/threads/create-thread-dialog.tsx",
+        "line": 44,
+        "column": 10
+      }
+    },
+    "b16ac6aeb36f": {
+      "type": "content",
+      "sourceText": "Title *",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/threads/create-thread-form.tsx"
+      },
+      "hash": "b16ac6aeb36f",
+      "location": {
+        "filePath": "../components/features/threads/create-thread-form.tsx",
+        "line": 75,
+        "column": 8
+      }
+    },
+    "f1a578c381ed": {
+      "type": "content",
+      "sourceText": "Description *",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/threads/create-thread-form.tsx"
+      },
+      "hash": "f1a578c381ed",
+      "location": {
+        "filePath": "../components/features/threads/create-thread-form.tsx",
+        "line": 98,
+        "column": 8
+      }
+    },
+    "5ff776f64d9c": {
+      "type": "content",
+      "sourceText": "Cancel",
+      "context": {
+        "componentName": "CreateThreadForm",
+        "filePath": "../components/features/threads/create-thread-form.tsx"
+      },
+      "hash": "5ff776f64d9c",
+      "location": {
+        "filePath": "../components/features/threads/create-thread-form.tsx",
+        "line": 123,
+        "column": 10
+      }
+    },
+    "10a50f7801d2": {
+      "type": "content",
+      "sourceText": "No feedback yet",
+      "context": {
+        "componentName": "ThreadList",
+        "filePath": "../components/features/threads/thread-list.tsx"
+      },
+      "hash": "10a50f7801d2",
+      "location": {
+        "filePath": "../components/features/threads/thread-list.tsx",
+        "line": 52,
+        "column": 10
+      }
+    },
+    "106b3acbc69e": {
+      "type": "content",
+      "sourceText": "Filter by Status",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "106b3acbc69e",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 29,
+        "column": 8
+      }
+    },
+    "bf2c8b067e6e": {
+      "type": "attribute",
+      "sourceText": "All statuses",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "bf2c8b067e6e",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 36,
+        "column": 12
+      }
+    },
+    "d048ed8d31ae": {
+      "type": "content",
+      "sourceText": "All",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "d048ed8d31ae",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 39,
+        "column": 12
+      }
+    },
+    "b8fee79a74c7": {
+      "type": "content",
+      "sourceText": "New",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "b8fee79a74c7",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 40,
+        "column": 12
+      }
+    },
+    "875fd4e6e7bd": {
+      "type": "content",
+      "sourceText": "Under Review",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "875fd4e6e7bd",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 41,
+        "column": 12
+      }
+    },
+    "2bd6200ca2dd": {
+      "type": "content",
+      "sourceText": "Planned",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "2bd6200ca2dd",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 42,
+        "column": 12
+      }
+    },
+    "7767836a9fd6": {
+      "type": "content",
+      "sourceText": "Completed",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "7767836a9fd6",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 43,
+        "column": 12
+      }
+    },
+    "23b59d93ffb6": {
+      "type": "content",
+      "sourceText": "Won't Fix",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "23b59d93ffb6",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 44,
+        "column": 12
+      }
+    },
+    "b8a2a7e3c814": {
+      "type": "content",
+      "sourceText": "Sort by",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "b8a2a7e3c814",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 50,
+        "column": 8
+      }
+    },
+    "300ec96d4c47": {
+      "type": "attribute",
+      "sourceText": "Sort by...",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "300ec96d4c47",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 56,
+        "column": 12
+      }
+    },
+    "97fdac99f9f9": {
+      "type": "content",
+      "sourceText": "Most Recent",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "97fdac99f9f9",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 59,
+        "column": 12
+      }
+    },
+    "4ab7125fffb9": {
+      "type": "content",
+      "sourceText": "Priority",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "4ab7125fffb9",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 60,
+        "column": 12
+      }
+    },
+    "262226a4b89b": {
+      "type": "content",
+      "sourceText": "Most Discussed",
+      "context": {
+        "componentName": "ThreadFilters",
+        "filePath": "../components/features/threads/thread-filters.tsx"
+      },
+      "hash": "262226a4b89b",
+      "location": {
+        "filePath": "../components/features/threads/thread-filters.tsx",
+        "line": 61,
+        "column": 12
+      }
+    },
+    "000c827d3896": {
+      "type": "content",
+      "sourceText": "{expression0} comments",
+      "context": {
+        "componentName": "ThreadCard",
+        "filePath": "../components/features/threads/thread-card.tsx"
+      },
+      "hash": "000c827d3896",
+      "location": {
+        "filePath": "../components/features/threads/thread-card.tsx",
+        "line": 45,
+        "column": 12
+      }
+    },
+    "af7e3ee920f9": {
+      "type": "content",
+      "sourceText": "Originally in {expression0}",
+      "context": {
+        "componentName": "ThreadCard",
+        "filePath": "../components/features/threads/thread-card.tsx"
+      },
+      "hash": "af7e3ee920f9",
+      "location": {
+        "filePath": "../components/features/threads/thread-card.tsx",
+        "line": 55,
+        "column": 10
+      }
+    },
+    "5c8773e03147": {
+      "type": "content",
+      "sourceText": "Project Name *",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "5c8773e03147",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 88,
+        "column": 8
+      }
+    },
+    "e7c42767f552": {
+      "type": "content",
+      "sourceText": "URL Slug *",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "e7c42767f552",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 115,
+        "column": 8
+      }
+    },
+    "b7543e74cfc6": {
+      "type": "content",
+      "sourceText": "Description",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "b7543e74cfc6",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 142,
+        "column": 8
+      }
+    },
+    "1d491266f406": {
+      "type": "content",
+      "sourceText": "Public Project",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "1d491266f406",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 167,
+        "column": 10
+      }
+    },
+    "7a4b40e97ec0": {
+      "type": "content",
+      "sourceText": "Allow anyone to discover and view this project",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "7a4b40e97ec0",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 168,
+        "column": 10
+      }
+    },
+    "d4286af0cf89": {
+      "type": "content",
+      "sourceText": "Cancel",
+      "context": {
+        "componentName": "CreateProjectForm",
+        "filePath": "../components/features/projects/create-project-form.tsx"
+      },
+      "hash": "d4286af0cf89",
+      "location": {
+        "filePath": "../components/features/projects/create-project-form.tsx",
+        "line": 187,
+        "column": 8
+      }
+    },
+    "9e9ad5b1872c": {
+      "type": "content",
+      "sourceText": "by {expression0}",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/projects/project-card.tsx"
+      },
+      "hash": "9e9ad5b1872c",
+      "location": {
+        "filePath": "../components/features/projects/project-card.tsx",
+        "line": 27,
+        "column": 12
+      }
+    },
+    "2ccbf089d636": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/projects/project-card.tsx"
+      },
+      "hash": "2ccbf089d636",
+      "location": {
+        "filePath": "../components/features/projects/project-card.tsx",
+        "line": 45,
+        "column": 12
+      }
+    },
+    "74d6ab5dfd7e": {
+      "type": "content",
+      "sourceText": "{expression0} threads",
+      "context": {
+        "componentName": "ProjectCard",
+        "filePath": "../components/features/projects/project-card.tsx"
+      },
+      "hash": "74d6ab5dfd7e",
+      "location": {
+        "filePath": "../components/features/projects/project-card.tsx",
+        "line": 49,
+        "column": 12
+      }
+    },
+    "7f80ce3d97ee": {
+      "type": "content",
+      "sourceText": "🔥",
+      "context": {
+        "componentName": "PriorityIndicator",
+        "filePath": "../components/features/threads/priority-indicator.tsx"
+      },
+      "hash": "7f80ce3d97ee",
+      "location": {
+        "filePath": "../components/features/threads/priority-indicator.tsx",
+        "line": 20,
+        "column": 17
+      }
+    },
+    "fd11f66feb74": {
+      "type": "content",
+      "sourceText": "Priority: {priority}",
+      "context": {
+        "componentName": "PriorityIndicator",
+        "filePath": "../components/features/threads/priority-indicator.tsx"
+      },
+      "hash": "fd11f66feb74",
+      "location": {
+        "filePath": "../components/features/threads/priority-indicator.tsx",
+        "line": 22,
+        "column": 8
+      }
+    },
+    "3d3104e60aa4": {
+      "type": "content",
+      "sourceText": "← Back to {expression0}",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "3d3104e60aa4",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 66,
+        "column": 8
+      }
+    },
+    "ee7c900fa648": {
+      "type": "content",
+      "sourceText": "{expression0} comments",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "ee7c900fa648",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 103,
+        "column": 12
+      }
+    },
+    "489d915bfcb1": {
+      "type": "content",
+      "sourceText": "Originally in {expression0}",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "489d915bfcb1",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 110,
+        "column": 10
+      }
+    },
+    "eb1b9a83d8ef": {
+      "type": "content",
+      "sourceText": "Manage Thread",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "eb1b9a83d8ef",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 124,
+        "column": 12
+      }
+    },
+    "a969d0a1d2db": {
+      "type": "content",
+      "sourceText": "Comments ({expression0})",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "a969d0a1d2db",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 158,
+        "column": 8
+      }
+    },
+    "557723673fe9": {
+      "type": "content",
+      "sourceText": "Add a comment",
+      "context": {
+        "componentName": "CreateCommentForm",
+        "filePath": "../components/features/comments/create-comment-form.tsx"
+      },
+      "hash": "557723673fe9",
+      "location": {
+        "filePath": "../components/features/comments/create-comment-form.tsx",
+        "line": 73,
+        "column": 8
+      }
+    },
+    "91ececb1bbe1": {
+      "type": "content",
+      "sourceText": "Status",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "91ececb1bbe1",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 75,
+        "column": 6
+      }
+    },
+    "685224164e5b": {
+      "type": "content",
+      "sourceText": "New",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "685224164e5b",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 85,
+        "column": 10
+      }
+    },
+    "789a8d7e8abd": {
+      "type": "content",
+      "sourceText": "Under Review",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "789a8d7e8abd",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 86,
+        "column": 10
+      }
+    },
+    "45112a5e6629": {
+      "type": "content",
+      "sourceText": "Planned",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "45112a5e6629",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 87,
+        "column": 10
+      }
+    },
+    "084d1f865a99": {
+      "type": "content",
+      "sourceText": "Completed",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "084d1f865a99",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 88,
+        "column": 10
+      }
+    },
+    "082e2c5ae142": {
+      "type": "content",
+      "sourceText": "Won't Fix",
+      "context": {
+        "componentName": "ThreadStatusSelector",
+        "filePath": "../components/features/threads/thread-status-selector.tsx"
+      },
+      "hash": "082e2c5ae142",
+      "location": {
+        "filePath": "../components/features/threads/thread-status-selector.tsx",
+        "line": 89,
+        "column": 10
+      }
+    },
+    "973e3aefd37b": {
+      "type": "content",
+      "sourceText": "No comments yet. Be the first to comment!",
+      "context": {
+        "componentName": "CommentList",
+        "filePath": "../components/features/comments/comment-list.tsx"
+      },
+      "hash": "973e3aefd37b",
+      "location": {
+        "filePath": "../components/features/comments/comment-list.tsx",
+        "line": 15,
+        "column": 8
+      }
+    },
+    "18f7b89d297c": {
+      "type": "content",
+      "sourceText": "Priority",
+      "context": {
+        "componentName": "ThreadPrioritySelector",
+        "filePath": "../components/features/threads/thread-priority-selector.tsx"
+      },
+      "hash": "18f7b89d297c",
+      "location": {
+        "filePath": "../components/features/threads/thread-priority-selector.tsx",
+        "line": 52,
+        "column": 8
+      }
+    },
+    "f6b93500f74b": {
+      "type": "content",
+      "sourceText": "Priority (0-10)",
+      "context": {
+        "componentName": "ThreadPrioritySelector",
+        "filePath": "../components/features/threads/thread-priority-selector.tsx"
+      },
+      "hash": "f6b93500f74b",
+      "location": {
+        "filePath": "../components/features/threads/thread-priority-selector.tsx",
+        "line": 60,
+        "column": 6
+      }
+    },
+    "ca1efd4b886c": {
+      "type": "content",
+      "sourceText": "by {expression0}",
+      "context": {
+        "componentName": "PublicProjectPage",
+        "filePath": "projects/[slug]/page.tsx"
+      },
+      "hash": "ca1efd4b886c",
+      "location": {
+        "filePath": "projects/[slug]/page.tsx",
+        "line": 45,
+        "column": 12
+      }
+    },
+    "e8d8e35a0bd0": {
+      "type": "content",
+      "sourceText": "Public",
+      "context": {
+        "componentName": "PublicProjectPage",
+        "filePath": "projects/[slug]/page.tsx"
+      },
+      "hash": "e8d8e35a0bd0",
+      "location": {
+        "filePath": "projects/[slug]/page.tsx",
+        "line": 49,
+        "column": 10
+      }
+    },
+    "32bd4569ff12": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "PublicProjectPage",
+        "filePath": "projects/[slug]/page.tsx"
+      },
+      "hash": "32bd4569ff12",
+      "location": {
+        "filePath": "projects/[slug]/page.tsx",
+        "line": 59,
+        "column": 12
+      }
+    },
+    "df6cafb2d786": {
+      "type": "content",
+      "sourceText": "{expression0} threads",
+      "context": {
+        "componentName": "PublicProjectPage",
+        "filePath": "projects/[slug]/page.tsx"
+      },
+      "hash": "df6cafb2d786",
+      "location": {
+        "filePath": "projects/[slug]/page.tsx",
+        "line": 63,
+        "column": 12
+      }
+    },
+    "954189a7f818": {
+      "type": "content",
+      "sourceText": "<ArrowLeft0></ArrowLeft0> Back to {expression0}",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "954189a7f818",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 66,
+        "column": 8
+      }
+    },
+    "40122879a129": {
+      "type": "content",
+      "sourceText": "Back to {expression0}",
+      "context": {
+        "componentName": "ThreadDetailPage",
+        "filePath": "projects/[slug]/threads/[id]/page.tsx"
+      },
+      "hash": "40122879a129",
+      "location": {
+        "filePath": "projects/[slug]/threads/[id]/page.tsx",
+        "line": 67,
+        "column": 8
+      }
     }
   },
   "stats": {
-    "totalEntries": 79,
-    "lastUpdated": "2026-02-08T03:58:30.371Z"
+    "totalEntries": 177,
+    "lastUpdated": "2026-02-08T05:32:14.861Z"
   }
 }

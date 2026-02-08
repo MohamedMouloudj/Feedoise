@@ -6,15 +6,21 @@ import {
 } from "@/lib/generated/prisma/client";
 import { OrganizationRole } from "@/lib/generated/prisma/enums";
 
+type OwnedOrgMembership = Prisma.OrganizationMemberGetPayload<{
+  include: {
+    organization: true;
+  };
+}>;
+
 /**
  * Service class for organization-related operations.
  */
 export class OrganizationsService {
   /**
-   * Get a user's role in a specific organization.'
+   * Get a user's role in a specific organization membership.
    * @param userId - The ID of the user.
    * @param organizationId - The ID of the organization.
-   * @returns The user's `role in the organization` ("owner", "member") or `null` if not a member.
+   * @returns The user's `role in the organization membership` ("owner", "admin", "member") or `null` if not a member.
    */
   static async getUserRoleInOrganization(
     userId: string,
@@ -181,11 +187,13 @@ export class OrganizationsService {
   }
 
   /**
-   * Get the organization owned by a user.
+   * Get the organization membership owned by a user.
    * @param userId - The ID of the user.
    * @returns The owned organization with membership details or null.
    */
-  static async getOwnedOrganization(userId: string) {
+  static async getOwnedOrganization(
+    userId: string,
+  ): Promise<OwnedOrgMembership | null> {
     try {
       const ownedOrg = await prisma.organizationMember.findFirst({
         where: {
