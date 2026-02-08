@@ -253,10 +253,400 @@
         "line": 2,
         "column": 9
       }
+    },
+    "2b2b8676554f": {
+      "type": "content",
+      "sourceText": "Email",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "2b2b8676554f",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 86,
+        "column": 10
+      }
+    },
+    "f5198a3e3959": {
+      "type": "content",
+      "sourceText": "Password",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "f5198a3e3959",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 115,
+        "column": 12
+      }
+    },
+    "26da170bacd2": {
+      "type": "content",
+      "sourceText": "Forgot password?",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "26da170bacd2",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 116,
+        "column": 12
+      }
+    },
+    "90370fafa2f8": {
+      "type": "content",
+      "sourceText": "Sign In",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "90370fafa2f8",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 149,
+        "column": 8
+      }
+    },
+    "81cf05214055": {
+      "type": "content",
+      "sourceText": "OR",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "81cf05214055",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 161,
+        "column": 8
+      }
+    },
+    "45b10b5b937d": {
+      "type": "content",
+      "sourceText": "Continue with GitHub",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "45b10b5b937d",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 166,
+        "column": 6
+      }
+    },
+    "7ec48f0ecadf": {
+      "type": "content",
+      "sourceText": "Don''t have an account? <Link0>Sign up </Link0>",
+      "context": {
+        "componentName": "LoginForm",
+        "filePath": "../components/pages/auth/login-form.tsx"
+      },
+      "hash": "7ec48f0ecadf",
+      "location": {
+        "filePath": "../components/pages/auth/login-form.tsx",
+        "line": 187,
+        "column": 6
+      }
+    },
+    "5dee27d616d0": {
+      "type": "content",
+      "sourceText": "Feedback without language barriers",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "5dee27d616d0",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 24,
+        "column": 14
+      }
+    },
+    "cda4833d5f91": {
+      "type": "content",
+      "sourceText": "Collect feedback in any language. Users submit in their native language, you read it in yours. Powered by AI translation.",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "cda4833d5f91",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 27,
+        "column": 14
+      }
+    },
+    "8b78bc41e44c": {
+      "type": "content",
+      "sourceText": "Get Started Free",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "8b78bc41e44c",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 32,
+        "column": 16
+      }
+    },
+    "7976634dd387": {
+      "type": "content",
+      "sourceText": "Browse Projects",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "7976634dd387",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 35,
+        "column": 16
+      }
+    },
+    "ba3c3d7b3ab7": {
+      "type": "content",
+      "sourceText": "Built for global teams",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "ba3c3d7b3ab7",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 50,
+        "column": 10
+      }
+    },
+    "dbeadacb1d94": {
+      "type": "attribute",
+      "sourceText": "Multilingual Support",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "dbeadacb1d94",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 53,
+        "column": 12
+      }
+    },
+    "47c552337926": {
+      "type": "attribute",
+      "sourceText": "Users submit feedback in their language, you read it in yours. Automatic translation powered by AI.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "47c552337926",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 53,
+        "column": 12
+      }
+    },
+    "7a12a9e7ac47": {
+      "type": "attribute",
+      "sourceText": "Smart Prioritization",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "7a12a9e7ac47",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 57,
+        "column": 12
+      }
+    },
+    "10ad12b5d91e": {
+      "type": "attribute",
+      "sourceText": "Weighted scoring system helps you focus on what matters most to your users.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "10ad12b5d91e",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 57,
+        "column": 12
+      }
+    },
+    "96ecfde0469f": {
+      "type": "attribute",
+      "sourceText": "Light Ticketing",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "96ecfde0469f",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 61,
+        "column": 12
+      }
+    },
+    "4948cd6b13c8": {
+      "type": "attribute",
+      "sourceText": "Track status, assign tasks, add labels. Everything you need without the complexity.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "4948cd6b13c8",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 61,
+        "column": 12
+      }
+    },
+    "314e5109717c": {
+      "type": "content",
+      "sourceText": "Ready to get started?",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "314e5109717c",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 60,
+        "column": 10
+      }
+    },
+    "98ba14f7e6cd": {
+      "type": "content",
+      "sourceText": "Join teams around the world using Feedoise to collect and manage feedback across languages.",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "98ba14f7e6cd",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 63,
+        "column": 10
+      }
+    },
+    "397d5f4d8fad": {
+      "type": "content",
+      "sourceText": "Create Your Organization",
+      "context": {
+        "componentName": "Home",
+        "filePath": "page.tsx"
+      },
+      "hash": "397d5f4d8fad",
+      "location": {
+        "filePath": "page.tsx",
+        "line": 67,
+        "column": 10
+      }
+    },
+    "11a137740b18": {
+      "type": "attribute",
+      "sourceText": "Multilingual Support",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "11a137740b18",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 17,
+        "column": 6
+      }
+    },
+    "f2cc6f715202": {
+      "type": "attribute",
+      "sourceText": "Users submit feedback in their language, you read it in yours. Automatic translation powered by AI.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "f2cc6f715202",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 17,
+        "column": 6
+      }
+    },
+    "7f3cab583310": {
+      "type": "attribute",
+      "sourceText": "Smart Prioritization",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "7f3cab583310",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 21,
+        "column": 6
+      }
+    },
+    "b382b93fdb1a": {
+      "type": "attribute",
+      "sourceText": "Weighted scoring system helps you focus on what matters most to your users.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "b382b93fdb1a",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 21,
+        "column": 6
+      }
+    },
+    "621e162845c3": {
+      "type": "attribute",
+      "sourceText": "Light Ticketing",
+      "context": {
+        "attributeName": "title",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "621e162845c3",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 25,
+        "column": 6
+      }
+    },
+    "fd0d79857dfa": {
+      "type": "attribute",
+      "sourceText": "Track status, assign tasks, add labels. Everything you need without the complexity.",
+      "context": {
+        "attributeName": "description",
+        "componentName": "Features",
+        "filePath": "../components/pages/Home/Features.tsx"
+      },
+      "hash": "fd0d79857dfa",
+      "location": {
+        "filePath": "../components/pages/Home/Features.tsx",
+        "line": 25,
+        "column": 6
+      }
     }
   },
   "stats": {
-    "totalEntries": 18,
-    "lastUpdated": "2026-02-08T06:37:34.675Z"
+    "totalEntries": 45,
+    "lastUpdated": "2026-02-08T09:27:11.488Z"
   }
 }

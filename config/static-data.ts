@@ -336,6 +336,146 @@ export const featuresIcons: Record<Feature["id"], React.ElementType> = {
 };
 
 /**
+ * Supported languages of features on Home page
+ */
+export const featureCards = {
+  en: {
+    multilingual: {
+      title: "Multilingual Support",
+      description:
+        "Users submit feedback in their language, you read it in yours. Automatic translation powered by AI.",
+    },
+    prioritization: {
+      title: "Smart Prioritization",
+      description:
+        "Weighted scoring system helps you focus on what matters most to your users.",
+    },
+    ticketing: {
+      title: "Light Ticketing",
+      description:
+        "Track status, assign tasks, add labels. Everything you need without the complexity.",
+    },
+  },
+  es: {
+    multilingual: {
+      title: "Soporte multilingüe",
+      description:
+        "Los usuarios envían comentarios en su idioma, tú los lees en el tuyo. Traducción automática impulsada por IA.",
+    },
+    prioritization: {
+      title: "Priorización inteligente",
+      description:
+        "El sistema de puntuación ponderada te ayuda a centrarte en lo que más importa a tus usuarios.",
+    },
+    ticketing: {
+      title: "Gestión de tickets ligera",
+      description:
+        "Sigue estados, asigna tareas, añade etiquetas. Todo lo que necesitas sin complicaciones.",
+    },
+  },
+  ru: {
+    multilingual: {
+      title: "Многоязычная поддержка",
+      description:
+        "Пользователи оставляют отзывы на своем языке, а вы читаете их на своем. Автоматический перевод на базе ИИ.",
+    },
+    prioritization: {
+      title: "Умная приоритезация",
+      description:
+        "Система взвешенной оценки поможет вам сосредоточиться на том, что важнее всего для ваших пользователей.",
+    },
+    ticketing: {
+      title: "Упрощенные тикеты",
+      description:
+        "Отслеживайте статус, назначайте задачи, добавляйте теги. Все необходимое без лишней сложности.",
+    },
+  },
+  fr: {
+    multilingual: {
+      title: "Support multilingue",
+      description:
+        "Les utilisateurs soumettent leurs commentaires dans leur langue, vous les lisez dans la vôtre. Traduction automatique par IA.",
+    },
+    prioritization: {
+      title: "Priorisation intelligente",
+      description:
+        "Le système de notation pondérée vous aide à vous concentrer sur ce qui compte le plus pour vos utilisateurs.",
+    },
+    ticketing: {
+      title: "Billetterie légère",
+      description:
+        "Suivez le statut, attribuez des tâches, ajoutez des étiquettes. Tout ce dont vous avez besoin sans la complexité.",
+    },
+  },
+  ar: {
+    multilingual: {
+      title: "دعم لغات متعددة",
+      description:
+        "يرسل المستخدمون ملاحظاتهم بلغتهم، وتقرأها أنت بلغتك. ترجمة تلقائية مدعومة بالذكاء الاصطناعي.",
+    },
+    prioritization: {
+      title: "تحديد أولويات ذكي",
+      description:
+        "نظام تسجيل مرجح يساعدك على التركيز على الأمور الأكثر أهمية لمستخدميك.",
+    },
+    ticketing: {
+      title: "نظام تذاكر مبسط",
+      description:
+        "تتبع الحالة، وتعيين المهام، وإضافة الملصقات. كل ما تحتاجه دون تعقيد.",
+    },
+  },
+  zh: {
+    multilingual: {
+      title: "多语言支持",
+      description:
+        "用户用他们的语言提交反馈，您用您的语言阅读。由人工智能驱动的自动翻译。",
+    },
+    prioritization: {
+      title: "智能优先级排序",
+      description: "加权评分系统帮助您专注于对用户最重要的事务。",
+    },
+    ticketing: {
+      title: "轻量级工单",
+      description: "跟踪状态、分配任务、添加标签。满足您的一切需求，化繁为简。",
+    },
+  },
+  hi: {
+    multilingual: {
+      title: "बहुभाषी सहायता",
+      description:
+        "उपयोगकर्ता अपनी भाषा में फीडबैक सबमिट करते हैं, आप इसे अपनी भाषा में पढ़ते हैं। AI द्वारा संचालित स्वचालित अनुवाद।",
+    },
+    prioritization: {
+      title: "स्मार्ट प्राथमिकता",
+      description:
+        "वेटेड स्कोरिंग सिस्टम आपको यह ध्यान केंद्रित करने में मदद करता है कि आपके उपयोगकर्ताओं के लिए सबसे अधिक क्या मायने रखता है।",
+    },
+    ticketing: {
+      title: "लाइट टिकटिंग",
+      description:
+        "स्टेटस ट्रैक करें, टास्क असाइन करें, लेबल जोड़ें। वह सब कुछ जो आपको चाहिए, बिना किसी जटिलता के।",
+    },
+  },
+  pt: {
+    multilingual: {
+      title: "Suporte multilíngue",
+      description:
+        "Os usuários enviam feedback no idioma deles, você lê no seu. Tradução automática via IA.",
+    },
+    prioritization: {
+      title: "Priorização inteligente",
+      description:
+        "O sistema de pontuação ponderada ajuda você a focar no que é mais importante para seus usuários.",
+    },
+    ticketing: {
+      title: "Gestão de tickets leve",
+      description:
+        "Acompanhe status, atribua tarefas e adicione etiquetas. Tudo o que você precisa sem complexidade.",
+    },
+  },
+};
+
+/**
  * Supported languages for the application.
  */
 export const LANGUAGES = [

@@ -71,7 +71,6 @@ export function LoginForm() {
     try {
       await signIn.social({
         provider: "github",
-        callbackURL: "/space",
       });
       // Social auth will handle redirect automatically
     } catch (_error) {
