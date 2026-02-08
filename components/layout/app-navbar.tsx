@@ -1,65 +1,103 @@
-import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { NotificationSheet } from "./notification-sheet";
 import { MobileSidebar } from "./mobile-sidebar";
-import { Button } from "@/components/ui/button";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { prisma } from "@/lib/db";
-
-async function getUserOrganizationRole(userId: string) {
-  const orgMember = await prisma.organizationMember.findFirst({
-    where: { userId },
-    include: { organization: true },
-    orderBy: { createdAt: "asc" },
-  });
-
-  return orgMember;
-}
+import { UserDropdown } from "./user-dropdown";
+import AppButton from "../AppButton";
+import { OrganizationsService } from "@/services/Organizations";
+import { ProjectsService } from "@/services/Projects";
+import { getUserSession } from "@/actions/session-helper.action";
 
 export default async function Navbar() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await getUserSession();
 
-  let orgMembership = null;
+  let sidebarData = null;
+
   if (session?.user) {
-    orgMembership = await getUserOrganizationRole(session.user.id);
+    const [ownedOrg, memberOrgs, contributorProjects] = await Promise.all([
+      OrganizationsService.getOwnedOrganization(session.user.id),
+      OrganizationsService.getMemberOrganizations(session.user.id),
+      ProjectsService.getUserContributorProjects(session.user.id),
+    ]);
+
+    sidebarData = {
+      ownedOrg: ownedOrg
+        ? {
+            id: ownedOrg.organization.id,
+            name: ownedOrg.organization.name,
+            slug: ownedOrg.organization.slug,
+            role: "owner",
+          }
+        : null,
+      memberOrgs: memberOrgs.map((org) => ({
+        id: org.organization.id,
+        name: org.organization.name,
+        slug: org.organization.slug,
+        role: org.role,
+      })),
+      contributorProjects: contributorProjects.map((pm) => ({
+        id: pm.project.id,
+        name: pm.project.name,
+        slug: pm.project.slug,
+        organizationName: pm.project.organization.name,
+        role: pm.role,
+      })),
+    };
   }
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto flex h-14 md:h-16 items-center justify-between px-3 md:px-4">
         <div className="flex items-center gap-4 md:gap-8">
-          {session?.user && (
+          {session?.user ? (
             <MobileSidebar
               isAuthenticated={true}
-              organizationName={orgMembership?.organization?.name}
-              role={orgMembership?.role}
+              ownedOrg={sidebarData?.ownedOrg || null}
+              memberOrgs={sidebarData?.memberOrgs || []}
+              contributorProjects={sidebarData?.contributorProjects || []}
             />
-          )}
-          <Logo className="text-base md:text-xl" />
+          ) : null}
+          <div className="max-sm:hidden">
+            <Logo size="sm" href="/" />
+          </div>
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/threads">
-              <Button variant="ghost" size="sm">Threads</Button>
-            </Link>
-            <Link href="/organizations">
-              <Button variant="ghost" size="sm">Organizations</Button>
-            </Link>
+            <AppButton type="ghost" size="sm" href="/about">
+              About
+            </AppButton>
+            <AppButton type="ghost" size="sm" href="/projects">
+              Projects
+            </AppButton>
+            <AppButton type="ghost" size="sm" href="/organizations">
+              Organizations
+            </AppButton>
+            {session?.user && (
+              <AppButton type="ghost" size="sm" href="/space">
+                Space
+              </AppButton>
+            )}
           </div>
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
           {session?.user ? (
-            <NotificationSheet />
+            <div className="flex items-center gap-2">
+              <NotificationSheet />
+              <UserDropdown
+                userName={session.user.name}
+                userImage={session.user.image}
+                userEmail={session.user.email}
+                organizationName={sidebarData?.ownedOrg?.name}
+              />
+            </div>
           ) : (
             <div className="flex items-center gap-2">
-              <Link href="/login" className="hidden sm:flex">
-                <Button variant="ghost" size="sm">Log In</Button>
-              </Link>
-              <Link href="/signup">
-                <Button size="sm">Sign Up</Button>
-              </Link>
+              <AppButton type="outline" size="sm" href="/login">
+                Log In
+              </AppButton>
+              <AppButton type="primary" size="sm" href="/signup">
+                Sign Up
+              </AppButton>
             </div>
           )}
         </div>

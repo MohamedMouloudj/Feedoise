@@ -1,122 +1,54 @@
-import Link from "next/link";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { prisma } from "@/lib/db";
-import { Logo } from "@/components/Logo";
-import {
-  LayoutDashboard,
-  FolderKanban,
-  Settings,
-  Users,
-  CreditCard,
-} from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-
-async function getUserOrganizationRole(userId: string) {
-  const orgMember = await prisma.organizationMember.findFirst({
-    where: { userId },
-    include: { organization: true },
-    orderBy: { createdAt: "asc" },
-  });
-
-  return orgMember;
-}
+import { getUserSession } from "@/actions/session-helper.action";
+import { OrganizationsService } from "@/services/Organizations";
+import { ProjectsService } from "@/services/Projects";
+import { SidebarContent } from "./sidebar-content";
 
 export default async function AppSidebar() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await getUserSession();
 
   if (!session?.user) {
     return null;
   }
 
-  const orgMembership = await getUserOrganizationRole(session.user.id);
+  // Fetch user's organizations and projects
+  const [ownedOrg, memberOrgs, contributorProjects] = await Promise.all([
+    OrganizationsService.getOwnedOrganization(session.user.id),
+    OrganizationsService.getMemberOrganizations(session.user.id),
+    ProjectsService.getUserContributorProjects(session.user.id),
+  ]);
 
-  // User has no organization
-  if (!orgMembership) {
-    return (
-      <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background p-6">
-        <div className="mb-8">
-          <Logo />
-        </div>
-        <nav className="flex flex-col gap-2">
-          <NavLink href="/contributions" icon={FolderKanban}>
-            Contributions
-          </NavLink>
-          <NavLink href="/threads" icon={LayoutDashboard}>
-            Threads
-          </NavLink>
-          <Separator className="my-4" />
-          <NavLink href="/profile" icon={Settings}>
-            Profile
-          </NavLink>
-        </nav>
-      </aside>
-    );
-  }
-
-  // User has organization - show org-specific navigation
-  const isOwner = orgMembership.role === "owner";
-  const isAdmin = orgMembership.role === "admin";
+  // Transform data for sidebar
+  const sidebarData = {
+    ownedOrg: ownedOrg
+      ? {
+          id: ownedOrg.organization.id,
+          name: ownedOrg.organization.name,
+          slug: ownedOrg.organization.slug,
+          role: ownedOrg.role,
+        }
+      : null,
+    memberOrgs: memberOrgs.map((m) => ({
+      id: m.organization.id,
+      name: m.organization.name,
+      slug: m.organization.slug,
+      role: m.role,
+    })),
+    contributorProjects: contributorProjects.map((p) => ({
+      id: p.project.id,
+      name: p.project.name,
+      slug: p.project.slug,
+      organizationName: p.project.organization.name,
+      role: p.role,
+    })),
+  };
 
   return (
-    <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background p-6">
-      <div className="mb-8">
-        <Logo />
-        <p className="mt-2 text-sm text-muted-foreground">
-          {orgMembership.organization.name}
-        </p>
-      </div>
-      <nav className="flex flex-col gap-2">
-        <NavLink href="/dashboard" icon={LayoutDashboard}>
-          Dashboard
-        </NavLink>
-        <NavLink href="/dashboard/projects" icon={FolderKanban}>
-          Projects
-        </NavLink>
-
-        {(isOwner || isAdmin) && (
-          <>
-            <Separator className="my-4" />
-            <NavLink href="/dashboard/settings" icon={Settings}>
-              Organization Settings
-            </NavLink>
-            <NavLink href="/dashboard/team" icon={Users}>
-              Team Management
-            </NavLink>
-          </>
-        )}
-
-        {isOwner && (
-          <NavLink href="/dashboard/billing" icon={CreditCard}>
-            Billing
-          </NavLink>
-        )}
-
-        <Separator className="my-4" />
-        <NavLink href="/profile" icon={Settings}>
-          Profile
-        </NavLink>
-      </nav>
+    <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background">
+      <SidebarContent
+        ownedOrg={sidebarData.ownedOrg}
+        memberOrgs={sidebarData.memberOrgs}
+        contributorProjects={sidebarData.contributorProjects}
+      />
     </aside>
-  );
-}
-
-function NavLink({
-  href,
-  icon: Icon,
-  children,
-}: {
-  href: string;
-  icon: React.ElementType;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center gap-3 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-    >
-      <Icon className="h-4 w-4" />
-      {children}
-    </Link>
   );
 }

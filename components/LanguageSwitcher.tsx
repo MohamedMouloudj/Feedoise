@@ -16,7 +16,7 @@ export function LanguageSwitcher() {
     <Select
       value={locale || "en"}
       onValueChange={(value) => {
-        setLocale(value as any);
+        setLocale(value as Parameters<typeof setLocale>[0]);
         window.location.reload();
       }}
       defaultValue="en"

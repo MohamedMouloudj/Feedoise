@@ -2,7 +2,7 @@ import { OrganizationRole, ProjectRole } from "./generated/prisma/enums";
 
 /**
  * Organization permissions matrix:
- * 
+ *
  * | Category                        | Permission              | Owner | Admin | Member | Project Maintainer | Project Contributor |
  * | ------------------------------- | ----------------------- | :---: | :---: | :----: | :----------------: | :-----------------: |
  * | **Organization**                | Update org settings     |   ✅   |   ✅   |    ❌   |          ❌         |          ❌          |
@@ -10,9 +10,9 @@ import { OrganizationRole, ProjectRole } from "./generated/prisma/enums";
  * |                                 | Remove org members      |   ✅   |   ✅   |    ❌   |          ❌         |          ❌          |
  * | **Projects**                    | View all org projects   |   ✅   |   ✅   |    ✅   |         ✅*         |          ✅*         |
  * |                                 | Create projects         |   ✅   |   ✅   |    ❌   |          ❌         |          ❌          |
- * |                                 | Update project settings |   ✅   |   ✅   |    ❌   |         ✅**        |          ❌          |
+ * |                                 | Update project settings |   ✅   |   ✅   |    ❌   |         ✅*         |          ❌          |
  * |                                 | Delete projects         |   ✅   |   ✅   |    ❌   |          ❌         |          ❌          |
- * |                                 | Add project members     |   ✅   |   ✅   |    ❌   |         ✅**        |          ❌          |
+ * |                                 | Add project members     |   ✅   |   ✅   |    ❌   |          ❌         |          ❌          |
  * | **Threads**                     | View threads            |   ✅   |   ✅   |    ✅   |          ✅         |          ✅          |
  * |                                 | Create threads          |   ✅   |   ✅   |    ✅   |          ✅         |          ✅          |
  * |                                 | Change status           |   ✅   |   ✅   |    ❌   |          ✅         |          ❌          |
@@ -32,7 +32,6 @@ import { OrganizationRole, ProjectRole } from "./generated/prisma/enums";
  *
  * **Notes:**
  * - \* assigned only
- * - \** own project
  */
 
 export const PERMISSIONS = {
@@ -46,7 +45,7 @@ export const PERMISSIONS = {
     "org:member:view",
     "org:member:add",
     "org:member:remove",
-    "org:member:role:update",
+    "org:member:role:update", // change member ↔ admin
     "org:ownership:transfer",
 
     // Project management
@@ -149,8 +148,6 @@ export const PERMISSIONS = {
   PROJECT_MAINTAINER: [
     // Project management (for ASSIGNED project only)
     "project:update", // Can update project settings
-    "project:member:add", // Can add contributors
-    "project:member:remove",
 
     // Thread/feedback management (for ASSIGNED project only)
     "thread:view",

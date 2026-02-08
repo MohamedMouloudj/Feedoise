@@ -1,0 +1,262 @@
+{
+  "entries": {
+    "2fc5c55dd7c2": {
+      "type": "content",
+      "sourceText": "That's all!",
+      "context": {
+        "componentName": "InfiniteScrollList",
+        "filePath": "../components/ui/infinite-scroll-list.tsx"
+      },
+      "hash": "2fc5c55dd7c2",
+      "location": {
+        "filePath": "../components/ui/infinite-scroll-list.tsx",
+        "line": 61,
+        "column": 8
+      }
+    },
+    "7fec05d83b2f": {
+      "type": "content",
+      "sourceText": "Discover Projects",
+      "context": {
+        "componentName": "DiscoverProjectsPage",
+        "filePath": "projects/page.tsx"
+      },
+      "hash": "7fec05d83b2f",
+      "location": {
+        "filePath": "projects/page.tsx",
+        "line": 75,
+        "column": 8
+      }
+    },
+    "beb093a0da7d": {
+      "type": "content",
+      "sourceText": "Explore public feedback projects and share your thoughts",
+      "context": {
+        "componentName": "DiscoverProjectsPage",
+        "filePath": "projects/page.tsx"
+      },
+      "hash": "beb093a0da7d",
+      "location": {
+        "filePath": "projects/page.tsx",
+        "line": 76,
+        "column": 8
+      }
+    },
+    "ab9e0a7d8e66": {
+      "type": "attribute",
+      "sourceText": "Search projects by name, description, or organization...",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "DiscoverProjectsPage",
+        "filePath": "projects/page.tsx"
+      },
+      "hash": "ab9e0a7d8e66",
+      "location": {
+        "filePath": "projects/page.tsx",
+        "line": 84,
+        "column": 10
+      }
+    },
+    "ceacc216ff07": {
+      "type": "content",
+      "sourceText": "Discover Organizations",
+      "context": {
+        "componentName": "OrganizationsPage",
+        "filePath": "organizations/page.tsx"
+      },
+      "hash": "ceacc216ff07",
+      "location": {
+        "filePath": "organizations/page.tsx",
+        "line": 84,
+        "column": 8
+      }
+    },
+    "8e8632ee20b1": {
+      "type": "content",
+      "sourceText": "Explore organizations and their public projects",
+      "context": {
+        "componentName": "OrganizationsPage",
+        "filePath": "organizations/page.tsx"
+      },
+      "hash": "8e8632ee20b1",
+      "location": {
+        "filePath": "organizations/page.tsx",
+        "line": 85,
+        "column": 8
+      }
+    },
+    "2ecf0540cc3e": {
+      "type": "attribute",
+      "sourceText": "Search organizations by name...",
+      "context": {
+        "attributeName": "placeholder",
+        "componentName": "OrganizationsPage",
+        "filePath": "organizations/page.tsx"
+      },
+      "hash": "2ecf0540cc3e",
+      "location": {
+        "filePath": "organizations/page.tsx",
+        "line": 93,
+        "column": 10
+      }
+    },
+    "a287afd6f565": {
+      "type": "content",
+      "sourceText": "@{expression0}",
+      "context": {
+        "componentName": "OrganizationCard",
+        "filePath": "../components/features/organizations/organization-card.tsx"
+      },
+      "hash": "a287afd6f565",
+      "location": {
+        "filePath": "../components/features/organizations/organization-card.tsx",
+        "line": 41,
+        "column": 12
+      }
+    },
+    "26d32d28c50f": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "OrganizationCard",
+        "filePath": "../components/features/organizations/organization-card.tsx"
+      },
+      "hash": "26d32d28c50f",
+      "location": {
+        "filePath": "../components/features/organizations/organization-card.tsx",
+        "line": 50,
+        "column": 12
+      }
+    },
+    "d5230b7f9820": {
+      "type": "content",
+      "sourceText": "{expression0} projects",
+      "context": {
+        "componentName": "OrganizationCard",
+        "filePath": "../components/features/organizations/organization-card.tsx"
+      },
+      "hash": "d5230b7f9820",
+      "location": {
+        "filePath": "../components/features/organizations/organization-card.tsx",
+        "line": 54,
+        "column": 12
+      }
+    },
+    "d7042542c150": {
+      "type": "content",
+      "sourceText": "@{expression0}",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "d7042542c150",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 66,
+        "column": 12
+      }
+    },
+    "7a815140563b": {
+      "type": "content",
+      "sourceText": "{expression0} members",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "7a815140563b",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 71,
+        "column": 16
+      }
+    },
+    "f10664ef661b": {
+      "type": "content",
+      "sourceText": "{expression0} projects",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "f10664ef661b",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 75,
+        "column": 16
+      }
+    },
+    "fb51520aaca8": {
+      "type": "content",
+      "sourceText": "Go to Dashboard",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "fb51520aaca8",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 81,
+        "column": 16
+      }
+    },
+    "ff0ae2a75c5d": {
+      "type": "content",
+      "sourceText": "Public Projects ({expression0})",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "ff0ae2a75c5d",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 97,
+        "column": 8
+      }
+    },
+    "6eeecb51540b": {
+      "type": "content",
+      "sourceText": "No public projects",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "6eeecb51540b",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 104,
+        "column": 12
+      }
+    },
+    "7344aba6b909": {
+      "type": "content",
+      "sourceText": "This organization hasn't created any public projects yet",
+      "context": {
+        "componentName": "OrganizationDetailPage",
+        "filePath": "organizations/[slug]/page.tsx"
+      },
+      "hash": "7344aba6b909",
+      "location": {
+        "filePath": "organizations/[slug]/page.tsx",
+        "line": 105,
+        "column": 12
+      }
+    },
+    "d796726f7366": {
+      "type": "content",
+      "sourceText": "Space",
+      "context": {
+        "componentName": "page",
+        "filePath": "space/page.tsx"
+      },
+      "hash": "d796726f7366",
+      "location": {
+        "filePath": "space/page.tsx",
+        "line": 2,
+        "column": 9
+      }
+    }
+  },
+  "stats": {
+    "totalEntries": 18,
+    "lastUpdated": "2026-02-08T06:37:34.675Z"
+  }
+}

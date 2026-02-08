@@ -2,9 +2,17 @@ import type { NextConfig } from "next";
 import { withLingo } from "@lingo.dev/compiler/next";
 
 const nextConfig: NextConfig = {
-  // images: {
-  //   qualities: [60, 80, 90, 100],
-  // },
+  images: {
+    qualities: [60, 80, 90, 100],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "/u/**",
+      },
+    ],
+  },
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
