@@ -68,7 +68,11 @@ export default async function PublicProjectPage({
         )}
       </div>
 
-      <ThreadList threads={threads} projectSlug={slug} />
+      <ThreadList
+        threads={threads}
+        projectSlug={slug}
+        userLanguage={session?.user?.preferredLanguage || "en"}
+      />
     </div>
   );
 }
