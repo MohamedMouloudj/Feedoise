@@ -6,7 +6,7 @@ export default async function DiscoverProjectsPage() {
   const projects = await ProjectsService.findAllPublic();
 
   return (
-    <div className="container py-8">
+    <div className="container max-w-full p-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Discover Projects</h1>
         <p className="mt-2 text-muted-foreground">
