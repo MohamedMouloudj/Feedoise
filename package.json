@@ -44,6 +44,7 @@
     "react-dom": "19.2.3",
     "react-email": "^5.2.6",
     "react-hook-form": "^7.71.1",
+    "react-infinite-scroll-component": "^6.1.1",
     "react-resizable-panels": "^4.5.9",
     "resend": "^6.9.1",
     "sonner": "^2.0.7",

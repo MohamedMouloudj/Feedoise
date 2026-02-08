@@ -95,6 +95,9 @@ importers:
       react-hook-form:
         specifier: ^7.71.1
         version: 7.71.1(react@19.2.3)
+      react-infinite-scroll-component:
+        specifier: ^6.1.1
+        version: 6.1.1(react@19.2.3)
       react-resizable-panels:
         specifier: ^4.5.9
         version: 4.5.9(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -4864,6 +4867,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
+  react-infinite-scroll-component@6.1.1:
+    resolution: {integrity: sha512-R8YoOyiNDynSWmfVme5LHslsKrP+/xcRUWR2ies8UgUab9dtyw5ECnMCVPPmnmjjF4MWQmfVdRwRWcWaDgeyMA==}
+    peerDependencies:
+      react: '>=16.0.0'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -5313,6 +5321,10 @@ packages:
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
+
+  throttle-debounce@2.3.0:
+    resolution: {integrity: sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ==}
+    engines: {node: '>=8'}
 
   tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
@@ -10970,6 +10982,11 @@ snapshots:
     dependencies:
       react: 19.2.3
 
+  react-infinite-scroll-component@6.1.1(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+      throttle-debounce: 2.3.0
+
   react-is@16.13.1: {}
 
   react-reconciler@0.29.2(react@19.2.3):
@@ -11544,6 +11561,8 @@ snapshots:
   tailwindcss@4.1.18: {}
 
   tapable@2.3.0: {}
+
+  throttle-debounce@2.3.0: {}
 
   tinycolor2@1.6.0: {}
 

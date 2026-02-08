@@ -1,49 +1,58 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ProjectCard } from "@/components/features/projects/project-card";
+import { OrganizationCard } from "@/components/features/organizations/organization-card";
 import { InfiniteScrollList } from "@/components/ui/infinite-scroll-list";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { debounce } from "@/lib/debounce";
-import { ProjectWithOrganization } from "@/services/Projects";
+import { Organization } from "@/lib/generated/prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
-import { TAKE } from "@/config/const";
 
-export default function DiscoverProjectsPage() {
-  const [projects, setProjects] = useState<ProjectWithOrganization[]>([]);
+type OrganizationWithCounts = Organization & {
+  _count: {
+    members: number;
+    projects: number;
+  };
+};
+
+export default function OrganizationsPage() {
+  const [organizations, setOrganizations] = useState<OrganizationWithCounts[]>(
+    [],
+  );
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [skip, setSkip] = useState(0);
+  const TAKE = 12;
 
-  const fetchProjects = async (
+  const fetchOrganizations = async (
     searchTerm: string,
     skipValue: number,
     isNewSearch = false,
   ) => {
     try {
       const response = await fetch(
-        `/api/projects/public?skip=${skipValue}&take=${TAKE}${searchTerm ? `&search=${encodeURIComponent(searchTerm)}` : ""}`,
+        `/api/organizations/public?skip=${skipValue}&take=${TAKE}${searchTerm ? `&search=${encodeURIComponent(searchTerm)}` : ""}`,
       );
       const data = await response.json();
 
       if (isNewSearch) {
-        setProjects(data.items);
+        setOrganizations(data.items);
       } else {
-        setProjects((prev) => [...prev, ...data.items]);
+        setOrganizations((prev) => [...prev, ...data.items]);
       }
       setHasMore(data.hasMore);
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching projects:", error);
+      console.error("Error fetching organizations:", error);
       setIsLoading(false);
     }
   };
 
   // Initial load
   useEffect(() => {
-    fetchProjects("", 0, true);
+    fetchOrganizations("", 0, true);
   }, []);
 
   // Debounced search handler
@@ -52,7 +61,7 @@ export default function DiscoverProjectsPage() {
     debounce((searchTerm: string) => {
       setIsLoading(true);
       setSkip(0);
-      fetchProjects(searchTerm, 0, true);
+      fetchOrganizations(searchTerm, 0, true);
     }, 300),
     [],
   );
@@ -66,15 +75,15 @@ export default function DiscoverProjectsPage() {
   const loadMore = () => {
     const newSkip = skip + TAKE;
     setSkip(newSkip);
-    fetchProjects(searchQuery, newSkip, false);
+    fetchOrganizations(searchQuery, newSkip, false);
   };
 
   return (
     <div className="container max-w-full p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Discover Projects</h1>
+        <h1 className="text-3xl font-bold">Discover Organizations</h1>
         <p className="mt-2 text-muted-foreground">
-          Explore public feedback projects and share your thoughts
+          Explore organizations and their public projects
         </p>
       </div>
 
@@ -82,7 +91,7 @@ export default function DiscoverProjectsPage() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="Search projects by name, description, or organization..."
+            placeholder="Search organizations by name..."
             className="pl-10"
             value={searchQuery}
             onChange={handleSearchChange}
@@ -90,7 +99,7 @@ export default function DiscoverProjectsPage() {
         </div>
       </div>
 
-      {isLoading && projects.length === 0 ? (
+      {isLoading && organizations.length === 0 ? (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
             <Skeleton key={i} className="h-48 w-full" />
@@ -98,17 +107,17 @@ export default function DiscoverProjectsPage() {
         </div>
       ) : (
         <InfiniteScrollList
-          items={projects}
+          items={organizations}
           hasMore={hasMore}
           loadMore={loadMore}
-          renderItem={(project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              href={`/projects/${project.slug}`}
+          renderItem={(organization) => (
+            <OrganizationCard
+              key={organization.id}
+              organization={organization}
+              href={`/organizations/${organization.slug}`}
             />
           )}
-          emptyMessage="No projects found. Try a different search term."
+          emptyMessage="No organizations found. Try a different search term."
         />
       )}
     </div>

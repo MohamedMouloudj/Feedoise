@@ -348,12 +348,39 @@ export class ProjectsService {
   }
 
   /**
-   * Find all public projects (for discovery page).
+   * Find all public projects (for discovery page) with pagination and search.
    */
-  static async findAllPublic(): Promise<ProjectWithOrganization[]> {
+  static async findAllPublic({
+    skip = 0,
+    take = 12,
+    searchQuery,
+  }: {
+    skip?: number;
+    take?: number;
+    searchQuery?: string;
+  } = {}): Promise<{ items: ProjectWithOrganization[]; hasMore: boolean }> {
     try {
+      const where: Prisma.ProjectWhereInput = searchQuery
+        ? {
+            isPublic: true,
+            OR: [
+              { name: { contains: searchQuery, mode: "insensitive" } },
+              {
+                description: { contains: searchQuery, mode: "insensitive" },
+              },
+              {
+                organization: {
+                  name: { contains: searchQuery, mode: "insensitive" },
+                },
+              },
+            ],
+          }
+        : { isPublic: true };
+
       const projects = await prisma.project.findMany({
-        where: { isPublic: true },
+        where,
+        skip,
+        take: take + 1, // Fetch one extra to check hasMore
         orderBy: { createdAt: "desc" },
         include: {
           organization: {
@@ -373,7 +400,11 @@ export class ProjectsService {
         },
       });
 
-      return projects;
+      const hasMore = projects.length > take;
+      return {
+        items: projects.slice(0, take),
+        hasMore,
+      };
     } catch (error) {
       console.error("Error finding public projects:", error);
       throw new Error("Failed to retrieve public projects");
