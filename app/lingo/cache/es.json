@@ -20,6 +20,10 @@
     "32bd4569ff12": "{expression0, plural, one {# miembro} other {# miembros}}",
     "df6cafb2d786": "{expression0, plural, one {# hilo} other {# hilos}}",
     "000c827d3896": "{expression0} comentarios",
-    "10a50f7801d2": "Aún no hay comentarios"
+    "10a50f7801d2": "Aún no hay comentarios",
+    "1e5a79f607fc": "Mi organización",
+    "2d8afed699b3": "Organizaciones en las que estoy",
+    "43c120bbc61c": "Proyectos en los que contribuyo",
+    "1698d13f3cc5": "Mi actividad"
   }
 }

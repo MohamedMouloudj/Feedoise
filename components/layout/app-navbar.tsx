@@ -7,6 +7,8 @@ import AppButton from "../AppButton";
 import { OrganizationsService } from "@/services/Organizations";
 import { ProjectsService } from "@/services/Projects";
 import { getUserSession } from "@/actions/session-helper.action";
+import { NAVIGATION, NavigationLabels } from "@/config/navigation";
+import { getLabel } from "@/lib/utils";
 
 export default async function Navbar() {
   const session = await getUserSession();
@@ -45,6 +47,8 @@ export default async function Navbar() {
     };
   }
 
+  const navigation = NAVIGATION;
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto flex h-14 md:h-16 items-center justify-between px-3 md:px-4">
@@ -61,15 +65,20 @@ export default async function Navbar() {
             <Logo size="sm" href="/" />
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <AppButton type="ghost" size="sm" href="/about">
-              About
-            </AppButton>
-            <AppButton type="ghost" size="sm" href="/projects">
-              Projects
-            </AppButton>
-            <AppButton type="ghost" size="sm" href="/organizations">
-              Organizations
-            </AppButton>
+            {(
+              Object.entries(navigation.OWNED_ORG) as [
+                string,
+                {
+                  href: string;
+                  icon: React.ElementType;
+                  label: NavigationLabels;
+                },
+              ][]
+            ).map(([_, { href, icon: Icon, label }]) => (
+              <AppButton key={href} href={href} type="ghost" size="sm">
+                {getLabel(label, session?.user.preferredLanguage || "en")}
+              </AppButton>
+            ))}
             {session?.user && (
               <AppButton type="ghost" size="sm" href="/space">
                 Space
