@@ -1,3 +1,57 @@
+# Feedoise
+
+Multilingual feedback platform that breaks language barriers.
+Users write in any language. Teams read in theirs. Powered by AI translation.
+
+---
+
+# The Problem
+
+Most feedback tools force everyone into a single language. Lots of internet users don't speak English as their first language, yet they're expected to submit feedback in English or get ignored.
+
+# Solution
+
+Feedoise lets users submit feedback in any language while teams read everything in their preferred language through real-time AI translation.
+
+- Write in Spanish, read in English
+- Comment in Arabic, team sees it in French
+- Toggle back to original language anytime
+- Full project management features (status, priority, assignment, labels)
+
+## Features
+
+### Real-Time Translation
+
+- Static UI: Lingo.dev Compiler (build-time translation)
+- Dynamic content: Lingo.dev SDK (runtime translation)
+- No storage: Translations happen on-demand, not stored in DB
+- Toggle: Switch between original and translated anytime
+
+### Organizations & Teams
+
+- Multi-organization support (own one, join many)
+- Role-based access: Owner → Admin → Member
+- Email invitations with role pre-assignment
+- Granular permissions (60+ permission checks)
+
+### Project Management
+
+- Public or private projects
+- Status workflow: New → Under Review → Planned → Completed → Won't Fix
+- Priority weighting (0-10)
+- Thread assignment
+- Custom labels with color coding
+- Comment threads with full discussion
+
+### Authentication
+
+- Email/password with verification
+- GitHub OAuth
+- Password reset flow
+- Session management via BetterAuth
+
+---
+
 # Database Schema (LDM)
 
 ```mermaid
@@ -669,3 +723,13 @@ sequenceDiagram
         Browser->>ThreadUI: Refresh thread list, show toast "5 threads updated"
     end
 ```
+
+# Used Technologies
+
+- **Next.js 16**: React framework for server-side rendering and API routes
+- **TypeScript**: Static typing for better developer experience
+- **Prisma**: ORM for database access and management
+- **PostgreSQL**: Relational database for storing all application data
+- **Lingo.dev**: AI-powered translation for multilingual support (Compiler & SDK)
+- **BetterAuth**: Authentication and session management
+- **Resend**: Email delivery service for verification and notifications
