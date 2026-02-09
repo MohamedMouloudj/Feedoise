@@ -48,3 +48,7 @@ next-env.d.ts
 *sql
 
 /lib/generated/prisma
+
+# ignore logs
+/logs
+*.log
