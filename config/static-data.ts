@@ -129,45 +129,6 @@ export const featureTranslations: Record<
     },
   ],
 
-  ru: [
-    {
-      id: "multilingual-feedback",
-      title: "Многоязычная обратная связь",
-      description:
-        "Отзывы отправляются на родном языке пользователей и переводятся для владельцев проектов. Статические переводы интерфейса выполняются на этапе сборки с помощью Lingo.dev SDK и Lingo.dev Compiler.",
-    },
-    {
-      id: "priority-weighting",
-      title: "Приоритизация",
-      description:
-        "Владельцы назначают вес приоритета обсуждениям; панель сортирует их по взвешенному рейтингу.",
-    },
-    {
-      id: "light-ticketing",
-      title: "Лёгкий тикетинг",
-      description:
-        "Отслеживание статуса, назначение участникам команды и метки для организации.",
-    },
-    {
-      id: "project-discovery",
-      title: "Обзор проектов",
-      description:
-        "Проекты могут быть публичными или доступными только по приглашению для полного контроля.",
-    },
-    {
-      id: "follow-notifications",
-      title: "Подписки и уведомления",
-      description:
-        "Пользователи подписываются на проекты и получают уведомления при ответах, изменениях статуса или приоритета.",
-    },
-    {
-      id: "comment-threads",
-      title: "Цепочки комментариев",
-      description:
-        "Полноценные обсуждения для каждого отзыва с обновлениями в реальном времени и вложенными комментариями.",
-    },
-  ],
-
   ar: [
     {
       id: "multilingual-feedback",
@@ -203,120 +164,6 @@ export const featureTranslations: Record<
       id: "comment-threads",
       title: "سلاسل التعليقات",
       description: "نقاشات غنية لكل ملاحظة مع تحديثات فورية ومحادثات مترابطة.",
-    },
-  ],
-
-  zh: [
-    {
-      id: "multilingual-feedback",
-      title: "多语言反馈",
-      description:
-        "反馈以用户的母语提交，并为项目所有者自动翻译。界面的静态翻译在构建阶段通过 Lingo.dev SDK 和 Lingo.dev Compiler 处理。",
-    },
-    {
-      id: "priority-weighting",
-      title: "优先级权重",
-      description:
-        "项目所有者为讨论分配优先级权重，仪表盘根据加权评分进行排序。",
-    },
-    {
-      id: "light-ticketing",
-      title: "轻量工单系统",
-      description: "状态跟踪、成员分配以及用于组织管理的标签。",
-    },
-    {
-      id: "project-discovery",
-      title: "项目发现",
-      description: "项目可以设为公开或仅限邀请，以实现完全控制。",
-    },
-    {
-      id: "follow-notifications",
-      title: "关注与通知",
-      description:
-        "用户可关注项目，并在反馈收到回复、状态或优先级变更时获得应用内通知。",
-    },
-    {
-      id: "comment-threads",
-      title: "评论线程",
-      description: "每条反馈都支持实时更新的丰富讨论和分层评论。",
-    },
-  ],
-
-  hi: [
-    {
-      id: "multilingual-feedback",
-      title: "बहुभाषी प्रतिक्रिया",
-      description:
-        "प्रतिक्रिया उपयोगकर्ताओं की मूल भाषा में सबमिट की जाती है और प्रोजेक्ट मालिकों के लिए अनुवादित की जाती है। स्थिर UI अनुवाद बिल्ड समय पर Lingo.dev SDK और Lingo.dev Compiler के माध्यम से संभाले जाते हैं।",
-    },
-    {
-      id: "priority-weighting",
-      title: "प्राथमिकता निर्धारण",
-      description:
-        "मालिक थ्रेड्स को प्राथमिकता वज़न देते हैं; डैशबोर्ड उन्हें वेटेड स्कोर के अनुसार रैंक करता है।",
-    },
-    {
-      id: "light-ticketing",
-      title: "हल्का टिकटिंग",
-      description:
-        "स्थिति ट्रैकिंग, टीम सदस्यों को असाइन करना और संगठन के लिए लेबल।",
-    },
-    {
-      id: "project-discovery",
-      title: "प्रोजेक्ट खोज",
-      description:
-        "पूर्ण नियंत्रण के लिए प्रोजेक्ट सार्वजनिक या केवल आमंत्रण-आधारित हो सकते हैं।",
-    },
-    {
-      id: "follow-notifications",
-      title: "फ़ॉलो और सूचनाएँ",
-      description:
-        "उपयोगकर्ता प्रोजेक्ट्स को फ़ॉलो करते हैं और प्रतिक्रिया पर उत्तर, स्थिति या प्राथमिकता बदलने पर इन-ऐप सूचनाएँ प्राप्त करते हैं।",
-    },
-    {
-      id: "comment-threads",
-      title: "टिप्पणी थ्रेड्स",
-      description:
-        "प्रत्येक प्रतिक्रिया पर रीयल-टाइम अपडेट और थ्रेडेड चर्चाएँ।",
-    },
-  ],
-
-  pt: [
-    {
-      id: "multilingual-feedback",
-      title: "Feedback multilíngue",
-      description:
-        "O feedback é enviado no idioma nativo dos usuários e traduzido para os donos do projeto. As traduções estáticas da interface são tratadas no build usando o SDK e o Compiler da Lingo.dev.",
-    },
-    {
-      id: "priority-weighting",
-      title: "Peso de prioridade",
-      description:
-        "Os proprietários atribuem pesos de prioridade às threads; o painel as classifica por pontuação ponderada.",
-    },
-    {
-      id: "light-ticketing",
-      title: "Ticketing leve",
-      description:
-        "Acompanhamento de status, atribuição a membros da equipe e uso de etiquetas.",
-    },
-    {
-      id: "project-discovery",
-      title: "Descoberta de projetos",
-      description:
-        "Os projetos podem ser públicos ou apenas por convite para controle total.",
-    },
-    {
-      id: "follow-notifications",
-      title: "Seguir e notificações",
-      description:
-        "Usuários seguem projetos e recebem notificações no app quando há respostas, mudanças de status ou de prioridade.",
-    },
-    {
-      id: "comment-threads",
-      title: "Threads de comentários",
-      description:
-        "Discussões ricas para cada feedback com atualizações em tempo real e conversas encadeadas.",
     },
   ],
 };
@@ -373,23 +220,6 @@ export const featureCards = {
         "Sigue estados, asigna tareas, añade etiquetas. Todo lo que necesitas sin complicaciones.",
     },
   },
-  ru: {
-    multilingual: {
-      title: "Многоязычная поддержка",
-      description:
-        "Пользователи оставляют отзывы на своем языке, а вы читаете их на своем. Автоматический перевод на базе ИИ.",
-    },
-    prioritization: {
-      title: "Умная приоритезация",
-      description:
-        "Система взвешенной оценки поможет вам сосредоточиться на том, что важнее всего для ваших пользователей.",
-    },
-    ticketing: {
-      title: "Упрощенные тикеты",
-      description:
-        "Отслеживайте статус, назначайте задачи, добавляйте теги. Все необходимое без лишней сложности.",
-    },
-  },
   fr: {
     multilingual: {
       title: "Support multilingue",
@@ -424,55 +254,6 @@ export const featureCards = {
         "تتبع الحالة، وتعيين المهام، وإضافة الملصقات. كل ما تحتاجه دون تعقيد.",
     },
   },
-  zh: {
-    multilingual: {
-      title: "多语言支持",
-      description:
-        "用户用他们的语言提交反馈，您用您的语言阅读。由人工智能驱动的自动翻译。",
-    },
-    prioritization: {
-      title: "智能优先级排序",
-      description: "加权评分系统帮助您专注于对用户最重要的事务。",
-    },
-    ticketing: {
-      title: "轻量级工单",
-      description: "跟踪状态、分配任务、添加标签。满足您的一切需求，化繁为简。",
-    },
-  },
-  hi: {
-    multilingual: {
-      title: "बहुभाषी सहायता",
-      description:
-        "उपयोगकर्ता अपनी भाषा में फीडबैक सबमिट करते हैं, आप इसे अपनी भाषा में पढ़ते हैं। AI द्वारा संचालित स्वचालित अनुवाद।",
-    },
-    prioritization: {
-      title: "स्मार्ट प्राथमिकता",
-      description:
-        "वेटेड स्कोरिंग सिस्टम आपको यह ध्यान केंद्रित करने में मदद करता है कि आपके उपयोगकर्ताओं के लिए सबसे अधिक क्या मायने रखता है।",
-    },
-    ticketing: {
-      title: "लाइट टिकटिंग",
-      description:
-        "स्टेटस ट्रैक करें, टास्क असाइन करें, लेबल जोड़ें। वह सब कुछ जो आपको चाहिए, बिना किसी जटिलता के।",
-    },
-  },
-  pt: {
-    multilingual: {
-      title: "Suporte multilíngue",
-      description:
-        "Os usuários enviam feedback no idioma deles, você lê no seu. Tradução automática via IA.",
-    },
-    prioritization: {
-      title: "Priorização inteligente",
-      description:
-        "O sistema de pontuação ponderada ajuda você a focar no que é mais importante para seus usuários.",
-    },
-    ticketing: {
-      title: "Gestão de tickets leve",
-      description:
-        "Acompanhe status, atribua tarefas e adicione etiquetas. Tudo o que você precisa sem complexidade.",
-    },
-  },
 };
 
 /**
@@ -483,8 +264,4 @@ export const LANGUAGES = [
   { value: "es", label: "Español" },
   { value: "fr", label: "Français" },
   { value: "ar", label: "العربية" },
-  { value: "zh", label: "中文" },
-  { value: "ru", label: "Русский" },
-  { value: "hi", label: "हिन्दी" },
-  { value: "pt", label: "Português" },
 ];

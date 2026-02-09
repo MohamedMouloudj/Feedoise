@@ -37,18 +37,6 @@ export function LanguageSwitcher() {
         <SelectItem value="es" className="py-1 px-2">
           Español
         </SelectItem>
-        <SelectItem value="pt" className="py-1 px-2">
-          Português
-        </SelectItem>
-        <SelectItem value="ru" className="py-1 px-2">
-          Русский
-        </SelectItem>
-        <SelectItem value="zh" className="py-1 px-2">
-          中文
-        </SelectItem>
-        <SelectItem value="hi" className="py-1 px-2">
-          हिन्दी
-        </SelectItem>
       </SelectContent>
     </Select>
   );

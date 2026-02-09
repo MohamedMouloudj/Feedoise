@@ -9,6 +9,7 @@ import { ProjectsService } from "@/services/Projects";
 import { getUserSession } from "@/actions/session-helper.action";
 import { NAVIGATION, NavigationLabels } from "@/config/navigation";
 import { getLabel } from "@/lib/utils";
+import { headers } from "next/headers";
 
 export default async function Navbar() {
   const session = await getUserSession();
@@ -47,6 +48,13 @@ export default async function Navbar() {
     };
   }
 
+  const headersList = await headers();
+  const cookieHeader = headersList.get("cookie") || "";
+  const locale =
+    cookieHeader
+      .split(";")
+      .find((c) => c.trim().startsWith("locale="))
+      ?.split("=")[1] || "en";
   const navigation = NAVIGATION;
 
   return (
@@ -66,7 +74,7 @@ export default async function Navbar() {
           </div>
           <div className="hidden md:flex items-center gap-4">
             {(
-              Object.entries(navigation.OWNED_ORG) as [
+              Object.entries(navigation.PUBLIC) as [
                 string,
                 {
                   href: string;
@@ -74,9 +82,9 @@ export default async function Navbar() {
                   label: NavigationLabels;
                 },
               ][]
-            ).map(([_, { href, icon: Icon, label }]) => (
+            ).map(([_, { href, icon: _Icon, label }]) => (
               <AppButton key={href} href={href} type="ghost" size="sm">
-                {getLabel(label, session?.user.preferredLanguage || "en")}
+                {getLabel(label, locale || "en")}
               </AppButton>
             ))}
             {session?.user && (

@@ -254,7 +254,7 @@ export function SidebarContent({
         {isExpanded("user-activity") && (
           <div className="ml-3 mt-1 space-y-1">
             {(
-              Object.entries(navigation.OWNED_ORG) as [
+              Object.entries(navigation.USER_ACTIVITY) as [
                 string,
                 {
                   href: string;
