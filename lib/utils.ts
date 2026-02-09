@@ -1,3 +1,4 @@
+import { LanguageCode, NavigationLabels } from "@/config/navigation";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -17,4 +18,17 @@ export function formatDate(dateString: string, locale: string = "en-US") {
     dateStyle: "long",
     timeStyle: "short",
   }).format(date);
+}
+
+/**
+ * Retrieves the appropriate label for navigation items based on the specified locale.
+ * @param label - The multilingual label object containing translations.
+ * @param locale - The desired language code to retrieve the label for.
+ * @returns The label string in the specified language.
+ */
+export function getLabel(
+  label: NavigationLabels,
+  locale: LanguageCode,
+): string {
+  return label[locale as keyof NavigationLabels];
 }

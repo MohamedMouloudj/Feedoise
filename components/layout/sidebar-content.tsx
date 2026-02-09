@@ -4,7 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type { OrganizationRole, ProjectRole } from "@/config/navigation";
+import type {
+  NavigationLabels,
+  OrganizationRole,
+  ProjectRole,
+} from "@/config/navigation";
 import {
   NAVIGATION,
   getOrgNavigationItems,
@@ -13,6 +17,8 @@ import {
   buildProjectRoute,
 } from "@/config/navigation";
 import { SidebarContentProps } from "@/types/navigation";
+import { useLingoContext } from "@lingo.dev/compiler/react";
+import { getLabel } from "@/lib/utils";
 
 export function SidebarContent({
   ownedOrg,
@@ -23,6 +29,7 @@ export function SidebarContent({
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set(["owned-org", "user-activity"]),
   );
+  const { locale } = useLingoContext();
 
   const toggleSection = (sectionId: string) => {
     setExpandedSections((prev) => {
@@ -64,16 +71,20 @@ export function SidebarContent({
               {(
                 Object.entries(navigation.OWNED_ORG) as [
                   string,
-                  { href: string; icon: React.ElementType },
+                  {
+                    href: string;
+                    icon: React.ElementType;
+                    label: NavigationLabels;
+                  },
                 ][]
-              ).map(([label, { href, icon: Icon }]) => (
+              ).map(([_, { href, icon: Icon, label }]) => (
                 <Link
                   key={href}
                   href={href}
                   className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
                 >
                   <Icon className="h-4 w-4" />
-                  {label}
+                  {getLabel(label, locale)}
                 </Link>
               ))}
             </div>
@@ -243,18 +254,22 @@ export function SidebarContent({
         {isExpanded("user-activity") && (
           <div className="ml-3 mt-1 space-y-1">
             {(
-              Object.entries(navigation.USER_ACTIVITY) as [
+              Object.entries(navigation.OWNED_ORG) as [
                 string,
-                { href: string; icon: React.ElementType },
+                {
+                  href: string;
+                  icon: React.ElementType;
+                  label: NavigationLabels;
+                },
               ][]
-            ).map(([label, { href, icon: Icon }]) => (
+            ).map(([_, { href, icon: Icon, label }]) => (
               <Link
                 key={href}
                 href={href}
                 className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
               >
                 <Icon className="h-4 w-4" />
-                {label}
+                {getLabel(label, locale)}
               </Link>
             ))}
           </div>
