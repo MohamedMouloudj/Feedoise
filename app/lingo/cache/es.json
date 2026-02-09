@@ -6,6 +6,20 @@
     "40122879a129": "Volver a {expression0}",
     "eb1b9a83d8ef": "Gestionar hilo",
     "a969d0a1d2db": "Comentarios ({expression0})",
-    "35612338c9e3": "Guardar"
+    "35612338c9e3": "Guardar",
+    "2b2b8676554f": "Correo electrónico",
+    "f5198a3e3959": "Contraseña",
+    "26da170bacd2": "¿Olvidaste tu contraseña?",
+    "90370fafa2f8": "Iniciar sesión",
+    "81cf05214055": "O",
+    "45b10b5b937d": "Continuar con GitHub",
+    "7ec48f0ecadf": "¿No tienes una cuenta? <Link0>Regístrate</Link0>",
+    "f3f3d95f2b36": "Ve a /space/projects, aún no sé qué poner aquí",
+    "ca1efd4b886c": "por {expression0}",
+    "e8d8e35a0bd0": "Público",
+    "32bd4569ff12": "{expression0, plural, one {# miembro} other {# miembros}}",
+    "df6cafb2d786": "{expression0, plural, one {# hilo} other {# hilos}}",
+    "000c827d3896": "{expression0} comentarios",
+    "10a50f7801d2": "Aún no hay comentarios"
   }
 }

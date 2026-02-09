@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { batchTranslateThreadsAction } from "@/actions/translation.action";
 
 interface Thread {
@@ -15,49 +15,64 @@ export function useBatchTranslation(
   targetLocale: string,
   enabled = true,
 ) {
-  const [translatedThreads, setTranslatedThreads] = useState<
-    Array<{
-      id: string;
-      translatedTitle: string;
-      translatedContent?: string;
-    }>
-  >(() =>
-    threads.map((t) => ({
-      id: t.id,
-      translatedTitle: t.title,
-      translatedContent: t.content,
-    })),
-  );
+  // Create stable cache key from thread IDs and locale
+  const cacheKey = useMemo(() => {
+    const threadIds = threads.map((t) => t.id).sort().join(",");
+    return `${threadIds}-${targetLocale}`;
+  }, [threads, targetLocale]);
+
+  const [translationCache, setTranslationCache] = useState<
+    Map<
+      string,
+      Array<{
+        id: string;
+        translatedTitle: string;
+        translatedContent?: string;
+      }>
+    >
+  >(new Map());
+  
   const [isTranslating, setIsTranslating] = useState(false);
+  const requestedRef = useRef<Set<string>>(new Set());
+
+  // Check if any thread needs translation
+  const needsTranslation = useMemo(
+    () => threads.some((t) => t.originalLanguage !== targetLocale),
+    [threads, targetLocale],
+  );
 
   useEffect(() => {
-    if (!enabled || threads.length === 0) {
+    if (!enabled || threads.length === 0 || !needsTranslation) {
       return;
     }
 
+    // Check if already requested or in cache
+    if (requestedRef.current.has(cacheKey) || translationCache.has(cacheKey)) {
+      return;
+    }
+
+    // Mark as requested
+    requestedRef.current.add(cacheKey);
+    setIsTranslating(true);
+
     let isMounted = true;
 
-    Promise.resolve().then(() => {
-      if (isMounted) {
-        setIsTranslating(true);
-      }
-      return batchTranslateThreadsAction(threads, targetLocale);
-    })
+    batchTranslateThreadsAction(threads, targetLocale)
       .then((result) => {
         if (isMounted && result.success) {
-          setTranslatedThreads(result.data);
+          setTranslationCache((prev) => {
+            const next = new Map(prev);
+            next.set(cacheKey, result.data);
+            return next;
+          });
           setIsTranslating(false);
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Batch translation failed:", error);
         if (isMounted) {
-          setTranslatedThreads(
-            threads.map((t) => ({
-              id: t.id,
-              translatedTitle: t.title,
-              translatedContent: t.content,
-            })),
-          );
+          // Remove from requested set so it can be retried
+          requestedRef.current.delete(cacheKey);
           setIsTranslating(false);
         }
       });
@@ -65,10 +80,29 @@ export function useBatchTranslation(
     return () => {
       isMounted = false;
     };
-  }, [threads, targetLocale, enabled]);
+  }, [cacheKey, enabled, threads, targetLocale, needsTranslation, translationCache]);
+
+  const translatedThreads = useMemo(() => {
+    if (!needsTranslation) {
+      return threads.map((t) => ({
+        id: t.id,
+        translatedTitle: t.title,
+        translatedContent: t.content,
+      }));
+    }
+
+    return (
+      translationCache.get(cacheKey) ||
+      threads.map((t) => ({
+        id: t.id,
+        translatedTitle: t.title,
+        translatedContent: t.content,
+      }))
+    );
+  }, [threads, targetLocale, translationCache, cacheKey, needsTranslation]);
 
   return {
     translatedThreads,
-    isTranslating,
+    isTranslating: isTranslating && !translationCache.has(cacheKey),
   };
 }

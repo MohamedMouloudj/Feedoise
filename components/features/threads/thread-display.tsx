@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { TranslatedThread } from "@/components/features/translations/translated-thread";
 import { LanguageBadge } from "@/components/ui/language-badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -33,11 +34,18 @@ interface ThreadDisplayProps {
 }
 
 export function ThreadDisplay({ thread, userLanguage }: ThreadDisplayProps) {
+  const stableThread = useMemo(
+    () => ({
+      id: thread.id,
+      title: thread.title,
+      content: thread.content,
+      originalLanguage: thread.originalLanguage,
+    }),
+    [thread.id, thread.title, thread.content, thread.originalLanguage],
+  );
+
   return (
-    <TranslatedThread
-      thread={thread}
-      userLanguage={userLanguage}
-    >
+    <TranslatedThread thread={stableThread} userLanguage={userLanguage}>
       {({
         title,
         content,

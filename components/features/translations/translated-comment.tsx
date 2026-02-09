@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useTranslation } from "@/hooks/use-translation";
 
 interface TranslatedCommentProps {
@@ -23,6 +24,13 @@ export function TranslatedComment({
   userLanguage,
   children,
 }: TranslatedCommentProps) {
+  const content = useMemo(
+    () => ({
+      content: comment.content,
+    }),
+    [comment.content],
+  );
+
   const {
     translatedContent,
     isTranslating,
@@ -30,9 +38,7 @@ export function TranslatedComment({
     toggleOriginal,
     needsTranslation,
   } = useTranslation({
-    content: {
-      content: comment.content,
-    },
+    content,
     originalLanguage: comment.originalLanguage,
     targetLanguage: userLanguage,
   });

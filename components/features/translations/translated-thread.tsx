@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useTranslation } from "@/hooks/use-translation";
 
 interface TranslatedThreadProps {
@@ -25,6 +26,15 @@ export function TranslatedThread({
   userLanguage,
   children,
 }: TranslatedThreadProps) {
+  // Memoize content object to prevent unnecessary re-renders
+  const content = useMemo(
+    () => ({
+      title: thread.title,
+      content: thread.content,
+    }),
+    [thread.title, thread.content],
+  );
+
   const {
     translatedContent,
     isTranslating,
@@ -32,10 +42,7 @@ export function TranslatedThread({
     toggleOriginal,
     needsTranslation,
   } = useTranslation({
-    content: {
-      title: thread.title,
-      content: thread.content,
-    },
+    content,
     originalLanguage: thread.originalLanguage,
     targetLanguage: userLanguage,
   });
