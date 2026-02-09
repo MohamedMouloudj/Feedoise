@@ -8,7 +8,11 @@ import { gsap } from "gsap";
 import AppButton from "../AppButton";
 import { useLingoContext } from "@lingo.dev/compiler/react";
 import { Badge } from "@/components/ui/badge";
-import type { OrganizationRole, ProjectRole } from "@/config/navigation";
+import type {
+  NavigationLabels,
+  OrganizationRole,
+  ProjectRole,
+} from "@/config/navigation";
 import {
   NAVIGATION,
   getOrgNavigationItems,
@@ -17,6 +21,7 @@ import {
   buildProjectRoute,
 } from "@/config/navigation";
 import { MobileSidebarProps } from "@/types/navigation";
+import { getLabel } from "@/lib/utils";
 
 export function MobileSidebar({
   isAuthenticated,
@@ -153,9 +158,13 @@ export function MobileSidebar({
                   {(
                     Object.entries(navigation.OWNED_ORG) as [
                       string,
-                      { href: string; icon: React.ElementType },
+                      {
+                        href: string;
+                        icon: React.ElementType;
+                        label: NavigationLabels;
+                      },
                     ][]
-                  ).map(([label, { href, icon: Icon }]) => (
+                  ).map(([_, { href, icon: Icon, label }]) => (
                     <Link
                       key={href}
                       href={href}
@@ -163,7 +172,7 @@ export function MobileSidebar({
                       className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
                     >
                       <Icon className="h-4 w-4" />
-                      {label}
+                      {getLabel(label, locale)}
                     </Link>
                   ))}
                 </div>
@@ -220,9 +229,13 @@ export function MobileSidebar({
                             {(
                               Object.entries(items) as [
                                 string,
-                                { href: string; icon: React.ElementType },
+                                {
+                                  href: string;
+                                  icon: React.ElementType;
+                                  label: NavigationLabels;
+                                },
                               ][]
-                            ).map(([label, { href, icon: Icon }]) => (
+                            ).map(([_, { href, icon: Icon, label }]) => (
                               <Link
                                 key={href}
                                 href={buildOrgRoute(href, org.slug)}
@@ -230,7 +243,7 @@ export function MobileSidebar({
                                 className="flex items-center gap-3 px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
                               >
                                 <Icon className="h-4 w-4" />
-                                {label}
+                                {getLabel(label, locale)}
                               </Link>
                             ))}
                           </div>
@@ -337,9 +350,13 @@ export function MobileSidebar({
                 {(
                   Object.entries(navigation.USER_ACTIVITY) as [
                     string,
-                    { href: string; icon: React.ElementType },
+                    {
+                      href: string;
+                      icon: React.ElementType;
+                      label: NavigationLabels;
+                    },
                   ][]
-                ).map(([label, { href, icon: Icon }]) => (
+                ).map(([_, { href, icon: Icon, label }]) => (
                   <Link
                     key={href}
                     href={href}
@@ -347,7 +364,7 @@ export function MobileSidebar({
                     className="flex items-center gap-3 px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground rounded-md transition-colors"
                   >
                     <Icon className="h-4 w-4" />
-                    {label}
+                    {getLabel(label, locale)}
                   </Link>
                 ))}
               </div>

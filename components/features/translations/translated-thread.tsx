@@ -1,0 +1,62 @@
+"use client";
+
+import { useMemo } from "react";
+import { useTranslation } from "@/hooks/use-translation";
+
+interface TranslatedThreadProps {
+  thread: {
+    id: string;
+    title: string;
+    content: string;
+    originalLanguage: string;
+  };
+  userLanguage: string;
+  children: (data: {
+    title: string;
+    content: string;
+    isTranslating: boolean;
+    showOriginal: boolean;
+    toggleOriginal: () => void;
+    needsTranslation: boolean;
+  }) => React.ReactNode;
+}
+
+export function TranslatedThread({
+  thread,
+  userLanguage,
+  children,
+}: TranslatedThreadProps) {
+  // Memoize content object to prevent unnecessary re-renders
+  const content = useMemo(
+    () => ({
+      title: thread.title,
+      content: thread.content,
+    }),
+    [thread.title, thread.content],
+  );
+
+  const {
+    translatedContent,
+    isTranslating,
+    showOriginal,
+    toggleOriginal,
+    needsTranslation,
+  } = useTranslation({
+    content,
+    originalLanguage: thread.originalLanguage,
+    targetLanguage: userLanguage,
+  });
+
+  return (
+    <>
+      {children({
+        title: translatedContent.title,
+        content: translatedContent.content,
+        isTranslating,
+        showOriginal,
+        toggleOriginal,
+        needsTranslation,
+      })}
+    </>
+  );
+}
