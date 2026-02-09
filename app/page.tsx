@@ -2,6 +2,7 @@ import { Globe } from "@/components/ui/globe";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import AppButton from "@/components/AppButton";
 import Lenis from "@/components/Lenis";
+import Features from "@/components/pages/Home/Features";
 
 export default function Home() {
   return (
@@ -49,20 +50,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Built for global teams
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            <FeatureCard
-              title="Multilingual Support"
-              description="Users submit feedback in their language, you read it in yours. Automatic translation powered by AI."
-            />
-            <FeatureCard
-              title="Smart Prioritization"
-              description="Weighted scoring system helps you focus on what matters most to your users."
-            />
-            <FeatureCard
-              title="Light Ticketing"
-              description="Track status, assign tasks, add labels. Everything you need without the complexity."
-            />
-          </div>
+          <Features />
         </div>
       </section>
 
@@ -81,21 +69,6 @@ export default function Home() {
           </AppButton>
         </div>
       </section>
-    </div>
-  );
-}
-
-function FeatureCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="flex flex-col gap-3 p-6 bg-background border border-border">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 }
