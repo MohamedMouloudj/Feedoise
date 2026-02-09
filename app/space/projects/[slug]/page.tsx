@@ -86,7 +86,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         )}
       </div>
 
-      <ThreadList threads={threads} projectSlug={slug} />
+      <ThreadList
+        threads={threads}
+        projectSlug={slug}
+        userLanguage={session?.user?.preferredLanguage || "en"}
+      />
     </div>
   );
 }
