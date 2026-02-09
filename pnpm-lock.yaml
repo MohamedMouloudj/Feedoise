@@ -65,6 +65,9 @@ importers:
       lenis:
         specifier: ^1.3.17
         version: 1.3.17(react@19.2.3)
+      lingo.dev:
+        specifier: ^0.131.1
+        version: 0.131.1(@types/node@20.19.31)(@types/react@19.2.10)(encoding@0.1.13)(next@16.1.6(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       lucide-react:
         specifier: ^0.563.0
         version: 0.563.0(react@19.2.3)
@@ -1353,6 +1356,9 @@ packages:
   '@lingo.dev/_compiler@0.11.0':
     resolution: {integrity: sha512-MxTw8AtqK8jUEKClRFEbUfa7srbKBLT1JihCta6YPc4syc0CxQis5J7yRda5RjfLZMO3U3T5ZhLyGkdl3E+5dA==}
 
+  '@lingo.dev/_compiler@0.11.1':
+    resolution: {integrity: sha512-G2xourXU4Gc+kHnzjQlxD/QS6VP0+Za+4QtaKv/G0UBcwQelqHoSvx0mVQ5NZbNxH1DRF/9YArw9nzzv/i9Zqw==}
+
   '@lingo.dev/_locales@0.3.3':
     resolution: {integrity: sha512-50blm6NdDEM9P/GtWmyrfuxILe+9s3g+wMmETQafV97Geh/OQeW8Ej/8XcozZBHNRLIrCsUn53RS+x5kczAM0Q==}
 
@@ -1364,8 +1370,14 @@ packages:
   '@lingo.dev/_sdk@0.14.0':
     resolution: {integrity: sha512-7jr4XjOh5rKUr4BjP+Vm0jI9ljjHuvIcIye1ChPPGBx93K0weZGBoss5t7zgblQaFzPkMokNM0X7e1jd0IZBUQ==}
 
+  '@lingo.dev/_sdk@0.14.1':
+    resolution: {integrity: sha512-oC2MTtM8LZ7dUtC4ArJxJ6VySAk6ryZ8aAamCNP+9yAtthWPyRUq8xfzr31faYKgw/QTcuHSzw2dpxpUhShN6Q==}
+
   '@lingo.dev/_spec@0.47.0':
     resolution: {integrity: sha512-b/1GkuWJlochZ7aPQy3Wo1xs75pHDMwZS4bsdn5Uiu/GQ585pMgEYi2ki1RxkYVMTAoK53QSqKqoBQfrV2vG6g==}
+
+  '@lingo.dev/_spec@0.47.1':
+    resolution: {integrity: sha512-heBlHvo9OypK2q3pfpUBjuhDZwkWWnD3qSo1w1G5zXK6UYgmyuNnAcKb8shiuundC0SzF5llEAruQaANKpwHvw==}
 
   '@lingo.dev/compiler@0.3.5':
     resolution: {integrity: sha512-YKTqa13R7i6iKGVhEgrsEjVpMstmJ+2+vJ2rxwJ9sIYqsMpif9AE4zCIDA0gcDCVzEEH4VOTbPj5LLfDtN59Hw==}
@@ -3437,6 +3449,7 @@ packages:
   glob@11.1.0:
     resolution: {integrity: sha512-vuNwKSaKiqm7g0THUBu2x7ckSs3XJLXE+2ssL7/MfTGPLLcrJQ/4Uq1CjPTtO5cCIiRxqvN6Twy1qOwhL0Xjcw==}
     engines: {node: 20 || >=22}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   globals@14.0.0:
@@ -4066,6 +4079,11 @@ packages:
 
   lingo.dev@0.130.1:
     resolution: {integrity: sha512-2Rc4u9cRW5DTsN/jzUmzfMTM24eiw2D3jn5WWJHCj/jEW9f2UrjEVN4mwHNv6TOSDMlRBZSuBDa9RuN7hxKVRw==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  lingo.dev@0.131.1:
+    resolution: {integrity: sha512-IVqqS1kVG6zWzWIbm0H0pGA/yGO88VI2HHlyyZNAnT+rtg2vB/+8KAMEIvF6yJQ9zqpNnY7FBSCIhfVy+VU5Ng==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6901,6 +6919,39 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@lingo.dev/_compiler@0.11.1':
+    dependencies:
+      '@ai-sdk/anthropic': 3.0.9(zod@4.1.12)
+      '@ai-sdk/google': 3.0.6(zod@4.1.12)
+      '@ai-sdk/groq': 3.0.4(zod@4.1.12)
+      '@ai-sdk/mistral': 3.0.5(zod@4.1.12)
+      '@ai-sdk/openai': 3.0.7(zod@4.1.12)
+      '@babel/generator': 7.28.5
+      '@babel/parser': 7.28.5
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
+      '@lingo.dev/_sdk': 0.14.1
+      '@lingo.dev/_spec': 0.47.1
+      '@openrouter/ai-sdk-provider': 6.0.0-alpha.1(zod@4.1.12)
+      ai: 6.0.25(zod@4.1.12)
+      dedent: 1.7.0
+      dotenv: 16.4.5
+      fast-xml-parser: 5.3.2
+      ini: 5.0.0
+      lodash: 4.17.21
+      node-machine-id: 1.1.12
+      object-hash: 3.0.0
+      ollama-ai-provider-v2: 2.0.0(ai@6.0.25(zod@4.1.12))(zod@4.1.12)
+      posthog-node: 5.14.0
+      unplugin: 2.3.11
+      zod: 4.1.12
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - bufferutil
+      - canvas
+      - supports-color
+      - utf-8-validate
+
   '@lingo.dev/_locales@0.3.3':
     dependencies:
       iso-639-3: 3.0.1
@@ -6923,7 +6974,24 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@lingo.dev/_sdk@0.14.1':
+    dependencies:
+      '@lingo.dev/_spec': 0.47.1
+      '@paralleldrive/cuid2': 2.2.2
+      jsdom: 25.0.1
+      zod: 4.1.12
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - utf-8-validate
+
   '@lingo.dev/_spec@0.47.0':
+    dependencies:
+      '@lingo.dev/_locales': 0.3.3
+      zod: 4.1.12
+
+  '@lingo.dev/_spec@0.47.1':
     dependencies:
       '@lingo.dev/_locales': 0.3.3
       zod: 4.1.12
@@ -9797,6 +9865,122 @@ snapshots:
       '@lingo.dev/_react': 0.7.6(next@16.1.6(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       '@lingo.dev/_sdk': 0.14.0
       '@lingo.dev/_spec': 0.47.0
+      '@markdoc/markdoc': 0.5.4(@types/react@19.2.10)(react@19.2.3)
+      '@modelcontextprotocol/sdk': 1.22.0
+      '@openrouter/ai-sdk-provider': 6.0.0-alpha.1(zod@4.1.12)
+      '@paralleldrive/cuid2': 2.2.2
+      '@types/ejs': 3.1.5
+      ai: 6.0.25(zod@4.1.12)
+      bitbucket: 2.12.0(encoding@0.1.13)
+      chalk: 5.6.2
+      chokidar: 4.0.3
+      cli-progress: 3.12.0
+      cli-table3: 0.6.5
+      cors: 2.8.5
+      csv-parse: 5.6.0
+      csv-stringify: 6.6.0
+      date-fns: 4.1.0
+      dedent: 1.7.0
+      diff: 7.0.0
+      dom-serializer: 2.0.0
+      domhandler: 5.0.3
+      domutils: 3.2.2
+      dotenv: 16.4.7
+      ejs: 3.1.10
+      express: 5.1.0
+      external-editor: 3.1.0
+      figlet: 1.9.4
+      flat: 6.0.1
+      gettext-parser: 8.0.0
+      glob: 11.1.0
+      gradient-string: 3.0.0
+      gray-matter: 4.0.3
+      htmlparser2: 10.0.0
+      ini: 5.0.0
+      ink: 4.2.0(@types/react@19.2.10)(react@19.2.3)
+      ink-progress-bar: 3.0.0
+      ink-spinner: 5.0.0(ink@4.2.0(@types/react@19.2.10)(react@19.2.3))(react@19.2.3)
+      inquirer: 12.6.0(@types/node@20.19.31)
+      interactive-commander: 0.5.194(@types/node@20.19.31)
+      is-url: 1.2.4
+      jsdom: 25.0.1
+      json5: 2.2.3
+      jsonc-parser: 3.3.1
+      jsonrepair: 3.13.1
+      listr2: 8.3.2
+      lodash: 4.17.21
+      marked: 15.0.6
+      mdast-util-from-markdown: 2.0.2
+      mdast-util-gfm: 3.1.0
+      micromark-extension-gfm: 3.0.0
+      node-machine-id: 1.1.12
+      node-webvtt: 1.9.4
+      object-hash: 3.0.0
+      octokit: 4.0.2
+      ollama-ai-provider-v2: 2.0.0(ai@6.0.25(zod@4.1.12))(zod@4.1.12)
+      open: 10.2.0
+      ora: 8.1.1
+      p-limit: 6.2.0
+      php-array-reader: 2.1.2
+      plist: 3.1.0
+      posthog-node: 5.14.0
+      prettier: 3.6.2
+      react: 19.2.3
+      rehype-stringify: 10.0.1
+      remark-disable-tokenizers: 1.1.1
+      remark-frontmatter: 5.0.0
+      remark-gfm: 4.0.1
+      remark-mdx: 3.1.1
+      remark-mdx-frontmatter: 5.2.0
+      remark-parse: 11.0.0
+      remark-rehype: 11.1.2
+      remark-stringify: 11.0.0
+      sax: 1.4.3
+      srt-parser-2: 1.2.3
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+      vfile: 6.0.3
+      xliff: 6.2.2
+      xml2js: 0.6.2
+      xpath: 0.0.34
+      yaml: 2.8.1
+      zod: 4.1.12
+    transitivePeerDependencies:
+      - '@biomejs/wasm-bundler'
+      - '@biomejs/wasm-web'
+      - '@cfworker/json-schema'
+      - '@types/node'
+      - '@types/react'
+      - babel-plugin-macros
+      - bufferutil
+      - canvas
+      - encoding
+      - next
+      - react-devtools-core
+      - supports-color
+      - utf-8-validate
+
+  lingo.dev@0.131.1(@types/node@20.19.31)(@types/react@19.2.10)(encoding@0.1.13)(next@16.1.6(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)):
+    dependencies:
+      '@ai-sdk/anthropic': 3.0.9(zod@4.1.12)
+      '@ai-sdk/google': 3.0.6(zod@4.1.12)
+      '@ai-sdk/mistral': 3.0.5(zod@4.1.12)
+      '@ai-sdk/openai': 3.0.7(zod@4.1.12)
+      '@babel/generator': 7.28.5
+      '@babel/parser': 7.28.5
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
+      '@biomejs/js-api': 3.0.0(@biomejs/wasm-nodejs@2.3.7)
+      '@biomejs/wasm-nodejs': 2.3.7
+      '@datocms/cma-client-node': 4.0.1
+      '@gitbeaker/rest': 39.34.3
+      '@inkjs/ui': 2.0.0(ink@4.2.0(@types/react@19.2.10)(react@19.2.3))
+      '@inquirer/prompts': 7.8.0(@types/node@20.19.31)
+      '@lingo.dev/_compiler': 0.11.1
+      '@lingo.dev/_locales': 0.3.3
+      '@lingo.dev/_react': 0.7.6(next@16.1.6(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+      '@lingo.dev/_sdk': 0.14.1
+      '@lingo.dev/_spec': 0.47.1
       '@markdoc/markdoc': 0.5.4(@types/react@19.2.10)(react@19.2.3)
       '@modelcontextprotocol/sdk': 1.22.0
       '@openrouter/ai-sdk-provider': 6.0.0-alpha.1(zod@4.1.12)

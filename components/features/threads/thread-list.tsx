@@ -4,17 +4,30 @@ import { useState } from "react";
 import { ThreadWithAuthor } from "@/services/Threads";
 import { ThreadCard } from "./thread-card";
 import { ThreadFilters } from "./thread-filters";
+import { useBatchTranslation } from "@/hooks/use-batch-translation";
+import { Skeleton } from "@/components/ui/skeleton";
 import { ThreadStatus } from "@/lib/generated/prisma/client";
 
 type ThreadListProps = {
   threads: ThreadWithAuthor[];
   projectSlug: string;
+  userLanguage: string;
 };
 
-export function ThreadList({ threads, projectSlug }: ThreadListProps) {
+export function ThreadList({
+  threads,
+  projectSlug,
+  userLanguage,
+}: ThreadListProps) {
   const [statusFilter, setStatusFilter] = useState<ThreadStatus | "all">("all");
   const [sortBy, setSortBy] = useState<"recent" | "priority" | "discussed">(
     "recent",
+  );
+
+  // Batch translate threads
+  const { translatedThreads, isTranslating } = useBatchTranslation(
+    threads,
+    userLanguage,
   );
 
   // Filter threads
@@ -47,7 +60,13 @@ export function ThreadList({ threads, projectSlug }: ThreadListProps) {
         onSortChange={setSortBy}
       />
 
-      {sortedThreads.length === 0 ? (
+      {isTranslating ? (
+        <div className="space-y-4">
+          {sortedThreads.map((thread) => (
+            <Skeleton key={thread.id} className="h-48 w-full" />
+          ))}
+        </div>
+      ) : sortedThreads.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border py-16 text-center">
           <h3 className="mb-2 text-lg font-semibold">No feedback yet</h3>
           <p className="text-muted-foreground">
@@ -58,13 +77,20 @@ export function ThreadList({ threads, projectSlug }: ThreadListProps) {
         </div>
       ) : (
         <div className="space-y-4">
-          {sortedThreads.map((thread) => (
-            <ThreadCard
-              key={thread.id}
-              thread={thread}
-              projectSlug={projectSlug}
-            />
-          ))}
+          {sortedThreads.map((thread) => {
+            const translatedThread = translatedThreads.find(
+              (t) => t.id === thread.id,
+            );
+            return (
+              <ThreadCard
+                key={thread.id}
+                thread={thread}
+                projectSlug={projectSlug}
+                translatedTitle={translatedThread?.translatedTitle}
+                showLanguageBadge={thread.originalLanguage !== userLanguage}
+              />
+            );
+          })}
         </div>
       )}
     </div>
