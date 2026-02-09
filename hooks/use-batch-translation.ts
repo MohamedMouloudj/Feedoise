@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useTransition, useState } from "react";
 import { batchTranslateThreadsAction } from "@/actions/translation.action";
 
 interface Thread {
@@ -15,9 +15,14 @@ export function useBatchTranslation(
   targetLocale: string,
   enabled = true,
 ) {
+  const [isPending, startTransition] = useTransition();
+
   // Create stable cache key from thread IDs and locale
   const cacheKey = useMemo(() => {
-    const threadIds = threads.map((t) => t.id).sort().join(",");
+    const threadIds = threads
+      .map((t) => t.id)
+      .sort()
+      .join(",");
     return `${threadIds}-${targetLocale}`;
   }, [threads, targetLocale]);
 
@@ -31,8 +36,7 @@ export function useBatchTranslation(
       }>
     >
   >(new Map());
-  
-  const [isTranslating, setIsTranslating] = useState(false);
+
   const requestedRef = useRef<Set<string>>(new Set());
 
   // Check if any thread needs translation
@@ -53,34 +57,33 @@ export function useBatchTranslation(
 
     // Mark as requested
     requestedRef.current.add(cacheKey);
-    setIsTranslating(true);
 
     let isMounted = true;
 
-    batchTranslateThreadsAction(threads, targetLocale)
-      .then((result) => {
+    startTransition(async () => {
+      try {
+        const result = await batchTranslateThreadsAction(threads, targetLocale);
+
         if (isMounted && result.success) {
           setTranslationCache((prev) => {
-            const next = new Map(prev);
-            next.set(cacheKey, result.data);
-            return next;
+            const newCache = new Map(prev);
+            newCache.set(cacheKey, result.data);
+            return newCache;
           });
-          setIsTranslating(false);
         }
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Batch translation failed:", error);
         if (isMounted) {
           // Remove from requested set so it can be retried
           requestedRef.current.delete(cacheKey);
-          setIsTranslating(false);
         }
-      });
+      }
+    });
 
     return () => {
       isMounted = false;
     };
-  }, [cacheKey, enabled, threads, targetLocale, needsTranslation, translationCache]);
+  }, [cacheKey, enabled, threads, targetLocale, needsTranslation]);
 
   const translatedThreads = useMemo(() => {
     if (!needsTranslation) {
@@ -99,10 +102,10 @@ export function useBatchTranslation(
         translatedContent: t.content,
       }))
     );
-  }, [threads, targetLocale, translationCache, cacheKey, needsTranslation]);
+  }, [threads, translationCache, cacheKey, needsTranslation]);
 
   return {
     translatedThreads,
-    isTranslating: isTranslating && !translationCache.has(cacheKey),
+    isTranslating: isPending && !translationCache.has(cacheKey),
   };
 }
