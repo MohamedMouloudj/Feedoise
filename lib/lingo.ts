@@ -1,22 +1,19 @@
-"use client";
+import { LingoDotDevEngine } from "lingo.dev/sdk";
 
-import { LingoDotDevEngine } from "lingo.dev";
-
-// Initialize SDK instance (client-side only)
+// Server-side SDK instance
 const lingoDotDev = new LingoDotDevEngine({
-  apiKey: process.env.NEXT_PUBLIC_LINGODOTDEV_API_KEY!,
+  apiKey: process.env.LINGODOTDEV_API_KEY!, // Note: Not NEXT_PUBLIC (server-only)
 });
 
 /**
  * Translate content object from source to target language
- * Uses localizeObject for nested object translation
+ * SERVER-SIDE ONLY - Do not import in client components
  */
 export async function translateContent(
   content: { [key: string]: string },
   sourceLocale: string,
   targetLocale: string,
 ): Promise<{ [key: string]: string }> {
-  // If same language, return original
   if (sourceLocale === targetLocale) {
     return content;
   }
@@ -29,14 +26,13 @@ export async function translateContent(
     return translated as { [key: string]: string };
   } catch (error) {
     console.error("Translation failed:", error);
-    // Return original content on error
     return content;
   }
 }
 
 /**
  * Translate a single text string
- * Uses localizeText for simple string translation
+ * SERVER-SIDE ONLY
  */
 export async function translateText(
   text: string,
@@ -60,8 +56,8 @@ export async function translateText(
 }
 
 /**
- * Batch translate multiple threads efficiently
- * Groups by source language and translates in batches
+ * Batch translate multiple items efficiently. It groups items by source language to minimize API calls.
+ * SERVER-SIDE ONLY
  */
 export async function batchTranslateThreads(
   threads: Array<{
@@ -74,25 +70,23 @@ export async function batchTranslateThreads(
 ): Promise<
   Array<{
     id: string;
-    title: string;
-    content?: string;
+    translatedTitle: string;
+    translatedContent?: string;
   }>
 > {
-  // Filter threads that need translation
   const threadsToTranslate = threads.filter(
     (t) => t.originalLanguage !== targetLocale,
   );
 
-  // If no threads need translation, return originals
   if (threadsToTranslate.length === 0) {
     return threads.map((t) => ({
       id: t.id,
-      title: t.title,
-      content: t.content,
+      translatedTitle: t.title,
+      translatedContent: t.content,
     }));
   }
 
-  // Group by source language for efficient batching
+  // Group by source language
   const byLanguage = threadsToTranslate.reduce(
     (acc, thread) => {
       if (!acc[thread.originalLanguage]) {
@@ -101,64 +95,55 @@ export async function batchTranslateThreads(
       acc[thread.originalLanguage].push(thread);
       return acc;
     },
-    {} as Record<
-      string,
-      Array<{
-        id: string;
-        title: string;
-        content?: string;
-        originalLanguage: string;
-      }>
-    >,
+    {} as Record<string, typeof threadsToTranslate>,
   );
 
   try {
-    // Batch translate per language pair
     const translationPromises = Object.entries(byLanguage).map(
       async ([sourceLocale, items]) => {
-        // Create object with thread IDs as keys
         const contentToTranslate = Object.fromEntries(
-          items.map((t) => [t.id, t.title]),
+          items.flatMap((t) => {
+            const entries = [[`${t.id}_title`, t.title]];
+            if (t.content) {
+              entries.push([`${t.id}_content`, t.content]);
+            }
+            return entries;
+          }),
         );
 
         const translated = await lingoDotDev.localizeObject(
           contentToTranslate,
-          {
-            sourceLocale,
-            targetLocale,
-          },
+          { sourceLocale, targetLocale },
         );
 
-        return {
-          sourceLocale,
-          translated: translated as Record<string, string>,
-        };
+        return translated as Record<string, string>;
       },
     );
 
     const results = await Promise.all(translationPromises);
 
-    // Create translation map
+    // Merge results
     const translationMap = new Map<string, string>();
-    results.forEach(({ translated }) => {
-      Object.entries(translated).forEach(([id, title]) => {
-        translationMap.set(id, title);
+    results.forEach((translated) => {
+      Object.entries(translated).forEach(([key, value]) => {
+        translationMap.set(key, value);
       });
     });
 
-    // Return threads with translations
+    // Return with translations
     return threads.map((thread) => ({
       id: thread.id,
-      title: translationMap.get(thread.id) || thread.title,
-      content: thread.content,
+      translatedTitle: translationMap.get(`${thread.id}_title`) || thread.title,
+      translatedContent: thread.content
+        ? translationMap.get(`${thread.id}_content`) || thread.content
+        : undefined,
     }));
   } catch (error) {
     console.error("Batch translation failed:", error);
-    // Return original threads on error
     return threads.map((t) => ({
       id: t.id,
-      title: t.title,
-      content: t.content,
+      translatedTitle: t.title,
+      translatedContent: t.content,
     }));
   }
 }

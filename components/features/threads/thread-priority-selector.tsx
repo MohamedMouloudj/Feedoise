@@ -75,7 +75,7 @@ export function ThreadPrioritySelector({
             onClick={handleUpdate}
             disabled={isUpdating}
           >
-            {isUpdating ? "Saving..." : "Save"}
+            Save
           </AppButton>
         )}
       </div>

@@ -33,8 +33,8 @@ export function TranslatedComment({
     content: {
       content: comment.content,
     },
-    sourceLocale: comment.originalLanguage,
-    targetLocale: userLanguage,
+    originalLanguage: comment.originalLanguage,
+    targetLanguage: userLanguage,
   });
 
   return (

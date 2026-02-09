@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { batchTranslateThreads } from "@/lib/lingo";
+import { useState, useEffect } from "react";
+import { batchTranslateThreadsAction } from "@/actions/translation.action";
 
 interface Thread {
   id: string;
@@ -15,36 +15,49 @@ export function useBatchTranslation(
   targetLocale: string,
   enabled = true,
 ) {
-  const shouldTranslate = enabled && threads.length > 0;
-  const [translatedThreads, setTranslatedThreads] = useState(threads);
+  const [translatedThreads, setTranslatedThreads] = useState<
+    Array<{
+      id: string;
+      translatedTitle: string;
+      translatedContent?: string;
+    }>
+  >(() =>
+    threads.map((t) => ({
+      id: t.id,
+      translatedTitle: t.title,
+      translatedContent: t.content,
+    })),
+  );
   const [isTranslating, setIsTranslating] = useState(false);
 
-  // Create a stable key for threads changes
-  const threadsKey = useMemo(
-    () => threads.map((t) => t.id).join(","),
-    [threads]
-  );
-
   useEffect(() => {
-    if (!shouldTranslate) {
-      setTranslatedThreads(threads);
-      setIsTranslating(false);
+    if (!enabled || threads.length === 0) {
       return;
     }
 
     let isMounted = true;
-    setIsTranslating(true);
 
-    batchTranslateThreads(threads, targetLocale)
-      .then((translated) => {
-        if (isMounted) {
-          setTranslatedThreads(translated as Thread[]);
+    Promise.resolve().then(() => {
+      if (isMounted) {
+        setIsTranslating(true);
+      }
+      return batchTranslateThreadsAction(threads, targetLocale);
+    })
+      .then((result) => {
+        if (isMounted && result.success) {
+          setTranslatedThreads(result.data);
           setIsTranslating(false);
         }
       })
       .catch(() => {
         if (isMounted) {
-          setTranslatedThreads(threads);
+          setTranslatedThreads(
+            threads.map((t) => ({
+              id: t.id,
+              translatedTitle: t.title,
+              translatedContent: t.content,
+            })),
+          );
           setIsTranslating(false);
         }
       });
@@ -52,8 +65,7 @@ export function useBatchTranslation(
     return () => {
       isMounted = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [threadsKey, targetLocale, shouldTranslate]);
+  }, [threads, targetLocale, enabled]);
 
   return {
     translatedThreads,

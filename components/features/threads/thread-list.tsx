@@ -77,7 +77,7 @@ export function ThreadList({
         </div>
       ) : (
         <div className="space-y-4">
-          {sortedThreads.map((thread, index) => {
+          {sortedThreads.map((thread) => {
             const translatedThread = translatedThreads.find(
               (t) => t.id === thread.id,
             );
@@ -86,7 +86,7 @@ export function ThreadList({
                 key={thread.id}
                 thread={thread}
                 projectSlug={projectSlug}
-                translatedTitle={translatedThread?.title}
+                translatedTitle={translatedThread?.translatedTitle}
                 showLanguageBadge={thread.originalLanguage !== userLanguage}
               />
             );

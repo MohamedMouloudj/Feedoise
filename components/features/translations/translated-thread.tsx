@@ -36,8 +36,8 @@ export function TranslatedThread({
       title: thread.title,
       content: thread.content,
     },
-    sourceLocale: thread.originalLanguage,
-    targetLocale: userLanguage,
+    originalLanguage: thread.originalLanguage,
+    targetLanguage: userLanguage,
   });
 
   return (
