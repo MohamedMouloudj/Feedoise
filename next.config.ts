@@ -22,7 +22,7 @@ export default async function (): Promise<NextConfig> {
     sourceLocale: "en",
     targetLocales: ["es", "fr", "ar"],
     models: "lingo.dev",
-    buildMode: "cache-only",
+    buildMode: "translate",
     dev: {
       usePseudotranslator: false,
     },
