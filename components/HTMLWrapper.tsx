@@ -2,6 +2,7 @@
 
 import { notoSans, notoSansArabic, notoSansSC } from "@/lib/font";
 import { useLingoContext } from "@lingo.dev/compiler/react";
+import Footer from "./layout/footer";
 
 export default function HTMLWrapper({
   children,
@@ -17,6 +18,7 @@ export default function HTMLWrapper({
         dir={isRTL ? "rtl" : "ltr"}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

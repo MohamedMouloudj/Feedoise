@@ -69,6 +69,7 @@ export default function Home() {
           </AppButton>
         </div>
       </section>
+      <Lenis />
     </div>
   );
 }

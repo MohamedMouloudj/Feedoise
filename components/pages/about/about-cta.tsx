@@ -10,24 +10,28 @@ export function AboutCTA() {
 
   useGSAP(
     () => {
-      gsap.from(".about-cta-content", {
-        scrollTrigger: {
-          trigger: ".about-cta-content",
-          start: "top bottom-=100",
-          toggleActions: "play none none none",
-        },
-        scale: 0.9,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      });
+      if (typeof window !== "undefined") {
+        window.addEventListener("load", () => {
+          gsap.from(".about-cta-content", {
+            scrollTrigger: {
+              trigger: ".about-cta-content",
+              start: "top bottom-=100",
+              toggleActions: "play none none none",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          });
+        });
+      }
       return () => null;
     },
     { scope: ctaRef, revertOnUpdate: true },
   );
 
   return (
-    <section ref={ctaRef} className="px-4 py-24 sm:py-32">
+    <section id="about-cta" ref={ctaRef} className="px-4 py-24 sm:py-32">
       <div className="container mx-auto max-w-5xl">
         <div className="about-cta-content relative overflow-hidden rounded-2xl border bg-linear-to-br from-primary/10 via-primary/5 to-background p-12 text-center">
           {/* Decorative elements */}

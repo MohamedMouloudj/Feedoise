@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { LingoProvider } from "@lingo.dev/compiler/react";
 import HTMLWrapper from "@/components/HTMLWrapper";
 import Navbar from "@/components/layout/app-navbar";
-import Footer from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
@@ -23,7 +22,6 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
-          <Footer />
         </div>
         <Toaster />
       </HTMLWrapper>

@@ -34,10 +34,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      <Lenis />
       <AboutHero />
       <AboutFeatures />
       <AboutCTA />
+      <Lenis />
     </main>
   );
 }

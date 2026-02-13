@@ -9,31 +9,35 @@ export function AboutHero() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      if (typeof window !== "undefined") {
+        window.addEventListener("load", () => {
+          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".about-badge", {
-        y: -30,
-        opacity: 0,
-        duration: 0.6,
-      })
-        .from(
-          ".about-title",
-          {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-          },
-          "-=0.3",
-        )
-        .from(
-          ".about-subtitle",
-          {
-            y: 30,
+          tl.from(".about-badge", {
+            y: -30,
             opacity: 0,
             duration: 0.6,
-          },
-          "-=0.4",
-        );
+          })
+            .from(
+              ".about-title",
+              {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+              },
+              "-=0.3",
+            )
+            .from(
+              ".about-subtitle",
+              {
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+              },
+              "-=0.4",
+            );
+        });
+      }
     },
     { scope: heroRef, revertOnUpdate: true },
   );
